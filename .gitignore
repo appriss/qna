@@ -11,6 +11,9 @@ data/*.dat
 config/mongoid.yml
 config/database.yml
 config/auth_providers.yml
+config/deploy.rb
+config/newrelic.yml
+db/xapit/
 base_packaged.*
 .directory
 .bundle
@@ -28,3 +31,5 @@ public/packages/
 .redcar
 .idea
 tunnlr.yml
+shared/
+.svn/
