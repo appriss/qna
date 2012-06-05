@@ -1,5 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
+ENV["RAILS_ENV"] = 'test'
 require 'simplecov'
 SimpleCov.start 'rails'
 require File.expand_path("../../config/environment", __FILE__)
@@ -8,6 +8,8 @@ require 'rspec/expectations'
 require 'remarkable/mongoid'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'fabrication'
+require 'ffaker'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -71,12 +73,10 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-#     Sham.reset(:before_all)
     Capybara.default_driver = :selenium
     Capybara.javascript_driver = :selenium
     Capybara.default_host = AppConfig.domain
-    Xapit.reload
-#     Sham.reset(:before_each)
+    #Xapit.reload
     DatabaseCleaner.clean
   end
 end
