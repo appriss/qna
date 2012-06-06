@@ -17,7 +17,7 @@ end
 AppConfig = OpenStruct.new(options[Rails.env])
 
 # check config
-unless ENV["SHAPADO_NO_CHECK_CONFIG"]
+unless ENV["ACE_NO_CHECK_CONFIG"]
   begin
     known_options = YAML.load_file(Rails.root+"config/shapado.yml.sample")[Rails.env]
     if known_options
