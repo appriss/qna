@@ -14,7 +14,7 @@ sudo gem install bundler
 
 1. Download the sources:
 
-    git clone git://gitorious.org/ace/ace.git
+    git clone git://github.com/afazio-appriss/ace.git
 
     cd ace/
 
@@ -27,7 +27,7 @@ sudo gem install bundler
     edit ace.yml and auth_providers.yml
 
     Go to https://rpm.newrelic.com/ and create an account, then:
-    cp config/ace.yml.sample config/newrelic.yml
+    cp config/newrelic.yml.sample config/newrelic.yml
 
     If you don't want to use newrelic, just comment it out in the Gemfile.
 
@@ -63,26 +63,9 @@ then type
     sudo newaliases
 
 
+Talk to us at cttools \aT/ appriss d0t com
 
-Follow us on:
-
-* http://twitter.com/ace
-
-* http://identi.ca/ace
-
-* http://blog.ricodigo.com/ace
-
-Talk to us at:
-
-* irc://irc.freenode.org/ace
-
-* http://ace.com/chat
-
-* contact \aT/ ace d0t com
-
-Report bugs at http://ace.com and use the tags "bug" or "feature-request"
-
-
+Report bugs at https://github.com/afazio-appriss/ace/issues
 
 Happy hacking!
 

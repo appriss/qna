@@ -23,7 +23,7 @@ app     ALL=(ALL) NOPASSWD: ALL
 
 1. Download the sources:
 
-    $ git clone git://gitorious.org/ace/ace.git
+    $ git clone git://github.com/afazio-appriss/ace.git
     $ cd ace/
 
 2. Configure the application
