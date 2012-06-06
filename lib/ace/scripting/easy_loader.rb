@@ -11,7 +11,7 @@ require 'rails'
 require 'action_mailer/railtie'
 require 'action_controller'
 require 'action_view'
-require "#{Bundler.root}/lib/shapado/scripting/application"
+require "#{Bundler.root}/lib/ace/scripting/application"
 
 require 'mongoid'
 require 'mongoid_ext'

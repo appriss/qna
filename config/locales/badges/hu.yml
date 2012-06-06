@@ -132,7 +132,7 @@ hu:
       service_medal: 
         description: 300 pozitív szavazata van
         name: Érdemérem
-      shapado: 
+      ace: 
         description: Meglátogatta az oldalt 8 egymást követő napon
       stellar_answer: 
         description: Van olyan válasz, ami 100 felhasználó kedvence

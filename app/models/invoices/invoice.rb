@@ -36,7 +36,7 @@ class Invoice
       )
 
       self.override(:stripe_customer => customer.id)
-      self.group.override(:shapado_version_id => AceVersion.where(:token => self.version).first.id)
+      self.group.override(:ace_version_id => AceVersion.where(:token => self.version).first.id)
 
       return true
     rescue => e

@@ -127,7 +127,7 @@ eo:
       service_medal: 
         description: Havas 300 pozitivajn voĉojn
         name: Medalo pri servado
-      shapado: 
+      ace: 
         description: Vizitis la retejon ĉiutage 8 tagojn sinsekve
       stellar_question: 
         description: Demandis demandon kiun favoras 100 uzantoj

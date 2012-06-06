@@ -1,13 +1,13 @@
 development:
-  database: shapado-magent-development
+  database: ace-magent-development
   host: localhost
   port: 27017
   websocket_channel: magent.websocket
 
 test:
-  database: shapado-test
+  database: ace-test
 
 production:
-  database: shapado-magent-production
+  database: ace-magent-production
   websocket_channel: magent.websocket
 

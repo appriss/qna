@@ -24,7 +24,7 @@ el:
           instruction1: To do so you first need to log on to your domain provider (the site where you bought your domain such as %{subdomain}.com).
           instruction2: There you need to go to the DNS section and create something called a CNAME.
           instruction3: Pick 'www' or anything else as the name of your CNAME.
-          instruction4: "Then in the host or destination field, put your current shapado domain: %{domain}."
+          instruction4: "Then in the host or destination field, put your current ace domain: %{domain}."
           instruction5: Once this is done, after an hour or so, your domain www.%{subdomain} should point to %{appdomain}.
           instruction6: When this is the case, come back here and put your domain name www.%{subdomain} in the field below and press the button 'update'. If you have questions, ask us in the %{chat_url} or on our support forum
           title: Ρυθμίστε το domain
@@ -36,7 +36,7 @@ el:
           reputation_rewards_subtitle: Κατάλογος ανταμοιβών υπόληψης
           title: Ανταμοιβές
         share: 
-          ends_with_example: "π.χ. #shapado"
+          ends_with_example: "π.χ. #ace"
           question_must_include_example: "π.χ. #iAsk"
           starts_with_example: "π.χ. #qa"
           title: Διαμοιρασμός

@@ -62,7 +62,7 @@ class FacebookController < ApplicationController
     end
 
     @signed_request.delete("oauth_token")
-    session[:shapado_signed_request] = @signed_request
+    session[:ace_signed_request] = @signed_request
     @current_group
   end
 

@@ -1,4 +1,4 @@
-namespace "shapado40to41" do
+namespace "ace40to41" do
   task :levels => [:init] do
     Membership.all.each do |ms|
       print "."

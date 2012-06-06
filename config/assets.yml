@@ -46,7 +46,7 @@ javascripts:
     - public/javascripts/app/modules/local_storage.js
     - public/javascripts/app/modules/messages.js
     - public/javascripts/app/modules/questions.js
-    - public/javascripts/app/modules/shapado_ui.js
+    - public/javascripts/app/modules/ace_ui.js
     - public/javascripts/app/modules/tags.js
     - public/javascripts/app/modules/ui.js
     - public/javascripts/app/modules/utils.js
@@ -59,7 +59,7 @@ javascripts:
 
 
     - public/javascripts/app/initializers/search.js
-    - public/javascripts/app/initializers/shapado_toolbar.js
+    - public/javascripts/app/initializers/ace_toolbar.js
     - public/javascripts/vendor/jquery.droppy.js
     - public/javascripts/app/modules/invitations.js
     - public/javascripts/application-init.js

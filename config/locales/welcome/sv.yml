@@ -10,7 +10,7 @@ sv:
       under_18: Jag är under 18
     facts: 
       features: 
-        shapado: 
+        ace: 
           adaptable: ja!
           foss: ja!
           joel: nej :/
@@ -23,7 +23,7 @@ sv:
           multilanguage: nej
           multitopic: nej
       prices: 
-        shapado: 
+        ace: 
           large: antagligen som $500
           medium: <=== ditto
           onsite: förmodligen $0 på din egen server

@@ -2,7 +2,7 @@ base: &common
   site: http://example.com
   analytics_id: UA-000000-0
   analytics_vendor: googlean
-  session_key: _shapado_session
+  session_key: _ace_session
   session_secret: 9ac4fd97a52153070a0bd47467c00eded1badf526f145827384ddfde45ac0bfd3f0230c961ddfb9ef84d490b3d889e0169de8eee3ef7b7ed114262824f8aa8aa
   rest_auth_key: b4d66d73a1ade79ce227fba01b33f2ab021888ef
   rest_auth_digest_stretches: 10
@@ -10,7 +10,7 @@ base: &common
   notification_email: notifications@example.com
   default_language: en
   application_name: Ace
-  is_shapadocom: false
+  is_acecom: false
   enable_groups: false
   default_language: en
   enable_i18n: false
@@ -36,9 +36,9 @@ base: &common
     activate: false
     server: "smtp.gmail.com"
     port: 587
-    domain: "shapado.com"
-    login: "shapado@gmail.com"
-    password: "shapado123"
+    domain: "ace.com"
+    login: "ace@gmail.com"
+    password: "ace123"
 
   facebook:
     activate: false
@@ -72,7 +72,7 @@ development:
 production:
   <<: *common
   domain: example.com
-  googlean_domain: .shapado.com
+  googlean_domain: .ace.com
 test:
   <<: *common
   domain: test.loc

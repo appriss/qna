@@ -12,7 +12,7 @@ var Questions = {
   },
   initialize_on_index: function($body) {
     Ui.navigate_shortcuts($(".questions-index"), ".Question");
-    $(".Question .toolbar").shapadoToolbar();
+    $(".Question .toolbar").aceToolbar();
     Votes.initialize_on_questions();
 
     var extraParams = Utils.url_vars();
@@ -49,11 +49,11 @@ var Questions = {
     });
   },
   initialize_on_show: function($body) {
-    $(".main-question .toolbar").shapadoToolbar({formContainer: "#panel-forms"});
-    $("article.answer .toolbar").shapadoToolbar({formContainer: ".article-forms", afterFetchForm : function(link, form) {
+    $(".main-question .toolbar").aceToolbar({formContainer: "#panel-forms"});
+    $("article.answer .toolbar").aceToolbar({formContainer: ".article-forms", afterFetchForm : function(link, form) {
       Editor.setup(form.find(".markdown_editor, .wysiwyg_editor"));
     }});
-    $(".answer .toolbar, .comment .toolbar").shapadoToolbar({formContainer: ".article-forms", afterFetchForm: function(link, form) {
+    $(".answer .toolbar, .comment .toolbar").aceToolbar({formContainer: ".article-forms", afterFetchForm: function(link, form) {
       Editor.setup(form.find(".markdown_editor, .wysiwyg_editor"));
     }});
     Rewards.initialize();

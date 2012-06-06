@@ -285,7 +285,7 @@ class GroupsController < ApplicationController
   end
 
   def upgrade
-    if current_group.shapado_version && current_group.shapado_version.token == params[:plan]
+    if current_group.ace_version && current_group.ace_version.token == params[:plan]
       flash[:error] = 'You are already subscribed to this plan'
       redirect_to root_path and return
     end

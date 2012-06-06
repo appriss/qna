@@ -141,7 +141,7 @@ gl:
       service_medal: 
         description: Ten 300 votos positivos
         name: Medalla do servizo
-      shapado: 
+      ace: 
         description: Visitou o sitio cada día durante 8 días consecutivos
       stellar_answer: 
         description: Ten unha resposta que 100 usuarios marcaron como favorita

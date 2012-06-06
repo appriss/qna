@@ -87,7 +87,7 @@ sr:
           title: Дели
         tag_your_tweets: 
           add_tags: Додајте ознаке на објављено на Твитеру
-          ends_with_example: "нпр. #shapado"
+          ends_with_example: "нпр. #ace"
           starts_with_example: "нпр. #qa"
           title: Означите своје објаве на Твитеру
           tweet_ends_with: Приложите ознаку на објављено на Твитеру

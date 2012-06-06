@@ -23,5 +23,5 @@ task :init => [:environment] do
   GC.start
 end
 
-task :fixall => [:init, "shapado40to41:levels", "shapado40to41:activities"] do
+task :fixall => [:init, "ace40to41:levels", "ace40to41:activities"] do
 end

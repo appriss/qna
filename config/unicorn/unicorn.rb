@@ -7,7 +7,7 @@ worker_processes 1
 working_directory WD
 
 # Listen on a Unix domain socket, use the default backlog size
-listen "/tmp/unicorn-shapado.sock", :backlog => 1024
+listen "/tmp/unicorn-ace.sock", :backlog => 1024
 
 # Nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30

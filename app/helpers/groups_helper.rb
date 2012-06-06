@@ -10,11 +10,11 @@ module GroupsHelper
         end
         image_tag(logo_path(current_group), options)
       else
-        image_tag("shapado-brand.png", options)
+        image_tag("ace-brand.png", options)
       end
     rescue Exception => e
       Rails.logger.info e.backtrace.join("\n\t")
-      image_tag("shapado-brand.png", options)
+      image_tag("ace-brand.png", options)
     end
   end
 end

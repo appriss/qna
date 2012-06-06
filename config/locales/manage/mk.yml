@@ -87,7 +87,7 @@ mk:
           title: сподели
         tag_your_tweets: 
           add_tags: Додајте ознаки на објавеното на Twitter
-          ends_with_example: "на пр. #shapado"
+          ends_with_example: "на пр. #ace"
           starts_with_example: "на пр. #qa"
           title: Означете ги вашите објави на Twitter
           tweet_ends_with: Приложете ознака кон објавеното на Twitter

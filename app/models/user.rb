@@ -797,7 +797,7 @@ Time.zone.now ? 1 : 0)
   end
 
   # returns user's providers friends that have an account
-  # on shapado but that user is not following
+  # on ace but that user is not following
   def suggested_social_friends(group, limit = 5)
     array_hash = []
     social_connections.to_a.each do |provider|
@@ -811,7 +811,7 @@ Time.zone.now ? 1 : 0)
       limit(limit)
   end
 
-  # returns user's friends on other social networks that already have an account on shapado
+  # returns user's friends on other social networks that already have an account on ace
   def social_external_friends
     array_hash = []
     provider_ids = []

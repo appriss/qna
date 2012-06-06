@@ -78,7 +78,7 @@ es:
       code: "Copie y pegue este código en tu sitio o blog, como un widget de texto en su Wordpress:"
       custom_external_css: "Incluye CSS personalizado a su widget (se recomienda si usted no esta incluyendo el CSS Ace):"
       custom_html: "Html personalizado:"
-      exclude_css_on_external: Excluir su CSS de sitio shapado de su widget
+      exclude_css_on_external: Excluir su CSS de sitio ace de su widget
       limit: "Cantidad a mostrar:"
       on_questions: Mostrar en la página principal de lista de preguntas
       on_show_question: Mostrar en la pagina que muestra la pregunta y sus respuestas

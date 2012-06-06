@@ -27,13 +27,13 @@ module QuestionsHelper
         end
       when :identica
         url = "http://identi.ca/notice/new?status_textarea=#{microblogging_message(question)}"
-      when :shapado
+      when :ace
         if question
           message = (question.title)+"&question[tags]=#{current_group.name},share&question[body]=#{h(question.body)}%20|%20[More...](#{h(question_path(question, :only_path =>false))})"
         else
           message = (current_group.name)+"&question[tags]=#{current_group.name},share&question[body]=#{current_group.name}%20|%20[More...](#{root_path(:only_path =>false)})"
         end
-        url = "http://shapado.com/questions/new?question[title]="+message
+        url = "http://ace.com/questions/new?question[title]="+message
       when :linkedin
         if question
           message = escape_url(question_url(question))+"&title=#{h(question.title)}&summary=#{h(question.body)}&source=#{current_group.name}"

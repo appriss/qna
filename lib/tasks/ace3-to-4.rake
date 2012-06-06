@@ -1,23 +1,23 @@
 ## fixall0 and fixall1 can be ran in parallel, fixall2 must be ran at the end
 desc "Fix all"
 
-namespace "shapado3to4" do
+namespace "ace3to4" do
 
-  task :fixall => [:init, "shapado3to4:fixall0", "shapado3to4:fixall1", "shapado3to4:fixall2", "shapado3to4:fixall3", "shapado3to4:fixall4"] do
+  task :fixall => [:init, "ace3to4:fixall0", "ace3to4:fixall1", "ace3to4:fixall2", "ace3to4:fixall3", "ace3to4:fixall4"] do
   end
 
-  task :fixall0 => [:init, "shapado3to4:create_thumbnails"] do
+  task :fixall0 => [:init, "ace3to4:create_thumbnails"] do
   end
 
-  task :fixall1 => [:init, "shapado3to4:questions", "shapado3to4:contributions", "shapado3to4:dates", "shapado3to4:openid", "shapado3to4:relocate", "shapado3to4:votes", "shapado3to4:counters", "shapado3to4:sync_counts", "shapado3to4:last_target_type"] do
+  task :fixall1 => [:init, "ace3to4:questions", "ace3to4:contributions", "ace3to4:dates", "ace3to4:openid", "ace3to4:relocate", "ace3to4:votes", "ace3to4:counters", "ace3to4:sync_counts", "ace3to4:last_target_type"] do
   end
 
-  task :fixall2 => [:init, "shapado3to4:fix_moved_comments_and_set_comment_count", "shapado3to4:comments", "shapado3to4:widgets", "shapado3to4:tags", "shapado3to4:update_answers_favorite"] do
+  task :fixall2 => [:init, "ace3to4:fix_moved_comments_and_set_comment_count", "ace3to4:comments", "ace3to4:widgets", "ace3to4:tags", "ace3to4:update_answers_favorite"] do
   end
 
-  task :fixall3 => [:init, "shapado3to4:groups", "shapado3to4:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "shapado3to4:update_group_notification_config", "shapado3to4:set_follow_ids", "shapado3to4:set_friends_lists", "shapado3to4:fix_twitter_users", "shapado3to4:fix_facebook_users", "shapado3to4:set_invitations_perms", "shapado3to4:set_signup_type", "shapado3to4:versions", "shapado3to4:ads", "shapado3to4:wiki_booleans", "shapado3to4:themes", "shapado3to4:update_reputation_keys", "shapado3to4:votes_to_followers"]
+  task :fixall3 => [:init, "ace3to4:groups", "ace3to4:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "ace3to4:update_group_notification_config", "ace3to4:set_follow_ids", "ace3to4:set_friends_lists", "ace3to4:fix_twitter_users", "ace3to4:fix_facebook_users", "ace3to4:set_invitations_perms", "ace3to4:set_signup_type", "ace3to4:versions", "ace3to4:ads", "ace3to4:wiki_booleans", "ace3to4:themes", "ace3to4:update_reputation_keys", "ace3to4:votes_to_followers"]
 
-  task :fixall4 => [:init, "shapado3to4:memberships", "shapado3to4:update_tag_followers_count"] do
+  task :fixall4 => [:init, "ace3to4:memberships", "ace3to4:update_tag_followers_count"] do
   end
 
   task :clean_memberhips => [:init] do

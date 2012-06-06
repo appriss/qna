@@ -8,7 +8,7 @@ class Badge
   SILVER = %w[popular_person guru favorite_answer favorite_question addict good_question
               good_answer notable_question civic_duty enlightened necromancer]
   BRONZE = %w[pioneer supporter critic inquirer troubleshooter commentator
-              merit_medal effort_medal student shapado editor popular_question
+              merit_medal effort_medal student ace editor popular_question
               friendly interesting_person citizen_patrol cleanup disciplined
               nice_answer nice_question peer_pressure self-learner scholar autobiographer
               organizer tutor altruist benefactor investor promoter]

@@ -10,12 +10,12 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: shapado-development
+  database: ace-development
 
 test:
   <<: *defaults
-  database: shapado-test
+  database: ace-test
 
 production:
   <<: *defaults
-  database: shapado-production
+  database: ace-production

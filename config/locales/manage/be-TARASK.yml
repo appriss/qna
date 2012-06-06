@@ -88,7 +88,7 @@ be-TARASK:
           title: Доступ
         tag_your_tweets: 
           add_tags: Дадаваць тэгі да Вашых запісаў у Twitter
-          ends_with_example: "напрыклад, #shapado"
+          ends_with_example: "напрыклад, #ace"
           starts_with_example: "напрыклад, #qa"
           title: Пазначаць Вашыя запісы ў Twitter
           tweet_ends_with: Далучаць тэг у канец Вашых паведамленьняў на Twitter

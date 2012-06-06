@@ -142,7 +142,7 @@ ca:
       service_medal: 
         description: Té 300 vots positius
         name: Medalla del servei
-      shapado: 
+      ace: 
         description: Heu visitat el lloc cada dia durant 8 dies consecutius
       stellar_answer: 
         description: Té una resposta favorited per 100 usuaris

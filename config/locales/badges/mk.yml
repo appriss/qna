@@ -141,7 +141,7 @@ mk:
       service_medal: 
         description: Има 300 позитивни гласа
         name: Медал за служба
-      shapado: 
+      ace: 
         description: го посетил мрежното место 8 дена по ред
       stellar_answer: 
         description: Има одговор бендисан од 100 корисници

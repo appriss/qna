@@ -87,7 +87,7 @@ gl:
           title: Compartir
         tag_your_tweets: 
           add_tags: Engadir etiquetas aos seus chíos
-          ends_with_example: "por exemplo, #shapado"
+          ends_with_example: "por exemplo, #ace"
           starts_with_example: "por exemplo, #qa"
           title: Etiquetar os seus chíos
           tweet_ends_with: Engadir unha etiqueta aos seus chíos

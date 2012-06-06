@@ -49,11 +49,11 @@ class InvoicesController < ApplicationController
     if params[:type] == 'invoice.created'
       @invoice = Invoice.where(:stripe_customer => params[:data][:object][:customer]).first
 
-      if @invoice && @invoice.group.shapado_version && @invoice.group.shapado_version.token == 'private'
+      if @invoice && @invoice.group.ace_version && @invoice.group.ace_version.token == 'private'
         Stripe.api_key = PaymentsConfig['secret']
         Stripe::InvoiceItem.create(
           :customer => @invoice.stripe_customer,
-          :amount => @invoice.group.memberships.count*@invoice.group.shapado_version.per_user,
+          :amount => @invoice.group.memberships.count*@invoice.group.ace_version.per_user,
           :currency => "usd",
           :description => "fee for #{@invoice.group.memberships.count} users"
         )

@@ -1,5 +1,5 @@
 (function($){
-  $.fn.shapadoToolbar = function(options) {
+  $.fn.aceToolbar = function(options) {
     var defaults = {
       formContainer: ".panel-forms",
       afterFetchForm: function(link,form) {}

@@ -72,7 +72,7 @@ pt-PT:
           title: Partilhar
         tag_your_tweets: 
           add_tags: Adicione tags aos seus tweets
-          ends_with_example: "por exemplo, #shapado"
+          ends_with_example: "por exemplo, #ace"
           starts_with_example: "por exemplo, #qa"
         twitter_account: 
           legend: Esta conta será utilizada para postar novas perguntas e respostas no Twitter.

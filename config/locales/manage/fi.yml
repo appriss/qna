@@ -89,7 +89,7 @@ fi:
           title: Jaa
         tag_your_tweets: 
           add_tags: Lisää tunnisteet twitter-sanomiisi
-          ends_with_example: "esim. #shapado"
+          ends_with_example: "esim. #ace"
           starts_with_example: "esim. #qa"
           title: Merkitse tweettisi
           tweet_ends_with: Liitä tunniste twitter-viestiesi loppuun

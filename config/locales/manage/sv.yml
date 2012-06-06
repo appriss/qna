@@ -32,7 +32,7 @@ sv:
           title: Belöningar
         share: 
           asking_from_twitter: Ställa frågor från Twitter
-          ends_with_example: "t.ex. #shapado"
+          ends_with_example: "t.ex. #ace"
           question_must_include_example: "t.ex. #iAsk"
           twitter_account: Det Twitter-konto dina användare kommer att ställa frågor till.
         theme: 

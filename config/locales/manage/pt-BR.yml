@@ -38,7 +38,7 @@ pt-BR:
           add_tags: Acrescentar tags aos seus tweets
           application_id: ID da Aplicação
           asking_from_twitter: Perguntar a partir do Twitter
-          ends_with_example: "ex: #shapado"
+          ends_with_example: "ex: #ace"
           facebook_app: Configurações do Facebook
           question_asked_to: Pergunta Feita a
           question_must_include: A pergunta tem que ter a seguinte tag para ser enviada pelo Twitter

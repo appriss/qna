@@ -144,7 +144,7 @@ es:
       service_medal: 
         description: Tiene 300 votos positivos
         name: Insignia de servicio
-      shapado: 
+      ace: 
         description: Visita el sitio 8 días consecutivos
       stellar_answer: 
         description: Tiene una respuesta que ha sido agregada como favorita por 100 usuarios

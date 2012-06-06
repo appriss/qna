@@ -139,7 +139,7 @@ class ThemeViewBase < Poirot::View
     view_context.user_url(current_user)
   end
 
-  # returns current shapado group
+  # returns current ace group
   def current_group
     view_context.current_group
   end

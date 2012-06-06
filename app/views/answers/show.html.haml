@@ -1,5 +1,5 @@
 = include_latex
-- question_body = find_and_preserve(shapado_auto_link(markdown(@question.body.present? ? @question.body : @question.title)))
+- question_body = find_and_preserve(ace_auto_link(markdown(@question.body.present? ? @question.body : @question.title)))
 
 %section#question{:class => "main-question #{@question.id}", :item_scope => '', :itemtype => "http://schema.org/Article"}
   .author

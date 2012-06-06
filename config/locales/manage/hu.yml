@@ -36,7 +36,7 @@ hu:
           add_tags: Adj egy taget a tweetjeidhez
           application_id: Alkalmazás azonosítója
           asking_from_twitter: Kérdés feltevése Twitterről
-          ends_with_example: "pl. #shapado"
+          ends_with_example: "pl. #ace"
           facebook_app: Facebook-alkalmazás beállításai
           question_must_include: A kérdésnek tartalmaznia kell a következő címkéket a tweeteléshez
           question_must_include_example: "pl. #iAsk"
