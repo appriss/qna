@@ -31,7 +31,7 @@ Modernizr.load([{
       test: typeof(window.WebSocket)!=='undefined',
       nope: jsassets.websocket,
       complete: function() {
-        ShapadoSocket.initialize();
+        AceSocket.initialize();
         }
     }, {
       test: $('meta[data-has-js]').length > 0,

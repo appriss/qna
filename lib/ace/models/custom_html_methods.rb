@@ -1,4 +1,4 @@
-module Shapado
+module Ace
 module Models
   module CustomHtmlMethods
     def question_prompt

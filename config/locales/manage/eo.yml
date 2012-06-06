@@ -25,7 +25,7 @@ eo:
           instruction1: Por fari tion, vi unue ensalutu ĉe via domajnprovizisto. Tio estas la paĝaro, kie vi aĉetis vian domajnon, ekzemple %{subdomain}.com.
           instruction2: Tie vi iru al la DNS-parto kaj kreu CNAME-on.
           instruction3: Elektu 'www' aŭ ion alian kiel nomon de via CNAME.
-          instruction4: "Tiam en la gastigan aŭ celan kampon metu vian nunan Shapado-domajnon: %{domain}."
+          instruction4: "Tiam en la gastigan aŭ celan kampon metu vian nunan Ace-domajnon: %{domain}."
           instruction5: Kiam tio estas farita, post proksimume unu horo, via domajno www.%{subdomain} direktigos al %{appdomain}.
           instruction6: Kiam estas tiel, revenu tien ĉi kaj enigu vian domajnnamon www.%{subdomain} en la ĉi-malsupran kampon kaj klaku la butonon 'ĝisdatigi'. Se vi havas demandojn, demandu nin en la %{chat_url} aŭ en nia konsultejo.
           title: Agordi vian domajnon

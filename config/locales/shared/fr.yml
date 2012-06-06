@@ -36,7 +36,7 @@ fr:
         title: Vous n'avez créé aucun thème pour le moment.
     layout: 
       footer: 
-        cc_footer: Tout le contenu de Shapado.com et ses données sont disponibles sous la licence %{cc_link}
+        cc_footer: Tout le contenu de Ace.com et ses données sont disponibles sous la licence %{cc_link}
         powered_by: Mû par %{source_link} %{version} sous le %{agpl_link}
     login_drop_down: 
       with_facebook: avec Facebook

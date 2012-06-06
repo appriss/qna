@@ -1,4 +1,4 @@
-module Shapado
+module Ace
   module Scripting
     class Application < Rails::Application
       require './config/load_config'
@@ -18,6 +18,6 @@ end
 
 require "smtp_tls"
 
-Rails.application = Shapado::Scripting::Application.instance
+Rails.application = Ace::Scripting::Application.instance
 ActionController::Base.prepend_view_path "#{Rails.root}/app/views"
 ActionMailer::Base.prepend_view_path "#{Rails.root}/app/views"

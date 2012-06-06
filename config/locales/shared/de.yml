@@ -32,7 +32,7 @@ de:
         title: Bislang hast Du noch keine Themen erstellt.
     layout: 
       footer: 
-        cc_footer: Alle Inhalte und Daten auf Shapado.com stehen unter der Lizenz %{cc_link}
+        cc_footer: Alle Inhalte und Daten auf Ace.com stehen unter der Lizenz %{cc_link}
         powered_by: Nutzt %{source_link} in Version %{version}, das gemäß %{agpl_link} lizenziert ist.
     login_drop_down: 
       with_facebook: mit Facebook

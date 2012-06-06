@@ -32,7 +32,7 @@ gl:
         title: Aínda non creou ningún tema visual.
     layout: 
       footer: 
-        cc_footer: Todos os contidos e datos de Shapado.com están dispoñibles baixo a licenza %{cc_link}
+        cc_footer: Todos os contidos e datos de Ace.com están dispoñibles baixo a licenza %{cc_link}
         powered_by: Desenvolvido por %{source_link} %{version} baixo a %{agpl_link}
     login_drop_down: 
       with_facebook: co Facebook

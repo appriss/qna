@@ -45,11 +45,11 @@ fi:
           reputation_constrains_subtitle: Jokaisen toimen mainepisteiden luettelo
           title: Vaatimukset
         domain: 
-          description: "Voit kuvata eri verkko-osoitteet omaan Shapado-sivustoon niin, että sitä voidaan kutsua oman verkko-osoitteesi kautta. Se tehdään näin:"
+          description: "Voit kuvata eri verkko-osoitteet omaan Ace-sivustoon niin, että sitä voidaan kutsua oman verkko-osoitteesi kautta. Se tehdään näin:"
           instruction1: Tehdäksesi näin sinun on ensin kirjauduttava toimialuepalveluntarjoajaasi. Se on sivusto, josta ostit toimialueesi kuten %{subdomain}.com.
           instruction2: Siellä sinun on mentävä DNS-kohtaan ja luotava jotain jota kutsutaan nimellä CNAME.
           instruction3: Valitse "www" tai jotain muuta kuin oma CNAME-nimesi.
-          instruction4: "Laita sitten host- tai destination-kenttään nykyinen Shapado-toimialueesi: %{domain}."
+          instruction4: "Laita sitten host- tai destination-kenttään nykyinen Ace-toimialueesi: %{domain}."
           instruction5: Kun tämä on tehty, niin noin tunnin kuluttua toimialueesi www.%{subdomain} pitäisi osoittaa kohteeseen %{appdomain}.
           instruction6: Kun näin on tapahtunut, palaa tänne ja laita toimialuenimesi www.%{subdomain} alla olevaan kenttään ja paina painiketta 'update'. Jos sinulla on kysymyksiä, kysy meiltä verkkojuttelussa %{chat_url} tai tukifoorumillamme.
           title: Aseta oma verkko-osoitteesi

@@ -198,7 +198,7 @@ namespace :setup do
 
   desc "Create/Update Versions"
   task :versions => [:environment] do
-    ShapadoVersion.reload!
+    AceVersion.reload!
   end
 
   task :index_tags => [:environment] do

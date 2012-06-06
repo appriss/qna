@@ -1,4 +1,4 @@
-module Shapado
+module Ace
   class FileWrapper
     attr_reader :path, :content_type
     def initialize(path, content_type)

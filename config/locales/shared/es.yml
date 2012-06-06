@@ -32,7 +32,7 @@ es:
         title: No ha creado ningun tema por ahora.
     layout: 
       footer: 
-        cc_footer: Todo el contenido Shapado.com y los datos están disponibles bajo la licencia %{cc_link}
+        cc_footer: Todo el contenido Ace.com y los datos están disponibles bajo la licencia %{cc_link}
         powered_by: Desarrollado por %{source_link} %{version} bajo la %{agpl_link}
     login_drop_down: 
       with_facebook: con Facebook

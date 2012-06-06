@@ -112,11 +112,11 @@ en:
           reputation_rewards_description: This form allows you to configure how users can win and lose reputation points for a given action
         domain:
           title: Configure your custom domain
-          description: "You can map a different domain to your Shapado's site so it can be accessed through your own custom domain. This is how you do it:"
+          description: "You can map a different domain to your Ace's site so it can be accessed through your own custom domain. This is how you do it:"
           instruction1: "To do so you first need to log on to your domain provider. That is the site where you bought your domain such as %{subdomain}.com."
           instruction2: There you need to go to the DNS section and create something called a CNAME.
           instruction3: "Pick 'www' or anything else as the name of your CNAME."
-          instruction4: "Then in the host or destination field, put your current Shapado domain: %{domain}."
+          instruction4: "Then in the host or destination field, put your current Ace domain: %{domain}."
           instruction5: "Once this is done, after an hour or so, your domain www.%{subdomain} should point to %{appdomain}."
           instruction6: "When this is the case, come back here and put your domain name www.%{subdomain} in the field below and press the button 'update'. If you have questions, ask us in the %{chat_url} or on our support forum."
           warning: Are you sure you want to change your domain?

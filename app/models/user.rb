@@ -5,8 +5,8 @@ class User
   include Mongoid::Timestamps
   include MultiauthSupport
   include MongoidExt::Storage
-  include Shapado::Models::GeoCommon
-  include Shapado::Models::Networks
+  include Ace::Models::GeoCommon
+  include Ace::Models::Networks
 
   devise :database_authenticatable, :recoverable, :registerable, :rememberable,
          :lockable, :token_authenticatable, :encryptable, :trackable, :omniauthable, :encryptor => :restful_authentication_sha1
@@ -694,7 +694,7 @@ Time.zone.now ? 1 : 0)
   def self.find_file_from_params(params, request)
     if request.path =~ %r{/(avatar|big|medium|small)/([^/\.\?]+)}
       @user = User.find($2)
-      avatar = @user.has_avatar? ? @user.avatar : Shapado::FileWrapper.new("#{Rails.root}/public/images/avatar-25.png", "image/png")
+      avatar = @user.has_avatar? ? @user.avatar : Ace::FileWrapper.new("#{Rails.root}/public/images/avatar-25.png", "image/png")
       case $1
       when "avatar"
         avatar

@@ -1,4 +1,4 @@
-module Shapado
+module Ace
   module Models
     module Trackable
       extend ActiveSupport::Concern

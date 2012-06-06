@@ -50,7 +50,7 @@ fr:
           reputation_constrains_subtitle: Liste des contraintes pour chaque action
           title: Contraintes
         domain: 
-          description: "Vous pouvez associer un domaine différent à votre site Shapado, afin qu’il soit accessible via votre propre domaine. Cela se fait de la manière suivante :"
+          description: "Vous pouvez associer un domaine différent à votre site Ace, afin qu’il soit accessible via votre propre domaine. Cela se fait de la manière suivante :"
           instruction1: Vous devez tout d'abord vous rendre sur le site où vous avez acheter votre nom de de domaine tel que %{subdomain}.com.
           instruction2: Là, vous devez vous rendre dans la section DNS pour y créer un CNAME.
           instruction3: Choisissez 'www' ou tout autre nom pour votre CNAME.

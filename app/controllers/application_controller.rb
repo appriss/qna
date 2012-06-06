@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   include Subdomains
   include Sweepers
 
-  include Shapado::Controllers::Access
-  include Shapado::Controllers::Routes
-  include Shapado::Controllers::Locale
-  include Shapado::Controllers::Utils
+  include Ace::Controllers::Access
+  include Ace::Controllers::Routes
+  include Ace::Controllers::Locale
+  include Ace::Controllers::Utils
 
   if !AppConfig.recaptcha['activate']
     def recaptcha_valid?
@@ -229,7 +229,7 @@ class ApplicationController < ActionController::Base
       case invoice.action
       when "upgrade_plan"
         invoice.items.each do |item|
-          if item["item_class"] == "ShapadoVersion"
+          if item["item_class"] == "AceVersion"
             current_group.override(:shapado_version_id => item["item_id"],
                                      :plan_expires_at => Time.now + 1.month)
 

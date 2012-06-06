@@ -32,7 +32,7 @@ ia:
         title: Tu non ha ancora create apparentias.
     layout: 
       footer: 
-        cc_footer: Tote le contento e datos de Shapado.com es disponibile sub licentia %{cc_link}
+        cc_footer: Tote le contento e datos de Ace.com es disponibile sub licentia %{cc_link}
         powered_by: Actionate per %{source_link} %{version} sub le %{agpl_link}
     login_drop_down: 
       with_facebook: con Facebook

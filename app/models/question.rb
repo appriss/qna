@@ -11,8 +11,8 @@ class Question
   include MongoidExt::Versioning
   include MongoidExt::Voteable
 
-  include Shapado::Models::GeoCommon
-  include Shapado::Models::Trackable
+  include Ace::Models::GeoCommon
+  include Ace::Models::Trackable
 
   paginates_per 25
 

@@ -76,7 +76,7 @@ fr:
       title: Questions connexes
     settings: 
       code: "Copiez et collez ce code dans votre site ou votre blog, comme un widget texte dans votre Wordpress:"
-      custom_external_css: "Inclure du CSS personnalisé à votre widget (recommandé si vous n'incluez pas le CCS de Shapado):"
+      custom_external_css: "Inclure du CSS personnalisé à votre widget (recommandé si vous n'incluez pas le CCS de Ace):"
       custom_html: "HTML personnalisé:"
       exclude_css_on_external: Exclure le CSS du site shapado de votre widget
       limit: "Quantité à afficher :"

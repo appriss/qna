@@ -1,5 +1,5 @@
 class GroupNetworksWidget < Widget
-  include Shapado::Models::Networks
+  include Ace::Models::Networks
 
   field :settings, :type => Hash, :default => { :on_mainlist => true  }
   field :networks, :type => Hash, :default => {}

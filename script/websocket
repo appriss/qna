@@ -10,7 +10,7 @@ require 'magent'
 require 'magent/web_socket_server'
 require 'fixed_array'
 
-module Shapado
+module Ace
   class WebSocketServer < Magent::WebSocketServer
     def setup
       @chat_messages = Hash.new
@@ -51,5 +51,5 @@ module Shapado
   end
 end
 
-Shapado::WebSocketServer.start(:debug => (Rails.env == "development"))
+Ace::WebSocketServer.start(:debug => (Rails.env == "development"))
 

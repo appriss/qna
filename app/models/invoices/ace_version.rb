@@ -1,4 +1,4 @@
-class ShapadoVersion
+class AceVersion
   include Mongoid::Document
 
   field :token, :type => String, :index => true
@@ -31,9 +31,9 @@ class ShapadoVersion
     versions_data = YAML.load_file("#{Rails.root}/config/versions.yml")
 
     versions_data.each do |token, data|
-      version = ShapadoVersion.where(:token => token).first
+      version = AceVersion.where(:token => token).first
       if version.nil?
-        version = ShapadoVersion.create!(data.merge(:token => token))
+        version = AceVersion.create!(data.merge(:token => token))
         Stripe.api_key = PaymentsConfig['secret']
         Stripe::Plan.create(
           :amount => version.price,

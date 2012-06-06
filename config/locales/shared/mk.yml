@@ -32,7 +32,7 @@ mk:
         title: Засега немате создадено ниеден изглед.
     layout: 
       footer: 
-        cc_footer: Сите содржини и податоци на Shapado.com се достапни под лиценцата %{cc_link}
+        cc_footer: Сите содржини и податоци на Ace.com се достапни под лиценцата %{cc_link}
         powered_by: Овозможено од %{source_link} %{version} под %{agpl_link}
     login_drop_down: 
       with_facebook: со Facebook

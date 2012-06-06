@@ -1,4 +1,4 @@
-module Shapado
+module Ace
 module Models
   module GeoCommon
     extend ActiveSupport::Concern

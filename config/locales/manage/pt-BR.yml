@@ -23,7 +23,7 @@ pt-BR:
           instruction1: Para fazê-lo, antes autentique-se no fornecedor do seu domínio. É o site onde comprou o seu domínio, como %{subdomain}.com.
           instruction2: Lá, vá à seção de DNS e crie uma coisa chamada CNAME.
           instruction3: Escolha 'www' ou outra coisa para o seu CNAME.
-          instruction4: "Depois, no campo do host ou de destino, coloque o seu domínio Shapado atual: %{domain}."
+          instruction4: "Depois, no campo do host ou de destino, coloque o seu domínio Ace atual: %{domain}."
           instruction5: Cerca de uma hora depois, o seu domínio www.%{subdomain} deverá apontar para %{appdomain}.
           instruction6: Quando isto acontecer, volte aqui e coloque o nome do seu domínio www.%{subdomain} no campo abaixo e clique 'Atualizar'. Se você tem dúvidas, pergunte no %{chat_url} ou no nosso fórum de suporte.
           title: Defina o seu domínio

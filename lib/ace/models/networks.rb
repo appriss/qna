@@ -1,4 +1,4 @@
-module Shapado
+module Ace
 module Models
   module Networks
     extend ActiveSupport::Concern

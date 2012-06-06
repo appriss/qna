@@ -33,7 +33,7 @@ be-TARASK:
         title: Вы яшчэ не стварылі ніводнай тэмы.
     layout: 
       footer: 
-        cc_footer: Увесь зьмест і усе зьвесткі Shapado.com даступныя на ўмовах ліцэнзіі %{cc_link}
+        cc_footer: Увесь зьмест і усе зьвесткі Ace.com даступныя на ўмовах ліцэнзіі %{cc_link}
         powered_by: Рухавік %{source_link} %{version} на %{agpl_link}
     login_drop_down: 
       with_facebook: з Facebook

@@ -1,4 +1,4 @@
-module Shapado
+module Ace
   module Controllers
     module Utils
       def self.included(base)

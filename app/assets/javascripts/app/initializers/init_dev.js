@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   Jqmath.initialize();
-  ShapadoSocket.initialize();
+  AceSocket.initialize();
   $('.auto-link').autoVideo();
   Form.initialize();
   Modernizr.load({

@@ -9,7 +9,7 @@ base: &common
   enable_sharing: true
   notification_email: notifications@example.com
   default_language: en
-  application_name: Shapado
+  application_name: Ace
   is_shapadocom: false
   enable_groups: false
   default_language: en
