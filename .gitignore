@@ -5,7 +5,7 @@
 *.orig
 coverage
 public/stylesheets/compiled/
-config/shapado.yml
+config/ace.yml
 config/payments.yml
 data/*.dat
 config/mongoid.yml
