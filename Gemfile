@@ -55,7 +55,7 @@ gem 'twitter-text', '1.1.8'
 gem 'twitter_oauth'
 gem 'social_widgets', :git => 'https://git.gitorious.org/social_widgets/social_widgets.git'
 gem 'stripe'
-gem 'pdfkit', :git => 'git://github.com/jdpace/PDFKit.git' # apt-get install wkhtmltopdf
+gem 'pdfkit', :git => 'git://github.com/pdfkit/pdfkit.git' # apt-get install wkhtmltopdf
 
 gem 'geoip'
 gem 'rubyzip', '0.9.4', :require => 'zip/zip'
@@ -88,9 +88,9 @@ gem 'jquery-rails'
 
 group :deploy do
   gem 'capistrano', :require => false
-  gem 'ricodigo-capistrano-recipes', '~> 0.1.3', :require => false
   gem 'unicorn', '4.1.1', :require => false
   gem 'therubyracer'
+  gem 'rvm-capistrano'
 end
 
 group :scripts do
