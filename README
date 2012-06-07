@@ -14,7 +14,7 @@ sudo gem install bundler
 
 1. Download the sources:
 
-    git clone git://github.com/afazio-appriss/ace.git
+    git clone git://github.com/appriss/ace.git
 
     cd ace/
 
@@ -65,7 +65,7 @@ then type
 
 Talk to us at cttools \aT/ appriss d0t com
 
-Report bugs at https://github.com/afazio-appriss/ace/issues
+Report bugs at https://github.com/appriss/ace/issues
 
 Happy hacking!
 
