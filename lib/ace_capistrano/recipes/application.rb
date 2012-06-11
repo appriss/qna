@@ -1,8 +1,8 @@
 Capistrano::Configuration.instance.load do
 
   # Server settings
-  set :app_server, :unicorn       unless exists?(:app_server)
-  set :web_server, :nginx         unless exists?(:web_server)
+  set :app_server, :passenger       unless exists?(:app_server)
+  set :web_server, :apache          unless exists?(:web_server)
   if exists?(:user)
     set :runner, user             unless exists?(:runner)
   end
