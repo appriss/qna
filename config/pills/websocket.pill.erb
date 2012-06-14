@@ -27,9 +27,6 @@ Bluepill.application(app_name, :log_file => log_file) do |app|
     process.stop_grace_time = grace_time
     process.restart_grace_time = grace_time
 
-    process.uid = "<%= user %>"
-    process.gid = "<%= group %>"
-
     process.checks :mem_usage, :every => 15.seconds, :below => 165.megabytes, :times => [3,4], :fires => :stop
     process.checks :cpu_usage, :every => 15.seconds, :below => 90, :times => [3,4], :fires => :stop
   end

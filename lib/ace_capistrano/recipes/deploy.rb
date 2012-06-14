@@ -28,19 +28,16 @@ Capistrano::Configuration.instance.load do
 
     desc "|capistrano-recipes| Setup a GitHub-style deployment."
     task :setup, :roles => :app, :except => { :no_release => false } do
-      run "rm -rf #{current_path}"
       setup_dirs
-      run "git clone #{repository} #{current_path}"
+      t = Time.new.strftime('%s')
+      run "git clone #{repository} #{deploy_to}/releases/#{t}"
+      run "rm -f #{current_path}"
+      run "ln -sf #{deploy_to}/releases/#{t} #{current_path}"
     end
 
     desc "|capistrano-recipes| Update the deployed code."
     task :update_code, :roles => :app, :except => { :no_release => false } do
       run "cd #{current_path}; git fetch origin; git reset --hard #{branch}"
-    end
-
-    desc "|capistrano-recipes| Alias for symlinks:make"
-    task :symlink, :roles => :app, :except => { :no_release => false } do
-      symlinks.make
     end
 
     desc "|capistrano-recipes| Remote run for rake db:seed"
@@ -52,14 +49,6 @@ Capistrano::Configuration.instance.load do
     task :cleanup, :roles => :app, :except => { :no_release => false } do
       #nothing to cleanup, we're not working with 'releases'
       puts "Nothing to cleanup, yay!"
-    end
-
-    namespace :rollback do
-      desc "|capistrano-recipes| Rollback , :except => { :no_release => false }a single commit."
-      task :default, :roles => :app, :except => { :no_release => false } do
-        set :branch, "HEAD^"
-        deploy.default
-      end
     end
   end
 end
