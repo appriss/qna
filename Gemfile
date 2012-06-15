@@ -121,5 +121,4 @@ group :development do
   gem 'ruby_parser'
   gem 'niftier-generators', '0.1.2'
   gem 'ruby-prof'
-  gem 'tunnlr_connector', :git => 'git://github.com/dcu/tunnlr_connector.git', :branch => 'patch-1', :require => 'tunnlr'
 end
