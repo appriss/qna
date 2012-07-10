@@ -1,3 +1,5 @@
+# -*- mode: ruby -*-
+
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.1'
@@ -66,6 +68,7 @@ gem 'newrelic_rpm'
 gem 'omniauth', '~> 0.3.0'
 gem 'oa-openid', '~> 0.3.0', :require => 'omniauth/openid'
 gem 'oa-oauth', '~> 0.3.0', :require => 'omniauth/oauth'
+gem 'omniauth-ldap', '~> 0.3.0'
 
 gem 'multiauth', :git => 'http://github.com/dcu/multiauth.git'
 
