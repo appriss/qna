@@ -6,8 +6,9 @@
       %li
         = link_to provider.titleize, '/users/auth/facebook', :class => 'auth-provider Facebook', :id => 'facebook'
     - else
+      - provider_title = Multiauth.providers[provider][:title] || provider.titleize
       %li
-        = link_to provider.titleize, multiauth_url(provider), :class => "auth-provider #{provider}", :id => dprovider
+        = link_to provider_title, multiauth_url(provider), :class => "auth-provider #{provider}", :id => dprovider
 
   -if current_group.allow_any_openid
     %li
