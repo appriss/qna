@@ -1,3 +1,9 @@
+local:
+  database: ace-magent-development
+  host: localhost
+  port: 27017
+  websocket_channel: magent.websocket
+
 development:
   database: ace-magent-development
   host: localhost

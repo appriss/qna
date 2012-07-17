@@ -17,6 +17,9 @@ base: &common
 
   linked_in_no_count: '<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script><script type="in/share"></script>'
 
+local:
+  <<: *common
+
 development:
   <<: *common
 
