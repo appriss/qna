@@ -60,14 +60,6 @@ GIT
     rdiscount (1.6.8)
 
 GIT
-  remote: http://github.com/dcu/multiauth.git
-  revision: 18847dbe793cbf515b34cd52ab5fa5e765107351
-  specs:
-    multiauth (0.2.7)
-      omniauth
-      rails (>= 3.0.0)
-
-GIT
   remote: https://git.gitorious.org/social_widgets/social_widgets.git
   revision: e6f1f40d7027c3bd2ec50714cdb285d409170f79
   specs:
@@ -81,6 +73,13 @@ GIT
     mongo_store (0.3.1)
       activesupport (>= 2.2)
       mongo (>= 1.0)
+
+PATH
+  remote: vendor/multiauth
+  specs:
+    multiauth (99.0.0.1)
+      omniauth
+      rails (>= 3.0.0)
 
 GEM
   remote: http://rubygems.org/

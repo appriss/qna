@@ -1,0 +1,7 @@
+<%= multiauth_assets %>
+<% if logged_in? %>
+  <%= multiauth_menu("Connect Your Account") %>
+<% else %>
+  <%= multiauth_box %>
+<% end %>
+

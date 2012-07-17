@@ -69,8 +69,7 @@ gem 'omniauth', '~> 0.3.0'
 gem 'oa-openid', '~> 0.3.0', :require => 'omniauth/openid'
 gem 'oa-oauth', '~> 0.3.0', :require => 'omniauth/oauth'
 gem 'omniauth-ldap', '~> 0.3.0'
-
-gem 'multiauth', :git => 'http://github.com/dcu/multiauth.git'
+gem 'multiauth', :path => 'vendor/multiauth'
 
 gem 'orm_adapter'
 gem 'devise', '~> 1.4.0'

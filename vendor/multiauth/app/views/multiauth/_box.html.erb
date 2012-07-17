@@ -1,0 +1,33 @@
+<div id="openid_btns">
+  <div id="carousel">
+    <div id="buttons">
+      <a href="#" id="prev">prev</a>
+      <a href="#" id="next">next</a>
+    </div>
+    <%=  title || "Choose your account provider" %>
+    <div class="clear"></div>
+    <div id="slides">
+      <ul class="list">
+        <% count = 0 %>
+        <% multiauth_providers.each_slice(6) do |providers| %>
+          <li class="page">
+            <% providers.each_slice(3) do |column| %>
+              <div class="column">
+                <% column.each do |provider, config| %>
+                  <a id="btn_<%= count+=1 %>" class="<%= provider %> openid_btn <%= config["class"] %>" title="<%= provider %>" href="/users/auth/<%= config["openid"] ? "open_id?openid_url=#{config["openid"]}" : "#{provider.underscore}" %>"></a>
+                <% end %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div id="openid_inputarea">
+  <span class="oidlabel">username</span>
+  <%= text_field_tag "user_name", "", :id => "openid_username" %>
+  <%= submit_tag "Sign In", :id => "openid_inputarea_submit" %>
+  <a href="#" id="close_openid_inputarea">cancel</a>
+</div>
