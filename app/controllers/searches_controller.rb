@@ -40,9 +40,10 @@ class SearchesController < ApplicationController
         # @questions = Question.where(options).page(params["page"])
         @highlight = ""
       else
-        @questions = Question.where(options).page(params["page"])
-        if !@search_tags.blank?
+        if !@search_tags.empty?
           @questions = Question.where(options.merge({:tags=>{:$all =>@search_tags}})).page(params["page"])
+        else
+          @questions = Question.where(options).page(params["page"])
         end
       end
     else
