@@ -4,6 +4,32 @@
   article.Question.accepted
     border-left: 5px solid #A2C538
 
+=content-link
+  display: inline-block
+  color: white
+  padding: 6px 12px
+  text-decoration: none
+  background-color: rgb(119, 119, 119)
+  margin: 10px 5px
+  font-size: 115%
+  font-weight: bold
+  &:hover, &.youarehere
+    background-color: rgb(255, 153, 0)
+
+.nav-main, .nav-askquestion
+  padding: 20px 5px 10px 5px
+
+.nav-main
+  float: left
+  .content-tabs
+    a
+      +content-link
+
+.nav-askquestion
+  float: right
+  .askquestion
+    +content-link
+
 =question-floating-box
   float: left
   margin: 0px 3px 0px 0px
@@ -34,6 +60,7 @@ article.Question
     color: rgb(153, 153, 153)
   .title
     margin-bottom: 5px
+    padding-bottom: 5px
     font-size: 17px
     a
       color: rgb(0, 119, 204)
@@ -48,11 +75,14 @@ article.Question
       color: rgb(62, 109, 142)
       text-decoration: none
       padding: 3px 4px
-      margin: 2px 2px 2px 0px
+      margin: px 4px 2px 0px
       white-space: nowrap
       border:
         bottom: 1px solid rgb(62, 109, 142)
         right: 1px solid rgb(127, 159, 182)
+      &:hover
+        background-color: rgb(62, 109, 142)
+        color: rgb(224, 234, 241)
   .started
     float: right
     color: rgb(153, 153, 153)
