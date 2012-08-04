@@ -1,8 +1,71 @@
 @import 'setup'
 
 //Index
-article.Question.accepted
-  border-left: 5px solid #A2C538
+  article.Question.accepted
+    border-left: 5px solid #A2C538
+
+=question-floating-box
+  float: left
+  margin: 0px 3px 0px 0px
+  padding: 5px
+  text-align: center
+
+.mini-counts
+  font-size: 24px
+  font-weight: bold
+
+article.Question
+  border-bottom: 1px dotted rgb(153, 153, 153)
+  &.active, &:target
+    background-color: inherit
+  .votes
+    +question-floating-box
+    color: rgb(85, 85, 85)
+  .status
+    +question-floating-box
+    color: green
+    &.unanswered
+      color: rgb(154, 68, 68)
+    &.accepted
+      .mini-counts
+        background-color: rgb(216, 241, 197)
+  .views
+    +question-floating-box
+    color: rgb(153, 153, 153)
+  .title
+    margin-bottom: 5px
+    font-size: 17px
+    a
+      color: rgb(0, 119, 204)
+      font-weight: bold
+      font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
+      &:hover
+        text-decoration: underline
+  .tags
+    float: left
+    a.post-tag
+      background-color: rgb(224, 234, 241)
+      color: rgb(62, 109, 142)
+      text-decoration: none
+      padding: 3px 4px
+      margin: 2px 2px 2px 0px
+      white-space: nowrap
+      border:
+        bottom: 1px solid rgb(62, 109, 142)
+        right: 1px solid rgb(127, 159, 182)
+  .started
+    float: right
+    color: rgb(153, 153, 153)
+    padding-top: 4px
+    white-space: nowrap
+    a.author
+      color: rgb(238, 104, 31)
+      margin-left: 3px
+    .reputation-score
+      font-weight: bold
+      margin-left: 3px
+      color: rgb(68, 68, 68)
+      font-size: 120%
 
 // Main Question
 .main-question
