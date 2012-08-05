@@ -20,19 +20,26 @@
   - last_target_date = question.updated_at
   - owner = question.user unless question.anonymous
 
-%article.cleafix{:class => class_for_question(question)}
-  %h2
-    = question.last_target_type
-    = link_to highlight(title, @highlight), question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
-  .markdown
-    = highlight(markdown(question.body), @highlight)
-  .user-data
-    - if owner
-      = render :partial => "users/user_data", :locals => {:user => owner}
-    - else
-      = I18n.t('global.by_semi')
-      =t("global.anonymous")
-    = link_to t("time.ago", :time => time_ago_in_words(last_target_date)), question_path(question)+"##{last_target_id}"
-    -if question.wiki
-      = I18n.t('pages.index.wiki')
-
+%article.search.cleafix{:class => class_for_question(question)}
+  .stats
+    %a{:href => question_path(question)}
+      .top
+        .votes
+          .mini-counts= question.votes_average
+          .text votes
+        .status{:class => [question.answers_count==0 ? "unanswered" : "", question.accepted ? "accepted" : ""]}
+          .mini-counts= question.answers_count
+          .text answers
+      %span.views #{question.views_count} views
+  .summary.clearfix
+    .title
+      = link_to highlight(title, @highlight), question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
+    .markdown
+      = highlight(markdown(truncate(question.body, :length => 300)), @highlight)
+    .tags
+      - question.tags.each do |tag_name|
+        %a.post-tag{:href => tag_path(:id => CGI.escape(tag_name))}= tag_name
+    .started
+      %span.relativetime #{time_ago_in_words(last_target_date)} ago
+      %a.author{:href => user_path(owner)}= owner.login
+      %span.reputation-score(title="#{owner.login}'s reputation: #{format_number(owner.reputation_on(current_group))}")= format_number(owner.reputation_on(current_group))

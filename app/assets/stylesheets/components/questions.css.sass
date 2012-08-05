@@ -45,6 +45,25 @@ body.application
   font-size: 24px
   font-weight: bold
 
+article.search.Question
+  .stats
+    float: left
+    margin: 10px 15px 10px 0px
+    text-align: center
+    .top
+      background-color: #EEE
+    .votes
+      float: none
+    .status
+      float: none
+      &.accepted
+        background-color: rgb(216, 241, 197)
+    .views
+      font-size: inherit
+      font-weight: normal
+      text-align: center
+      width: 90%
+
 article.Question
   border-bottom: 1px dotted rgb(153, 153, 153)
   &.active, &:target
