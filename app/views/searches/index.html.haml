@@ -3,8 +3,8 @@
     -unless @questions.blank?
       = t('.found_results', :quantity => @questions.total_count)
     -else
-      = t('.advanced_search')
-  %p.description
+      %font(style="color: #BB0000;")= t('.found_results', :quantity => 0)
+  -#%p.description
     - link = link_to t('.advanced_search'), '#', :class => "advanced-search"
     =raw t('.description', :link => link)
 
@@ -13,15 +13,14 @@
 
 %ul
   -if @questions.blank? && params[:q]
-    %li.box.highlight
-      = t(".empty")
+    %li.box.highlight(style="font-weight: bold")= t(".empty")
   -else
     -@questions.each do |question|
       = render :partial => "searches/question", :object => question, :locals => {:query_regexp => @query_regexp}
 
   = paginate @questions unless @questions.blank?
 
-  -if !params[:q].blank?
+  -#if !params[:q].blank?
     .save-search
       =form_for @search, :url => search_index_path, :html => {:class => "form"} do |f|
         =f.hidden_field :query
