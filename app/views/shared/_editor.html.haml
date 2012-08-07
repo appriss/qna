@@ -11,7 +11,7 @@
   .markdown
     = f.text_area local_assigns.fetch(:field, :body), opts
   -if local_assigns[:markdown] && !current_group.wysiwyg_editor
-    .markdown_preview
+    .markdown_preview &nbsp;
 
 -if local_assigns[:markdown] && !current_group.wysiwyg_editor
   = markdown(f.object.body)

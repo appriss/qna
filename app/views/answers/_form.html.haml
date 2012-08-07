@@ -12,17 +12,17 @@
       = render :partial => "users/anonymous_form"
 
     .field.form-options
-      .column
+      -#.column
         .checkbox
           = f.label :wiki, "Wiki"
           = f.check_box :wiki, :class => "checkbox"
-      - if logged_in? && current_group.enable_anonymous
+      -#- if logged_in? && current_group.enable_anonymous
         .column
           .checkbox
             = f.label :anonymous, t("scaffold.post_as_anonymous"), :class => "radio"
             = f.check_box :anonymous, {:class => "checkbox"}, true, false
 
-      -if AppConfig.mailing && AppConfig.mailing["activate"]
+      -#-if AppConfig.mailing && AppConfig.mailing["activate"]
         .column.by_mail
           %a{:href => "mailto:#{@question.email}"}
             = I18n.t('questions.toolbar.answer_by_mail')

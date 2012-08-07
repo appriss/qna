@@ -14,7 +14,7 @@
     %h1{:itemprop => "name"}
       = @question.title
       - if @question.closed
-        =" [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
+        = " [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
     .author
       %small
         %span
