@@ -302,7 +302,7 @@ GEM
       oa-more (= 0.3.2)
       oa-oauth (= 0.3.2)
       oa-openid (= 0.3.2)
-    omniauth-ldap (0.3.0.2)
+    omniauth-ldap-0.3 (0.3.0.3)
       net-ldap (~> 0.2.2)
       omniauth (~> 0.3)
       pyu-ruby-sasl (~> 0.0.3.1)
@@ -507,7 +507,7 @@ DEPENDENCIES
   oa-oauth (~> 0.3.0)
   oa-openid (~> 0.3.0)
   omniauth (~> 0.3.0)
-  omniauth-ldap (~> 0.3.0)
+  omniauth-ldap-0.3 (~> 0.3.0)
   orm_adapter
   pdfkit!
   poirot!
