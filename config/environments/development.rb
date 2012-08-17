@@ -21,11 +21,26 @@ Ace::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  # Do not compress assets
+  # Compress assets.  For CSS, take out whitespace, comments, etc.  For JS,
+  # use a compressor (yui).
   config.assets.compress = true
 
-  # Expands the lines which load the assets
-  config.assets.debug = true
+  # Live Compilation of assets.  In this mode all requests for assets in
+  # the pipeline are handled by Sprockets directly.  On the first request
+  # the assets are compiled and cached as outlined in development above,
+  # and the manifest names used in the helpers are altered to include the
+  # MD5 hash.  This mode uses more memory, performs more poorly than the
+  # default and is not recommended.
+  config.assets.compile = false
+
+  # Append the file's md5 digest to the end of asset filenames.
+  config.assets.digest = true
+
+  # config.assets.debug Default 'true' for all environments but production
+  # If true, make sure that 'require' directives in application.js and
+  # application.css are expanded to individual <script> and <link> tags.
+  # If false, all 'require's are combined into a single file.
+  config.assets.debug = false
   
   config.force_ssl = true
 end
