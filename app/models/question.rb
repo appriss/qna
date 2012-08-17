@@ -226,10 +226,8 @@ class Question
   end
 
   def on_remove_vote(v, voter)
-    if voter_id.is_a? User
-      voter = voter_id
-    else
-      voter = User.find(voter_id)
+    if voter.is_a? String
+      voter = User.find(voter)
     end
 
     if v > 0
