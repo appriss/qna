@@ -3,12 +3,75 @@
 -source = question_path(question)
 
 -cache_for(:answers, question.id, answer.id, answer.user == current_user ? "owner" : "") do
-  %article.answer{:class => " #{answer.id} #{solution && "solution"}", :item_scope => '', :itemtype => "http://schema.org/Article"}
+  %article.answer{:class => " #{answer.id} #{solution && "solution"}", :item_scope => '', :itemtype => "http://schema.org/Article", :vote_url => question_answer_votes_path(answer.question, answer)}
     %a{:name => "answer#{answer.id}"}
 
-    = vote_box(answer, question_path(@question), @question.closed)
+    %table.answer-wrapper-table
+      %tbody
+        %tr
+          %td.votecell
+            .vote
+              %center
+                - vote_up_toggle = (logged_in? && (current_user.vote_on(answer) || 0) > 0) ? "vote-up-on" : "vote-up-off"
+                - vote_down_toggle = (logged_in? && (current_user.vote_on(answer) || 0) < 0) ? "vote-down-on" : "vote-down-off"
+                %a.vote-up{:class => vote_up_toggle}(title="This question shows research effort; it is useful and clear (click again to undo)") up vote
+                %span.vote-count-post= answer.votes_average
+                %a.vote-down{:class => vote_down_toggle}(title="This answer does not show any research effort; it is unclear or not useful (click again to undo)") down vote
+                %span.vote-accepted-on(title="The question owner accepted this as the best answer") accepted
+          %td.postcell
+            %div
+              .post-text.markdown.description= find_and_preserve(ace_auto_link(markdown(answer.body), :link_users => true))
+              %table.fw
+                %tbody
+                  %tr
+                    %td.vt
+                      .post-menu
+                        %a edit
+                        %span.lsep= "|"
+                        %a flag
+                        %span.lsep= "|"
+                        %a delete
+                    %td.post-signature
+                      .user-info
+                        .user-action-time 
+                          asked 
+                          %span.relativetime= time_ago_in_words(answer.created_at)
+                          ago
+                        .user-gravatar32= avatar_img(answer.user, :size => "small")
+                        .user-details
+                          = pjax_link_to answer.user.display_name, "user", user_path(answer.user), {:class => "clear"}
+                          %div.reputation-score(title="reputation score")= format_number(answer.user.reputation_on(current_group))
+        %tr
+          %td.votecell
+          %td
+            .comments
+              %table
+                %tbody
+                  - answer.comments.each do |comment|
+                    %tr.comment
+                      %td.comment-actions
+                        %table
+                          %tbody
+                            %tr
+                              - comment_votes = comment.votes_average == 0 ? " " : comment.votes_average
+                              %td.comment-score= comment_votes
+                              %td
+                                %a.comment-up(title="this comment adds something useful to the post") upvote
+                            %tr
+                              %td &nbsp
+                              %td
+                                %a.comment-flag(title="flag this comment as unconstructive, offensive, or spam") flag
+                      %td.comment-text
+                        %div
+                          %span.comment-copy= find_and_preserve(ace_auto_link(markdown(comment.body), :link_users => true))
+                          –
+                          %a.comment-user(href="#")= comment.user.display_name
+                          %span.comment-date #{time_ago_in_words(comment.created_at)} ago
+            %a.comments-link(title="ask author for clarification about this post") add comment
 
-    %h4.author
+    -#= vote_box(answer, question_path(@question), @question.closed)
+
+    -#%h4.author
       = avatar_img(answer.user, :size => "small") unless answer.user && answer.anonymous
       = render "questions/answered_by", local_assigns
       %time{ :datetime => answer.created_at.iso8601,  :itemprop=>"datePublished", :title => article_date(answer)}
@@ -18,7 +81,7 @@
 
 
 
-    .content.markdown
+    -#.content.markdown
       %div{:itemprop => "articleBody"}
         = find_and_preserve(ace_auto_link(markdown(answer.body), :link_users => true))
 
@@ -27,15 +90,15 @@
           = t(:flags, :scope => "activerecord.models")
           = render :partial => "flags/list", :locals => {:flaggeable => answer}
 
-    = render "questions/answer_toolbar", :question => @question, :answer => answer, :solution => solution
+    -#= render "questions/answer_toolbar", :question => @question, :answer => answer, :solution => solution
 
-    .comments
+    -#.comments
       = link_to "NN comments", "#", :class => "toggle_comments"
       -answer.comments.each do |comment|
         -read = (@last_read_at && @last_read_at > comment.created_at && comment.votes_average < 2)
         = render :partial => "comments/comment", :object => comment, :locals => {:source => source, :mini => true, :read => read}
 
-    .panel-comments
+    -#.panel-comments
       = form_for [@question, answer, @comment ||= Comment.new], html: {class: "answer_comment_form commentForm nestedAnswerForm addNestedAnswer", data: {commentable: answer.id, editor: current_group.wysiwyg_editor ? 'wysiwyg_editor' : 'markdown_editor'}} do |f|
         %fieldset
           = render :partial => "comments/form", :locals => {:f => f, :source => source, :commentable => answer }

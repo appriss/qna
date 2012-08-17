@@ -9,13 +9,81 @@
   %link{:rel => "canonical", :href => question_url(@question) }
 
 -cache_for(:question, @question.id, @question.user == current_user ? "owner" : "" ) do
-  %section#question{:class => "main-question #{@question.id}", :item_scope => '', :itemtype => "http://schema.org/Article"}
+  %section#question{:class => "main-question #{@question.id}", :item_scope => '', :itemtype => "http://schema.org/Article", :vote_url => question_votes_path(@question), :question_url => question_path(@question)}
+    #question-header
+      %h1{:itemprop => "name"}
+        = @question.title
+        - if @question.closed
+          = " [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
+    %table
+      %tbody
+        %tr
+          %td.votecell
+            .vote
+              %center
+                - vote_up_toggle = (logged_in? && (current_user.vote_on(@question) || 0) > 0) ? "vote-up-on" : "vote-up-off"
+                - vote_down_toggle = (logged_in? && (current_user.vote_on(@question) || 0) < 0) ? "vote-down-on" : "vote-down-off"
+                - star_toggle = (logged_in? && @question.follower?(current_user)) ? "star-on" : "star-off"
+                %a.vote-up{:class => vote_up_toggle}(title="This question shows research effort; it is useful and clear (click again to undo)") up vote
+                %span.vote-count-post= @question.votes_average
+                %a.vote-down{:class => vote_down_toggle}(title="This question does not show any research effort; it is unclear or not useful (click again to undo)") down vote
+                %a.star{:class => star_toggle}(title="This is a favorite question (click again to undo)" href="#") favorite
+                .favoritecount= @question.followers_count
+          %td.postcell
+            %div
+              .post-text.markdown.description(itemprop="articleBody")= question_body
+              .tags
+                - @question.tags.each do |tag_name|
+                  %a.post-tag{:href => tag_path(:id => CGI.escape(tag_name))}= tag_name
+              %table.fw
+                %tbody
+                  %tr
+                    %td.vt
+                      .post-menu
+                        %a edit
+                        %span.lsep= "|"
+                        %a flag
+                        %span.lsep= "|"
+                        %a delete
+                    %td.post-signature.owner
+                      .user-info
+                        .user-action-time 
+                          asked 
+                          %span.relativetime= time_ago_in_words(@question.created_at)
+                          ago
+                        .user-gravatar32= avatar_img(@question.user, :size => "small")
+                        .user-details
+                          = pjax_link_to @question.user.display_name, "user", user_path(@question.user), {:class => "clear"}
+                          %div.reputation-score(title="reputation score")= format_number(@question.user.reputation_on(current_group))
+        %tr
+          %td.votecell
+          %td
+            .comments
+              %table
+                %tbody
+                  - @question.comments.each do |comment|
+                    %tr.comment
+                      %td.comment-actions
+                        %table
+                          %tbody
+                            %tr
+                              - comment_votes = comment.votes_average == 0 ? " " : comment.votes_average
+                              %td.comment-score= comment_votes
+                              %td
+                                %a.comment-up(title="this comment adds something useful to the post") upvote
+                            %tr
+                              %td &nbsp
+                              %td
+                                %a.comment-flag(title="flag this comment as unconstructive, offensive, or spam") flag
+                      %td.comment-text
+                        %div
+                          %span.comment-copy= find_and_preserve(ace_auto_link(markdown(comment.body), :link_users => true))
+                          –
+                          %a.comment-user(href="#")= comment.user.display_name
+                          %span.comment-date #{time_ago_in_words(comment.created_at)} ago
+            %a.comments-link(title="ask author for clarification about this post") add comment
 
-    %h1{:itemprop => "name"}
-      = @question.title
-      - if @question.closed
-        = " [#{t("closed", :scope => "activerecord.attributes.question").upcase}]"
-    .author
+    -#.author
       %small
         %span
           = t('activerecord.attributes.question.asked_by')
@@ -30,30 +98,20 @@
           %time{:datetime => @question.updated_at.iso8601, :itemprop => "dateModified"}
             = link_to t("time.ago", :time => time_ago_in_words(@question.updated_at)), history_question_path(@question), :title => t("questions.show.history")+" (#{@question.versions_count})"
 
-    .description.markdown.clearfix
+    -#.description.markdown.clearfix
       %div{:itemprop => "articleBody"}
         = question_body
       = render "reward_info"
       = render "attachments", :question => @question, :attachments => @question.attachments, :editing => false
-
-
-    %ul.tag-list.clearfix
-      - @question.tags.each do |tag|
-        %li
-          = tag_link(tag)
-      - if logged_in? && (current_user.can_modify?(@question) || current_user.can_retag_others_questions_on?(current_group))
-        %li.retag
-          = link_to t('.retag'), retag_question_path(@question), :class => 'retag-link'
 
     %meta{:itemprop=>"keywords", :content=>@question.tags.join(",")}
     %meta{:itemprop=>"inLanguage", :content=>@question.language}
     %meta{:itemprop=>"interactionCount", :content=>"UserComments:#{@question.answers_count}"}
     %meta{:itemprop=>"interactionCount", :content=>"UserPageVisits:#{@question.views_count}"}
 
-    = render "toolbar"
+    -#= render "toolbar"
 
-    .comments
-      =link_to "NN comments", "#", :class => "toggle_comments"
+    -#.comments
       -@question.comments.each do |comment|
         -read = (@last_read_at && @last_read_at > comment.created_at && comment.votes_average < 2)
         = render :partial => "comments/comment", :object => comment, :locals => {:source => question_path(@question), :mini => true, :read => read}
@@ -84,10 +142,15 @@
           =find_and_preserve(ace_auto_link(@question.close_reason.comment))
   - if !@answers.empty? || @question.accepted
     -cache_for(:question_answers, @question.id) do
-      %h2
-        = t("questions.question.has_answers", :count => @question.answers_count)
+      #answers-header
+        .subheader.answers-subheader
+          %h2= t("questions.question.has_answers", :count => @question.answers_count)
+          #answer-tabs
+            %a(title="Show newest answers first") newest
+            %a(title="Show oldest answers first") oldest
+            %a.youarehere(title="Sort answers by votes") votes
 
-      .filters.clearfix
+      -#.filters.clearfix
         %ul.menubar{:class => @active_subtab.to_s}
           %li
             %label=t('global.sort_by')
@@ -125,7 +188,7 @@
 
       = paginate(@answers)
 
-  -if !@question.closed || !(logged_in? && current_user.can_answer_on?(current_group))
+  - if !@question.closed || !(logged_in? && current_user.can_answer_on?(current_group))
     #to_answer
       -if logged_in? && @question.answers.where(user_id: current_user.id).count > 0
         %h2

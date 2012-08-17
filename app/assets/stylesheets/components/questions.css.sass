@@ -6,6 +6,10 @@
 
 body.application
   background-color: white
+  ::selection
+    background-color: rgb(175, 213, 255)
+  ::-moz-selection
+    background-color: rgb(175, 213, 255)
   #container #columns
     border: 0px
 
@@ -13,20 +17,291 @@ body.application
   border: 2px dashed #BBB
   padding: 0px 5px
 
+=hidden-text
+  text-indent: -9999em
+  font-size: 1px
+
+=use-sprite
+  background-image: url('/images/sprites.png')
+  background-repeat: none
+  overflow: hidden
+
+.vote-up, .vote-down, .star, .comment-up-on, .comment-up-off, .comment-up, .comment-flag, .vote-accepted-on
+  +use-sprite
+  +hidden-text
+  cursor: pointer
+  display: block
+
+.vote-up
+  background-position: 0px -265px
+  width: 41px
+  height: 25px
+.vote-up-off
+  background-position: 0px -265px
+.vote-up-on
+  background-position: 0px -230px
+.vote-down-off, .vote-down
+  background-position: 0px -300px
+  width: 41px
+  height: 25px
+.vote-down-on
+  background-position: 0px -330px
+.star, .star-off
+  background-position: 0px -150px
+  width: 33px
+  height: 31px
+.star-on
+  background-position: 0px -190px
+.comment-up, .comment-flag
+  width: 14px
+  height: 14px
+  vertical-align: text-bottom
+  line-height: 12px
+article.answer.solution
+  .vote-accepted-on
+    background-position: 0px -460px
+    width: 39px
+    height: 40px
+.comment:hover
+  .comment-up
+    background-position: 0px -410px
+  .comment-flag
+    background-position: 0px -740px
+  .comment-up:hover
+    background-position: 0px -390px
+  .comment-flag:hover
+    background-position: 0px -715px
+.comment-flag-off
+  background-position: 0px -740px
+.comment-flag-on
+  background-position: 0px -715px
+.comment-up-off
+  background-position: 0px -410px
+.comment-up-on
+  background-position: 0px -390px
+
+body.questions-controller.show
+  div.filters
+    border: 0px
+
+.lsep
+  color: rgb(204, 204, 204)
+  font-size: 110%
+
+.comment .comment-copy p
+  display: inline
+
+#answers-header
+  margin: 10px 0px
+  .subheader
+    margin-bottom: -10px
+    border-bottom: 1px solid rgb(102, 102, 102)
+    height: 34px
+    clear: both
+    h2
+      float: left
+      font-size: 170%
+      line-height: 34px
+      margin-bottom: 0px
+      font-weight: bold
+      color: black
+      margin-top: 0px
+    #answer-tabs
+      float: right
+      font-weight: bold
+      a
+        border: 1px solid white
+        color: rgb(119, 119, 119)
+        display: block
+        float: left
+        font-size: 90%
+        height: 24px
+        line-height: 22px
+        margin: 8px 8px 0px 0px
+        padding: 0px 11px
+      a.youarehere
+        border-width: 1px
+        border-style: solid
+        border-color: rgb(119, 119, 119) rgb(119, 119, 119) white
+        -moz-border-top-colors: none
+        -moz-border-right-colors: none
+        -moz-border-bottom-colors: none
+        -moz-border-left-colors: none
+        -moz-border-image: none
+        background-color: white
+        color: black
+        font-size: 120%
+        height: 30px
+        line-height: 28px
+        margin-top: 3px
+        padding: 0px 11px
+
+article.answer
+  .answer-wrapper-table
+    width: 100%
+
+section#question.main-question, article.answer
+  .comments
+    width: 660px
+    border-top: 1px dotted rgb(170, 170, 170)
+    margin-top: 10px
+    margin-bottom: 0px
+    padding-bottom: 10px
+    line-height: 135%
+    color: rgb(68, 68, 68)
+    table
+      width: 100%
+      tr.comment > td
+        border-bottom: 1px dotted rgb(221, 221, 221)
+      tr.comment
+        .comment-actions
+          padding: 5px 0px 5px 0px
+          padding-left: 3px
+          width: 15px
+          .comment-score
+            font-weight: bold
+            color: rgb(102, 102, 102)
+            font-size: 110%
+          .comment-up
+            height: 14px
+            width: 14px
+            vertical-align: text-bottom
+            line-height: 12px
+            display: inline-block
+          .comment-flag
+            height: 14px
+            width: 14px
+            vertical-align: text-bottom
+            line-height: 12px
+            display: inline-block
+        .comment-text
+          padding: 5px 6px 5px 7px
+          vertical-align: text-top
+          a.comment-user
+            white-space: nowrap
+            color: rgb(0, 119, 204)
+          .comment-date
+            color: rgb(153, 153, 153)
+  a.comments-link
+    color: rgb(136, 136, 136)
+    padding: 0px 3px 2px
+    cursor: pointer
+    &:hover
+      background-color: rgb(119, 119, 119)
+      color: white
+    
+section#question.main-question
+  #question-header
+    margin-bottom: 20px
+    margin-top: 5px
+    border-bottom: 1px solid rgb(85, 85, 85)
+    line-height: 1
+    h1
+      color: black
+      margin-bottom: 7px
+      margin-left: 0px
+
+section#question.main-question, article.answer
+  table, table tr, table tr td
+    margin: 0px
+    padding: 0px
+  td.votecell
+    width: 60px
+    vertical-align: top
+    line-height: 1
+    .vote
+      text-align: center
+      .vote-count-post
+        font-size: 240%
+        font-weight: bold
+        color: rgb(128, 129, 133)
+        display: block
+        vertical-align: baseline
+      .favoritecount
+        color: rgb(128, 129, 133)
+      .favoritecount-selected
+        color: rgb(212, 168, 73)
+  td.postcell
+    vertical-align: baseline
+    line-height: 1
+    .post-text
+      font-size: 107%
+      margin: 0px 5px 15px 0px
+      line-height: 130%
+      color: black
+      p
+        margin: 0px
+        padding: 0px
+        clear: both
+        word-wrap: break-word
+    .tags
+      margin-bottom: 15px
+    .fw
+      width: 100%
+      .vt
+        vertical-align: top
+        .post-menu
+          padding-top: 2px
+          a
+            padding: 0px 3px 2px 0px
+            color: rgb(136, 136, 136)
+            cursor: pointer
+      .post-signature
+        padding: 2px 0px 0px 5px
+        .user-info
+          width: 185px
+          height: 35px
+          .user-action-time
+            margin: 2px 0px 4px 0px
+            .relativetime
+              font-weight: bold
+          .user-gravatar32
+            width: 32px
+            height: 32px
+            float: left
+          .user-details
+            float: left
+            padding-left: 10px
+            overflow: hidden
+            white-space: nowrap
+            width: 135px
+            color: rgb(136, 136, 136)
+            line-height: 17px
+            a
+              color: rgb(0, 119, 204)
+              &:hover
+                text-decoration: underline
+            .reputation-score
+              color: rgb(68, 68, 68)
+              font-size: 120%
+              font-weight: bold
+              margin-right: 2px
+            
+
+.post-signature
+  padding: 2px 0px 0px 5px
+  text-align: left
+  vertical-align: top
+  width: 175px
+  height: 58px
+  &.owner
+    background-color: rgb(224, 234, 241)
+
+
 =content-link
   display: inline-block
   color: white
   padding: 6px 12px
   text-decoration: none
   background-color: rgb(119, 119, 119)
-  margin: 10px 5px
+  margin: 10px 10px 10px 0px
   font-size: 115%
   font-weight: bold
   &:hover, &.youarehere
     background-color: rgb(255, 153, 0)
 
 .nav-main, .nav-askquestion
-  padding: 20px 5px 10px 5px
+  padding: 20px 0px 10px 0px
 
 .nav-main
   float: left
@@ -38,6 +313,7 @@ body.application
   float: right
   .askquestion
     +content-link
+    margin-right: 0px
 
 =question-floating-box
   float: left
@@ -96,21 +372,6 @@ article.Question
       font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
       &:hover
         text-decoration: underline
-  .tags
-    float: left
-    a.post-tag
-      background-color: rgb(224, 234, 241)
-      color: rgb(62, 109, 142)
-      text-decoration: none
-      padding: 3px 4px
-      margin: px 4px 2px 0px
-      white-space: nowrap
-      border:
-        bottom: 1px solid rgb(62, 109, 142)
-        right: 1px solid rgb(127, 159, 182)
-      &:hover
-        background-color: rgb(62, 109, 142)
-        color: rgb(224, 234, 241)
   .started
     float: right
     color: rgb(153, 153, 153)
@@ -124,6 +385,22 @@ article.Question
       margin-left: 3px
       color: rgb(68, 68, 68)
       font-size: 120%
+
+.tags
+  float: left
+  a.post-tag
+    background-color: rgb(224, 234, 241)
+    color: rgb(62, 109, 142)
+    text-decoration: none
+    padding: 3px 4px
+    margin: px 4px 2px 0px
+    white-space: nowrap
+    border:
+      bottom: 1px solid rgb(62, 109, 142)
+      right: 1px solid rgb(127, 159, 182)
+    &:hover
+      background-color: rgb(62, 109, 142)
+      color: rgb(224, 234, 241)
 
 // Main Question
 .main-question
@@ -233,8 +510,16 @@ article.Question
         &:hover, .add_reward:hover a
           background-position: 5px -787px !important
 
+body.questions-controller
+  #answers-content-wrap
+    h2
+      border: 0px
+    article.answer
+      padding-left: 0px
+      border-left: 0px
+
 // Main Question - Answers
-#answers-content-wrap
+/*#answers-content-wrap
   clear: both
   h2
     padding: 10px 15px 10px 15px
