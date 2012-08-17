@@ -14,7 +14,7 @@ function submit_vote (type, obj, vote) {
 	if (vote == 1) data["vote_up"] = 1
 	if (vote == -1) data["vote_down"] = -1
 
-	$.post(url+".js", data).success(function () {
+	$.post(url+".json", data).success(function () {
 		if (obj.hasClass('vote-'+dir+'-on')) {
 			obj.removeClass('vote-'+dir+'-on');
 			vote_count.html(parseInt(vote_count.html()) + -vote);
@@ -54,16 +54,16 @@ $(document).ready(function() {
 		var count = $('.favoritecount', parent).eq(0);
 		var url = parent.attr("question_url");
 		url += obj.hasClass('star-on') ? "/unfollow" : "/follow";
-		$.get(url+".js").success(function () {
-			if (obj.hasClass('star-on')) {
-				obj.removeClass('star-on');
-				obj.addClass('star-off');
-				count.html(parseInt(count.html()) - 1);
-			} else {
-				obj.removeClass('star-off');
-				obj.addClass('star-on');
-				count.html(parseInt(count.html()) + 1);
-			}
-		});
+		var datetime = new Date();
+		$.get(url+".json");
+		if (obj.hasClass('star-on')) {
+			obj.removeClass('star-on');
+			obj.addClass('star-off');
+			count.html(parseInt(count.html()) - 1);
+		} else {
+			obj.removeClass('star-off');
+			obj.addClass('star-on');
+			count.html(parseInt(count.html()) + 1);
+		}
 	});
 });
