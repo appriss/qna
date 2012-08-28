@@ -29,7 +29,7 @@ module Multiauth
         end
 
         Multiauth.providers.select{|p,_| p=~/ldap/i}.each do |provider, config|
-          Devise.omniauth :ldap, config
+          Devise.omniauth :ldap2, config
         end
       else
         $stderr.puts "Config file doesn't exist: #{config_file}"

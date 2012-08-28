@@ -36,6 +36,7 @@ module Multiauth
     alias_method :flattr, :auth
     alias_method :sso, :auth
     alias_method :ldap, :auth
+    alias_method :ldap2, :auth
 
     protected
   end

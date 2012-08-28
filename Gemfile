@@ -68,7 +68,7 @@ gem 'newrelic_rpm'
 gem 'omniauth', '~> 0.3.0'
 gem 'oa-openid', '~> 0.3.0', :require => 'omniauth/openid'
 gem 'oa-oauth', '~> 0.3.0', :require => 'omniauth/oauth'
-gem 'omniauth-ldap-0.3', '0.3.0.3', :path => '/tmp'
+gem 'omniauth-ldap-0.3', '0.3.0.6', :require => 'omniauth-ldap'
 gem 'multiauth', :path => 'vendor/multiauth'
 
 gem 'orm_adapter'
