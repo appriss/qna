@@ -96,6 +96,7 @@ module UsersHelper
   end
 
   def avatar_url(user, options)
+    options[:ssl] = true if request.ssl?
     size = options.delete(:size)
     options[:alt] = user.login
     options[:title] = user.login
