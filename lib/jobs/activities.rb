@@ -113,7 +113,7 @@ module Jobs
     end
 
     def self.on_admin_connect(ip, user_id)
-      Notifier.admin_login(ip, user_id).deliver
+      #Notifier.admin_login(ip, user_id).deliver
     end
   end
 end
