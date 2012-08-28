@@ -6,6 +6,7 @@ development:
 local:
   database_path: "db/xapit"
   enabled: true
+  server: "http://localhost:9292"
   spelling: true
 
 test:
