@@ -87,7 +87,7 @@ group :assets do
 end
 gem 'jammit'
 gem 'yui-compressor'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.1.0'
 
 group :deploy do
   gem 'capistrano', :require => false

@@ -34,12 +34,6 @@ $(document).ready(function() {
 	var $body = $(document.body);
 	Loader.initialize($body, true);
 
-	$.ajaxSetup({
-		beforeSend: function(xhr) {
-			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-		}
-	});
-	
 	$('article.answer a.vote-up').click(function () {
 		submit_vote("answer", $(this), 1);
 	});
