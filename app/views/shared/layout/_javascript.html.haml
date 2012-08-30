@@ -1,8 +1,8 @@
 
-%script{ src: "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" }
+-# %script{ src: "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" }
 
-- jq = "#{javascript_include_tag("jquery.js")}".gsub('</script>', '<\/script>')
-:javascript
+-# jq = "#{javascript_include_tag("jquery.js")}".gsub('</script>', '<\/script>')
+-#:javascript
   window.jQuery || document.write('#{jq}')
 
 - if current_group.has_custom_js
