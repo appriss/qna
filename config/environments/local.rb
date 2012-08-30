@@ -4,7 +4,7 @@ Ace::Application.configure do
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the webserver when you make code changes.
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
@@ -23,7 +23,7 @@ Ace::Application.configure do
 
   # Compress assets.  For CSS, take out whitespace, comments, etc.  For JS,
   # use a compressor (yui).
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Live Compilation of assets.  In this mode all requests for assets in
   # the pipeline are handled by Sprockets directly.  On the first request
@@ -34,7 +34,7 @@ Ace::Application.configure do
   config.assets.compile = true
 
   # Append the file's md5 digest to the end of asset filenames.
-  config.assets.digest = false
+  config.assets.digest = true
 
   # config.assets.debug Default 'true' for all environments but production
   # If true, make sure that 'require' directives in application.js and
