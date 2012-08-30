@@ -185,6 +185,7 @@ namespace :setup do
     end
   end
 
+  desc "Reindex Xapit full text db from MongoDB -- use this instead of xapit:index"
   task :reindex_xapian => [:environment] do
     raise "No Xapian database specified in config." if Xapit.config[:database_path].blank?
     FileUtils.rm_rf("tmp/xapit") if File.exist? "tmp/xapit"
