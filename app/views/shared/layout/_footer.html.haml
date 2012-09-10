@@ -5,7 +5,7 @@
 #join_dialog.hide{'data-title' => t('layouts.application.join_group', :group => current_group.name)}
   = link_to t('layouts.application.not_member_join_dialog', :group => current_group.name), join_groups_path , :id => 'join_dialog_link'
 %footer
-  %nav
+  -#%nav
     %ul
       -if !current_group.footer.blank?
         = raw(current_group.footer)
@@ -26,15 +26,17 @@
           = link_to t('global.tos'), tos_path
         %li
           = link_to t('global.privacy'), privacy_path
-  %p
+  -#%p
     - cc_link = link_to 'Creative Commons Attribution 3.0', 'http://creativecommons.org/licenses/by/3.0/'
     = raw t('.cc_footer', :cc_link => cc_link)
   %p
+    %br
+    %br
     / !!!!!!!!!!!! DO NOT REMOVE LINK TO SOURCE CODE AND LICENSE !!!!!!!!!!!!!
     - agpl_link = link_to 'GNU Affero General Public License','http://www.fsf.org/licensing/licenses/agpl-3.0.html'
-    - source_link = link_to 'Ace', 'http://gitorious.org/ace'
-    = raw t('.powered_by', :agpl_link => agpl_link, :source_link => source_link, :version => AppConfig.version)
-    - if current_group.enable_mathjax
+    - source_link = link_to 'Ace', 'http://github.org/appriss/ace'
+    = raw "<!--" + t('.powered_by', :agpl_link => agpl_link, :source_link => source_link, :version => AppConfig.version) + "-->"
+    -# if current_group.enable_mathjax
       = link_to('& mathjax', 'http://www.mathjax.org')
       = raw("<script type='text/javascript'>$('[data-layout=question]').removeClass('pjax')</script>")
 
