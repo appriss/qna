@@ -42,10 +42,10 @@
         = tab_entry "li", t('layouts.application.contributed'), filtered_questions_path(filter: 'contributed'), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
         = tab_entry "li", t('layouts.application.collaborate'), filtered_questions_path(filter: 'expertise'), :selected => "active", :link_opts => {:"class" => "pjax", :"data-layout" => "index"}
 
-%li
+-#%li
   %label
     = t('shared.view_mode')
-%li
+-#%li
   -if params[:answers] == "1"
     = link_to "#{t('activerecord.models.answers')} ▾", "#"
   -else
