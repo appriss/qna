@@ -26,6 +26,6 @@
           = link_to t('layouts.application.join_group', :group => current_group.name), new_user_path, :class => "signed_in_join_group #{current_group.signup_type} has-subnav"
 
 
-    %ul.menubar.group-list
+    -#%ul.menubar.group-list
       -if !current_group.isolate
         = render "groups/top_grouplist"
