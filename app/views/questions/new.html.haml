@@ -9,11 +9,11 @@
   =render :partial => "form", :locals => {:f => f}
 
   .field.form-options
-    .column
+    -#.column
       .checkbox
         = f.label :wiki, "Wiki"
         = f.check_box :wiki
-    .column
+    -#.column
       .checkbox
         = f.label :anonymous, t("scaffold.post_as_anonymous")
         = f.check_box :anonymous, {:class => "checkbox"}, true, false
