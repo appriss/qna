@@ -69,19 +69,36 @@
                             %tr
                               - comment_votes = comment.votes_average == 0 ? " " : comment.votes_average
                               %td.comment-score= comment_votes
-                              %td
-                                %a.comment-up(title="this comment adds something useful to the post") upvote
+                              %td &nbsp
+                              -#%td 
+                                = form_tag question_comment_votes_path(:comment_id => comment.id, :question_id => @question.id)
+                                - vote_up_toggle = (logged_in? && (current_user.vote_on(comment) || 0) > 0) ? "vote-up-on" : "vote-up-off"
+                                = hidden_field_tag "source", question_path(@question)
+                                = hidden_field_tag "vote_up", "1"
+                                = submit_tag "upvote", :class => "comment-up #{vote_up_toggle}", :title => "this comment adds something useful to the post"
                             %tr
                               %td &nbsp
-                              %td
-                                %a.comment-flag(title="flag this comment as unconstructive, offensive, or spam") flag
+                              %td &nbsp
+                              -#%a.comment-flag(title="flag this comment as unconstructive, offensive, or spam") flag
                       %td.comment-text
                         %div
                           %span.comment-copy= find_and_preserve(ace_auto_link(markdown(comment.body), :link_users => true))
                           –
                           %a.comment-user(href="#")= comment.user.display_name
                           %span.comment-date #{time_ago_in_words(comment.created_at)} ago
-            %a.comments-link(title="ask author for clarification about this post") add comment
+                %tfoot
+                  %tr
+                    %td
+                    %td.comment-form
+                      %a.comments-link(title="ask author for clarification about this post" onclick="$(this).hide(); $(\"form[data-commentable='#{@question.id}']\").show('fast');") add comment
+                      = form_for [@question, @comment ||= Comment.new], html: {style: "display: none", data: {commentable: @question.id}} do |f|
+                        %table
+                          %tbody
+                            %tr
+                              %td
+                                = f.text_area :body, :cols => "68", :rows => "3"
+                              %td
+                                = f.submit
 
     -#.author
       %small
