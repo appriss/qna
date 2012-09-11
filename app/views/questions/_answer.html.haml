@@ -26,11 +26,11 @@
                   %tr
                     %td.vt
                       .post-menu
-                        %a edit
+                        = link_to "edit", edit_question_answer_path(:id => answer.id, :question_id => question.id)
                         %span.lsep= "|"
-                        %a flag
+                        = link_to "flag", new_question_answer_flag_path(:answer_id => answer.id, :question_id => question.id)
                         %span.lsep= "|"
-                        %a delete
+                        = link_to "delete", [@question, answer], :method => :delete
                     %td.post-signature
                       .user-info
                         .user-action-time 
