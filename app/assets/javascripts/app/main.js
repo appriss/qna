@@ -30,9 +30,24 @@ function submit_vote (type, obj, vote) {
 	});
 }
 
+function delete__comment (comment) {
+	var data_url = comment.attr("data-url");
+	var comment_id = comment.attr("data-comment-id");
+	$.ajax({
+		async: true,
+		type: 'delete',
+		url: data_url + ".json"
+	});
+	$('#'+comment_id).hide('fast');
+}
+
 $(document).ready(function() {
 	var $body = $(document.body);
 	Loader.initialize($body, true);
+
+	$('.comment-delete').click(function () {
+		delete__comment($(this));
+	});
 
 	$('article.answer a.vote-up').click(function () {
 		submit_vote("answer", $(this), 1);

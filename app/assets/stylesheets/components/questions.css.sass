@@ -26,12 +26,25 @@ body.application
   background-repeat: none
   overflow: hidden
 
-.vote-up, .vote-down, .star, .comment-up-on, .comment-up-off, .comment-up, .comment-flag, .vote-accepted-on
+.vote-up, .vote-down, .star, .comment-up-on, .comment-up-off, .comment-up, .comment-flag, .vote-accepted-on, .comment-delete
   +use-sprite
   +hidden-text
   cursor: pointer
   display: block
 
+.comment-delete
+  background-position: 0px -690px
+  width: 14px
+  height: 14px
+  display: inline-block
+  margin-top: 3px
+  vertical-align: top
+  visibility: hidden
+.comment-delete:hover
+  background-position: 0px -665px
+.comment:hover
+  .comment-delete
+    visibility: visible
 .vote-up
   background-position: 0px -265px
   width: 41px

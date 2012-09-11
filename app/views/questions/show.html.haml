@@ -62,7 +62,7 @@
               %table
                 %tbody
                   - @question.comments.each do |comment|
-                    %tr.comment
+                    %tr.comment(id="comment-#{comment.id}")
                       %td.comment-actions
                         %table
                           %tbody
@@ -86,6 +86,8 @@
                           –
                           %a.comment-user(href="#")= comment.user.display_name
                           %span.comment-date #{time_ago_in_words(comment.created_at)} ago
+                          - if comment.user == current_user
+                            %span.comment-delete.delete-tag(title="delete this comment" data-comment-id="comment-#{comment.id}" data-url="#{question_comment_path(:id => comment.id, :question_id => @question.id)}") wee
                 %tfoot
                   %tr
                     %td
