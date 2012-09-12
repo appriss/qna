@@ -163,15 +163,18 @@
         .comment
           =find_and_preserve(ace_auto_link(@question.close_reason.comment))
   - if !@answers.empty? || @question.accepted
-    -cache_for(:question_answers, @question.id) do
-      #answers-header
-        .subheader.answers-subheader
-          %h2= t("questions.question.has_answers", :count => @question.answers_count)
-          #answer-tabs
-            %a(title="Show newest answers first") newest
-            %a(title="Show oldest answers first") oldest
-            %a.youarehere(title="Sort answers by votes") votes
+    #answers-header
+      .subheader.answers-subheader
+        %h2= t("questions.question.has_answers", :count => @question.answers_count)
+        #answer-tabs
+          - oldest_class = "youarehere" if params[:sort] == "oldest"
+          - newest_class = "youarehere" if params[:sort] == "newest"
+          - votes_class = "youarehere" if params[:sort] == "votes" || params[:sort].nil?
+          = link_to t("questions.index.newest"), question_path(@question, :sort=>"newest", :anchor => "answers"), :rel => "nofollow", :class => "pjax #{newest_class}", :"data-layout" => "question", :title => "Show newest answers first"
+          = link_to t("questions.index.oldest"), question_path(@question, :sort=>"oldest", :anchor => "answers"), :rel => "nofollow", :class => "pjax #{oldest_class}", :"data-layout" => "question", :title => "Sort oldest answers first"
+          = link_to t("questions.index.votes"), question_path(@question, :sort=>"votes", :anchor => "answers"), :rel => "nofollow", :class => "pjax #{votes_class}", :"data-layout" => "question", :title => "Sort answers by votes"
 
+    -cache_for(:question_answers, @question.id) do
       -#.filters.clearfix
         %ul.menubar{:class => @active_subtab.to_s}
           %li
