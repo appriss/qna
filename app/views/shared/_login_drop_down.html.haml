@@ -1,6 +1,7 @@
 %ul.drop-menu.providers-list
   %li.dropdown-signin.dropdown-form
     = form_tag "/users/auth/ldap2/callback", :class => "form" do
+      - session[:return_to] = request.path
       .drop-down-field
         = text_field_tag :username, "", :class => "text_field drop-down-input", :placeholder => "Username"
       .drop-down-field

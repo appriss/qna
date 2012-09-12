@@ -27,6 +27,12 @@ module Multiauth
 
       redirect_to new_session_path(:user)
     end
+
+    def failure
+      flash[:error] = "Invalid login credentials!  Please try again."
+      redirect_to session[:return_to]
+    end
+
     alias_method :twitter, :auth
     alias_method :identica, :auth
     alias_method :open_id, :auth
