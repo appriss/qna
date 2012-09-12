@@ -14,7 +14,14 @@ function submit_vote (type, obj, vote) {
 	if (vote == 1) data["vote_up"] = 1
 	if (vote == -1) data["vote_down"] = -1
 
-	$.post(url+".json", data).success(function () {
+	$.post(url+".json", data).success(function (result) {
+		if (!result.success && result.message) {
+			alert(result.message);
+			return;
+		} else if (!result.success) {
+			alert("An unknown error has occurred.")
+			return;
+		}
 		if (obj.hasClass('vote-'+dir+'-on')) {
 			obj.removeClass('vote-'+dir+'-on');
 			vote_count.html(parseInt(vote_count.html()) + -vote);
