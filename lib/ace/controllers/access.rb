@@ -62,7 +62,12 @@ module Ace
                                                 :status => :unauthenticate}.to_json)
             end
           end
-          format.any { warden.authenticate!(:scope => :user) }
+          format.any do
+            if warden.authenticate(:scope => :user).nil?
+              flash[:error] = t("global.please_login")
+              redirect_to request.referer
+            end
+          end
         end
       end
 
