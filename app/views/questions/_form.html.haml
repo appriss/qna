@@ -14,7 +14,8 @@
 
 .field
   = f.label :tags, "#{t(:tags, :scope => "activerecord.attributes.question")}", :class => "label"
-  = f.select :tags, current_group.default_tags && @question.tags, {},{:multiple => true, :selected => @question.tags}
+  =# f.select :tags, current_group.default_tags && @question.tags, {},{:multiple => true, :selected => @question.tags}
+  = f.select :tags, Tag.all.map {|t| t.name}, {},{:multiple => true, :selected => @question.tags}
   %small
     = t(".tags_tip")
 

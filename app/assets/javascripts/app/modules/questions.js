@@ -74,22 +74,27 @@ var Questions = {
     prettyPrint();
   },
   initialize_on_new: function($body) {
-    $("#related_questions").hide();
-    Editor.initialize();
-    $("#question_tags").ajaxChosen({
-      method: 'GET',
-      url: '/questions/tags_for_autocomplete.js',
-      dataType: 'json'
-    }, function (data) {
-      var terms = {};
-      $.each(data, function (i, val) {
-          console.log('i: '+i)
-          console.log('val: '+val)
-        terms[val["value"]] = val["caption"];
-      });
-
-      return terms;
-    });
+      $("#related_questions").hide();
+      Editor.initialize();
+	  /*
+      $("#question_tags").ajaxChosen(
+		  {
+			  method: 'GET',
+			  url: '/questions/tags_for_autocomplete.js',
+			  dataType: 'json'
+		  }, function (data) {
+			  var terms = {};
+			  $.each(data, function (i, val) {
+				  console.log('i: '+i)
+				  console.log('val: '+val)
+				  terms[val["value"]] = val["caption"];
+			  });
+			  
+			  return terms;
+		  }
+	  );
+	  */
+	  $("#question_tags").chosen();
 
 
 //     FIXME:filter is blocking mongodb
