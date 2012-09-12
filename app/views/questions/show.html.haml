@@ -40,11 +40,14 @@
                   %tr
                     %td.vt
                       .post-menu
-                        = link_to "edit", edit_question_path(@question)
-                        %span.lsep= "|"
-                        = link_to "flag", new_question_flag_path(@question)
-                        %span.lsep= "|"
-                        = link_to "delete", @question, :method => :delete, :confirm => "Are you sure you want to delete this question?"
+                        - unless current_user.nil?
+                          - if current_user.can_edit_others_posts_on?(@question.group) || current_user.can_modify?(@question)
+                            = link_to "edit", edit_question_path(@question)
+                            %span.lsep= "|"
+                          = link_to "flag", new_question_flag_path(@question)
+                          - if current_user.can_modify?(@question) || current_user.owner_of?(@question.group)
+                            %span.lsep= "|"
+                            = link_to "delete", @question, :method => :delete, :confirm => "Are you sure you want to delete this question?"
                     %td.post-signature.owner
                       .user-info
                         .user-action-time 
