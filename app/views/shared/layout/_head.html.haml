@@ -4,6 +4,9 @@
 
 = javascript_include_tag "modernizr.custom.geo.load.js"
 
+/[if lt IE 9]
+  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
 = raw(current_group.head_tag)
 = render "shared/layout/meta"
 
