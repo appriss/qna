@@ -32,16 +32,16 @@
   %p
     %br
     %br
-    / !!!!!!!!!!!! DO NOT REMOVE LINK TO SOURCE CODE AND LICENSE !!!!!!!!!!!!!
-    - agpl_link = link_to 'GNU Affero General Public License','http://www.fsf.org/licensing/licenses/agpl-3.0.html'
-    - source_link = link_to 'Ace', 'http://github.org/appriss/ace'
-    = raw "<!--" + t('.powered_by', :agpl_link => agpl_link, :source_link => source_link, :version => AppConfig.version) + "-->"
+    -#/ !!!!!!!!!!!! DO NOT REMOVE LINK TO SOURCE CODE AND LICENSE !!!!!!!!!!!!!
+    -# agpl_link = link_to 'GNU Affero General Public License','http://www.fsf.org/licensing/licenses/agpl-3.0.html'
+    -# source_link = link_to 'Ace', 'http://github.org/appriss/ace'
+    =# raw "<!--" + t('.powered_by', :agpl_link => agpl_link, :source_link => source_link, :version => AppConfig.version) + "-->"
     -# if current_group.enable_mathjax
       = link_to('& mathjax', 'http://www.mathjax.org')
       = raw("<script type='text/javascript'>$('[data-layout=question]').removeClass('pjax')</script>")
 
-  .feedback{:style => "display:none"}
+  -#.feedback{:style => "display:none"}
     = render :partial => "welcome/feedback"
 
-  = render "shared/layout/javascript"
-  = render "shared/layout/websocket"
+= render "shared/layout/javascript"
+= render "shared/layout/websocket"
