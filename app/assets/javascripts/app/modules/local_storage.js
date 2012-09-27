@@ -1,6 +1,6 @@
 var LocalStorage = {
   initialize: function(){
-    if(Modernizr.localstorage){
+    if(Modernizr.localstorage && typeof Storage !== 'undefined'){
       Storage.prototype.setObject = function(key, value) {
           this.setItem(key, JSON.stringify(value));
       }

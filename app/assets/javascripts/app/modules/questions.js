@@ -37,7 +37,7 @@ var Questions = {
       after_reset: function(data) {
         $('.quick_question .search-feedback').text("type to search");
         $('.content-tabs').show();
-      },
+      }
     });
 
     $(".flag-link-index").live("click", function(event) {

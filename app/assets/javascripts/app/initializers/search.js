@@ -9,8 +9,8 @@
       behaviour : "live",
       success: function(data) {},
       before_query: function(target) {},
-      after_reset: function(target) {},
-    }
+      after_reset: function(target) {}
+    };
 
     var options =  $.extend(defaults, options);
 
