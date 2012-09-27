@@ -95,7 +95,7 @@
                   %tr
                     %td
                     %td.comment-form
-                      %a.comments-link(title="ask author for clarification about this post" onclick="$(this).hide(); $(\"form[data-commentable='#{@question.id}']\").show('fast');") add comment
+                      %a.comments-link(title="ask author for clarification about this post" onclick="showCommentFormFor(this, '#{@question.id}');") add comment
                       = form_for [@question, @comment ||= Comment.new], html: {style: "display: none", data: {commentable: @question.id}} do |f|
                         %table
                           %tbody

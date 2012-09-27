@@ -1,3 +1,8 @@
+function showCommentFormFor (obj, question_id) {
+	$(obj).hide(); 
+	$("form[data-commentable='" + question_id + "']").show('fast');
+}
+
 function submit_vote (type, obj, vote) {
 	var parent_sel = "";
 	if (type == "answer") parent_sel = "article.answer";
