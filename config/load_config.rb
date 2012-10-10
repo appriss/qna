@@ -1,8 +1,8 @@
 require 'ostruct'
 
-config_file = "/etc/ace.yml"
+config_file = "/etc/qna.yml"
 if !File.exist?(config_file)
-  config_file = Rails.root+"config/ace.yml"
+  config_file = Rails.root+"config/qna.yml"
 end
 
 if !File.exist?(config_file)
@@ -19,7 +19,7 @@ AppConfig = OpenStruct.new(options[Rails.env])
 # check config
 unless ENV["QNA_NO_CHECK_CONFIG"]
   begin
-    known_options = YAML.load_file(Rails.root+"config/ace.yml.sample")[Rails.env]
+    known_options = YAML.load_file(Rails.root+"config/qna.yml.sample")[Rails.env]
     if known_options
       known_options.each do |k, v|
         if AppConfig.send(k).nil?

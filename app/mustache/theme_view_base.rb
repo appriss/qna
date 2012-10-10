@@ -139,7 +139,7 @@ class ThemeViewBase < Poirot::View
     view_context.user_url(current_user)
   end
 
-  # returns current ace group
+  # returns current qna group
   def current_group
     view_context.current_group
   end

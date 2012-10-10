@@ -14,17 +14,17 @@ sudo gem install bundler
 
 1. Download the sources:
 
-    git clone git://github.com/appriss/ace.git
+    git clone git://github.com/appriss/qna.git
 
-    cd ace/
+    cd qna/
 
 2. Configure the application
 
-    cp config/ace.sample.yml config/ace.yml
+    cp config/qna.sample.yml config/qna.yml
     cp config/mongoid.sample.yml config/mongoid.yml
     cp config/auth_providers.sample.yml config/auth_providers.yml
 
-    edit ace.yml and auth_providers.yml
+    edit qna.yml and auth_providers.yml
 
     Go to https://rpm.newrelic.com/ and create an account, then:
     cp config/newrelic.yml.sample config/newrelic.yml
@@ -47,14 +47,14 @@ sudo gem install bundler
 
     rails server -e development
 
-7. When running ace in production, you need to run:
+7. When running qna in production, you need to run:
 
     jammit
 
 == Postfix config
 
 add the following text to /etc/aliases
-    ace: "|/usr/local/rvm/bin/rvm 1.9.2 exec PATH/to/ace/script/handle_email"
+    qna: "|/usr/local/rvm/bin/rvm 1.9.2 exec PATH/to/qna/script/handle_email"
 
 in /etc/postfix/main.cf
     default_privs = ace
@@ -65,7 +65,7 @@ then type
 
 Talk to us at cttools \aT/ appriss d0t com
 
-Report bugs at https://github.com/appriss/ace/issues
+Report bugs at https://github.com/appriss/qna/issues
 
 Happy hacking!
 

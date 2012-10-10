@@ -141,7 +141,7 @@ ms:
       service_medal: 
         description: Mendapat 300 undian setuju
         name: Pingat khidmat
-      ace: 
+      qna: 
         description: Mengunjungi tapak ini setiap hari selama 8 hari berturut-turut
       stellar_answer: 
         description: Mempunyai jawapan yang digemari oleh 100 pengguna

@@ -7,7 +7,7 @@
     $ sudo visudo
     and add:
 
-3. configure and upload config/ace.yml to /etc/ace.yml
+3. configure and upload config/qna.yml to /etc/qna.yml
 
 ---------------- copy from here -------------
 Defaults    env_keep += "RAILS_ROOT"
@@ -23,15 +23,15 @@ app     ALL=(ALL) NOPASSWD: ALL
 
 1. Download the sources:
 
-    $ git clone git://github.com/appriss/ace.git
-    $ cd ace/
+    $ git clone git://github.com/appriss/qna.git
+    $ cd qna/
 
 2. Configure the application
 
-    $ cp config/ace.sample.yml config/ace.yml
+    $ cp config/qna.sample.yml config/qna.yml
     $ cp config/mongoid.sample.yml config/mongoid.yml
 
-    edit ace.yml
+    edit qna.yml
 
 3. Install dependencies
 
@@ -49,7 +49,7 @@ app     ALL=(ALL) NOPASSWD: ALL
     $ ricodigo-install-server <server ip> <deploy user>
 
     NOTE: if you entered user/password for mongodb you have to add it on server:
-    $ mongo --eval 'db.addUser("<THE USER>","<THE PASSWORD>", false)' ace-production
+    $ mongo --eval 'db.addUser("<THE USER>","<THE PASSWORD>", false)' qna-production
 
 6. Setup your deployment server
 

@@ -39,7 +39,7 @@ fa:
           add_tags: به تویت هایتان برچسب اضافه کنید
           application_id: شناسه برنامه
           asking_from_twitter: پرسیدن سوالات از طریق twitter
-          ends_with_example: "مثلا #ace"
+          ends_with_example: "مثلا #qna"
           facebook_app: تنظیمات facebook app
           question_asked_to: سوال پرسیده شده است از
           question_must_include: سوال باید دارای برچسب زیر باشد تا تویت شود

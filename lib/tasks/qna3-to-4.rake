@@ -1,23 +1,23 @@
 ## fixall0 and fixall1 can be ran in parallel, fixall2 must be ran at the end
 desc "Fix all"
 
-namespace "ace3to4" do
+namespace "qna3to4" do
 
-  task :fixall => [:init, "ace3to4:fixall0", "ace3to4:fixall1", "ace3to4:fixall2", "ace3to4:fixall3", "ace3to4:fixall4"] do
+  task :fixall => [:init, "qna3to4:fixall0", "qna3to4:fixall1", "qna3to4:fixall2", "qna3to4:fixall3", "qna3to4:fixall4"] do
   end
 
-  task :fixall0 => [:init, "ace3to4:create_thumbnails"] do
+  task :fixall0 => [:init, "qna3to4:create_thumbnails"] do
   end
 
-  task :fixall1 => [:init, "ace3to4:questions", "ace3to4:contributions", "ace3to4:dates", "ace3to4:openid", "ace3to4:relocate", "ace3to4:votes", "ace3to4:counters", "ace3to4:sync_counts", "ace3to4:last_target_type"] do
+  task :fixall1 => [:init, "qna3to4:questions", "qna3to4:contributions", "qna3to4:dates", "qna3to4:openid", "qna3to4:relocate", "qna3to4:votes", "qna3to4:counters", "qna3to4:sync_counts", "qna3to4:last_target_type"] do
   end
 
-  task :fixall2 => [:init, "ace3to4:fix_moved_comments_and_set_comment_count", "ace3to4:comments", "ace3to4:widgets", "ace3to4:tags", "ace3to4:update_answers_favorite"] do
+  task :fixall2 => [:init, "qna3to4:fix_moved_comments_and_set_comment_count", "qna3to4:comments", "qna3to4:widgets", "qna3to4:tags", "qna3to4:update_answers_favorite"] do
   end
 
-  task :fixall3 => [:init, "ace3to4:groups", "ace3to4:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "ace3to4:update_group_notification_config", "ace3to4:set_follow_ids", "ace3to4:set_friends_lists", "ace3to4:fix_twitter_users", "ace3to4:fix_facebook_users", "ace3to4:set_invitations_perms", "ace3to4:set_signup_type", "ace3to4:versions", "ace3to4:ads", "ace3to4:wiki_booleans", "ace3to4:themes", "ace3to4:update_reputation_keys", "ace3to4:votes_to_followers"]
+  task :fixall3 => [:init, "qna3to4:groups", "qna3to4:remove_retag_other_tag", "setup:create_reputation_constrains_modes", "qna3to4:update_group_notification_config", "qna3to4:set_follow_ids", "qna3to4:set_friends_lists", "qna3to4:fix_twitter_users", "qna3to4:fix_facebook_users", "qna3to4:set_invitations_perms", "qna3to4:set_signup_type", "qna3to4:versions", "qna3to4:ads", "qna3to4:wiki_booleans", "qna3to4:themes", "qna3to4:update_reputation_keys", "qna3to4:votes_to_followers"]
 
-  task :fixall4 => [:init, "ace3to4:memberships", "ace3to4:update_tag_followers_count"] do
+  task :fixall4 => [:init, "qna3to4:memberships", "qna3to4:update_tag_followers_count"] do
   end
 
   task :clean_memberhips => [:init] do

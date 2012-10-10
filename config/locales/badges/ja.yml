@@ -106,7 +106,7 @@ ja:
         name: 自己学習
       service_medal: 
         description: 300のプラス投票
-      ace: 
+      qna: 
         description: 8日連続でサイトに訪問する
       stellar_question: 
         description: 質問が100人にお気に入り登録された

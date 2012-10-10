@@ -71,7 +71,7 @@ id:
         name: Pelajar otodidak
       service_medal: 
         description: 300 suara positif
-      ace: 
+      qna: 
         description: Mengunjungi situs ini setiap hari selama 8 hari berturut-turut
       stellar_question: 
         name: Pertanyaan berbintang

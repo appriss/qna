@@ -99,7 +99,7 @@ class Group
   slug_key :name, :unique => true
   filterable_keys :name
 
-  referenced_in :ace_version, :class_name => "QnaVersion"
+  referenced_in :qna_version, :class_name => "QnaVersion"
   field :plan_expires_at, :type => Time
 
   references_many :tags, :dependent => :destroy, :validate => false
@@ -368,7 +368,7 @@ class Group
   end
 
   def version_expired?
-    return false if self.ace_version.nil?
+    return false if self.qna_version.nil?
 
     Time.now > self.plan_expires_at
   end

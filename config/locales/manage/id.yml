@@ -26,7 +26,7 @@ id:
           add_tags: Tambahkan tanda ke tweet Anda
           application_id: ID Aplikasi
           asking_from_twitter: Menanyakan pertanyaan dari Twitter
-          ends_with_example: "ie. #ace"
+          ends_with_example: "ie. #qna"
           facebook_app: Pengaturan aplikasi Facebook
           question_must_include_example: "ie. #iAsk"
           secret_key: Kunci Rahasia

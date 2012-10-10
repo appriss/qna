@@ -1,19 +1,19 @@
 local:
-  database: ace-magent-development
+  database: qna-magent-development
   host: localhost
   port: 27017
   websocket_channel: magent.websocket
 
 development:
-  database: ace-magent-development
+  database: qna-magent-development
   host: localhost
   port: 27017
   websocket_channel: magent.websocket
 
 test:
-  database: ace-test
+  database: qna-test
 
 production:
-  database: ace-magent-production
+  database: qna-magent-production
   websocket_channel: magent.websocket
 

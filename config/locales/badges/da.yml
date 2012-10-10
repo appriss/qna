@@ -130,7 +130,7 @@ da:
       service_medal: 
         description: Har 300 positive stemmer
         name: Service medalje
-      ace: 
+      qna: 
         description: Besøgte siden hver dag 8 dage i træk
       stellar_question: 
         description: Stillede et spørgsmål der blev favorit for 100 brugere

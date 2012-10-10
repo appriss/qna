@@ -89,7 +89,7 @@ nl:
           title: Delen
         tag_your_tweets: 
           add_tags: Labels aan uw tweets koppelen
-          ends_with_example: "bv. #ace"
+          ends_with_example: "bv. #qna"
           starts_with_example: "bv. #qa"
           title: Uw tweets labelen
           tweet_ends_with: Een label achter uw tweets toevoegen

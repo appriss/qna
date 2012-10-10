@@ -38,7 +38,7 @@ da:
           add_tags: Tilføj tags til dine tweets
           application_id: Applikations ID
           asking_from_twitter: Stille spørgsmål fra Twitter
-          ends_with_example: "fx #ace"
+          ends_with_example: "fx #qna"
           facebook_app: Facebook app-indstillinger
           question_asked_to: Spørgsmål Stillet Til
           question_must_include: Spørgsmål skal indeholde følgende tag for at blive tweeted

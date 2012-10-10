@@ -143,7 +143,7 @@ fi:
       service_medal: 
         description: On 300 myönteistä ääntä
         name: Palvelumitali
-      ace: 
+      qna: 
         description: Vieraillut sivustolla päivittäin 8 peräkkäisenä päivänä
       stellar_answer: 
         description: 100 käyttäjää on merkinnyt tämän käyttäjän vastauksen suosikikseen

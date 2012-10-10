@@ -63,7 +63,7 @@ $highlighted_view_bg_color: adjust-color($view_bg_color, $red: 11, $green: 11, $
     border: 3px solid darken($brand_color, 10%);
     color: $fg_brand_color; } }
 
-// ace/modules/comments
+// qna/modules/comments
 .comments {
   article.comment {
     .comment-body {
@@ -73,7 +73,7 @@ $highlighted_view_bg_color: adjust-color($view_bg_color, $red: 11, $green: 11, $
       a {
         color: $brand_color; } } } }
 
-// ace/modules/history
+// qna/modules/history
 
 form.history {
   ul li {
@@ -93,7 +93,7 @@ form.history {
   .navform {
     background-color: darken($view_bg_color, 5%); } }
 
-// ace/modules/invoices
+// qna/modules/invoices
 .invoices {
   .thanks {
     background-color: #ffefa7;
@@ -128,7 +128,7 @@ form.history {
   h2 {
     border-bottom: 1px solid $brand_color; } }
 
-// ace/modules/invoices
+// qna/modules/invoices
 .main-question {
   .author {
     a {
@@ -335,7 +335,7 @@ form.history {
   color: $fg_light_brand_color; }
 
 
-// ace/others/forms
+// qna/others/forms
 .questions {
   form.question_comment_form, form.answer_comment_form, .edit_comment_form, .edit_answer {
     color: $fg_light_brand_color;
@@ -401,7 +401,7 @@ form.history {
         border-bottom: 1px solid darken($view_bg_color, 10%); } } } }
 
 
-// ace/other/plans
+// qna/other/plans
 .plans {
   .each {
     border-top: 1px solid darken($view_bg_color, 10%);
@@ -449,7 +449,7 @@ form.history {
       background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #b4490f), color-stop(1, #ed671e));
       background-color: #ed671e; } } }
 
-// ace/others/quick-question
+// qna/others/quick-question
 .quick_question {
   background-color: $view_bg_color;
   .search-feedback: {

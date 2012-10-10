@@ -147,7 +147,7 @@ fr:
       service_medal: 
         description: A reçu 300 votes positifs
         name: Médaille du service
-      ace: 
+      qna: 
         description: Visiter le site tous jours durant 8 jours consécutifs
       stellar_answer: 
         description: Possède une question sélectionnée comme favorite par 100 utilisateurs

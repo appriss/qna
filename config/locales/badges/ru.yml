@@ -139,7 +139,7 @@ ru:
       service_medal: 
         description: Получил 300 голосов «за»
         name: Памятная медаль
-      ace: 
+      qna: 
         description: Посещал сайт каждый день 8 дней подряд
       stellar_question: 
         description: Задал вопрос, который добавили в избранное 100 пользователей

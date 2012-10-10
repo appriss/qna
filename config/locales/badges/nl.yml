@@ -146,7 +146,7 @@ nl:
       service_medal: 
         description: Heeft 300 positieve stemmen
         name: Dienstmedaille
-      ace: 
+      qna: 
         description: Heeft de site 8 dagen achter elkaar bezocht
       stellar_answer: 
         description: Heeft een antwoord dat door 100 gebruikers als favoriet is aangegeven

@@ -230,7 +230,7 @@ class ApplicationController < ActionController::Base
       when "upgrade_plan"
         invoice.items.each do |item|
           if item["item_class"] == "QnaVersion"
-            current_group.override(:ace_version_id => item["item_id"],
+            current_group.override(:qna_version_id => item["item_id"],
                                      :plan_expires_at => Time.now + 1.month)
 
           end

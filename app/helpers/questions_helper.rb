@@ -33,7 +33,7 @@ module QuestionsHelper
         else
           message = (current_group.name)+"&question[tags]=#{current_group.name},share&question[body]=#{current_group.name}%20|%20[More...](#{root_path(:only_path =>false)})"
         end
-        url = "http://ace.com/questions/new?question[title]="+message
+        url = "http://qna.com/questions/new?question[title]="+message
       when :linkedin
         if question
           message = escape_url(question_url(question))+"&title=#{h(question.title)}&summary=#{h(question.body)}&source=#{current_group.name}"

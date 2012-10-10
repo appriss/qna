@@ -33,7 +33,7 @@ nl:
         title: U hebt nog geen thema's aangemaakt.
     layout: 
       footer: 
-        cc_footer: Alle inhoud en gegevens van ace.com zijn beschikbaar onder de licentie %{cc_link}
+        cc_footer: Alle inhoud en gegevens van qna.com zijn beschikbaar onder de licentie %{cc_link}
         powered_by: Aangeboden met %{source_link} %{version} onder de %{agpl_link}
     login_drop_down: 
       with_facebook: met Facebook

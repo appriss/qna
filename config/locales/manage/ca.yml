@@ -88,7 +88,7 @@ ca:
           title: Comparteix
         tag_your_tweets: 
           add_tags: Afegeix etiquetes al seu tweets
-          ends_with_example: "e.g. #ace"
+          ends_with_example: "e.g. #qna"
           starts_with_example: "e.g. #qa"
           title: El seu tweets d'Etiquetes
           tweet_ends_with: Afegeixi un cordó al seu tweets

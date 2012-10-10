@@ -24,7 +24,7 @@ es-419:
           instruction1: Primero tienes que conectarte en tu provedor de dominio (la pagina donde has comprado tu dominio como %{subdomain}.com).
           instruction2: Ahi, tienes que ir a la seccion DNS y crear un CNAME.
           instruction3: Dale un nombre como 'www' a tu CNAME, puede ser cualquier cosa.
-          instruction4: "Ahora en el campo 'host' o 'destinacion', ingresa tu dominio ace actual: %{domain}."
+          instruction4: "Ahora en el campo 'host' o 'destinacion', ingresa tu dominio qna actual: %{domain}."
           instruction5: Despues de un par de horas, tu dominio www.%{subdomain} deberia apuntar a %{appdomain}.
           instruction6: Si es que apunta bien, ahora regresa aqui y entra tu nombre de dominio www.%{subdomain} en el campo de texto aqui a bajo y presiona el boton para actualizar. Si tienes preguntas, puedes hablarnos en el %{chat_url} o en el foro de soporte
           title: configura tu dominio
@@ -39,7 +39,7 @@ es-419:
           add_tags: Agregar etiquetas a sus tweets
           application_id: Application ID
           asking_from_twitter: Preguntar desde Twitter
-          ends_with_example: "por ejemplo #ace"
+          ends_with_example: "por ejemplo #qna"
           facebook_app: Propiedades de su aplicación Facebook
           question_asked_to: Preguntas hechas a
           question_must_include: La pregunta debe incluir a la etiqueta siguiente para ser mandada por Twitter

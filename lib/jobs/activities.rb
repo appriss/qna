@@ -12,7 +12,7 @@ module Jobs
       elsif days > 20
         create_badge(user, group, :token => "addict", :unique => true)
       elsif days > 8
-        create_badge(user, group, :token => "ace", :unique => true)
+        create_badge(user, group, :token => "qna", :unique => true)
       end
     end
 

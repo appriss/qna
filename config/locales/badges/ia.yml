@@ -141,7 +141,7 @@ ia:
       service_medal: 
         description: Ha 300 votos positive
         name: Medalia de servicio
-      ace: 
+      qna: 
         description: Visitava le sito cata die durante 8 dies consecutive
       stellar_answer: 
         description: Ha un responsa marcate como favorite per 100 usatores

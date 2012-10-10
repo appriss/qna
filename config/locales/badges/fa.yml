@@ -128,7 +128,7 @@ fa:
       service_medal: 
         description: دارای ۳۰۰ رای مثبت است
         name: مدال خدمت
-      ace: 
+      qna: 
         description: برای ۸ روز متوالی هر روز از سایت دیدن کرده است
       stellar_question: 
         description: سوالی پرسیده که ۱۰۰ کاربر آن را به سوالات محبوبشان اضافه کرده اند

@@ -36,7 +36,7 @@ class Invoice
       )
 
       self.override(:stripe_customer => customer.id)
-      self.group.override(:ace_version_id => QnaVersion.where(:token => self.version).first.id)
+      self.group.override(:qna_version_id => QnaVersion.where(:token => self.version).first.id)
 
       return true
     rescue => e

@@ -142,7 +142,7 @@ be-TARASK:
       service_medal: 
         description: Мае 300 галасоў «за»
         name: Мэдаль за службу
-      ace: 
+      qna: 
         description: Наведваў сайт кожны дзень на працягу 8 дзён
       stellar_answer: 
         description: Мае адказ, які лічаць улюблёным 100 карыстальнікаў

@@ -88,7 +88,7 @@ it:
           title: Condividi
         tag_your_tweets: 
           add_tags: Aggiungi tag ai tuoi tweet
-          ends_with_example: "ad esempio #ace"
+          ends_with_example: "ad esempio #qna"
           starts_with_example: "ad esempio #qa"
           title: Tagga i tuoi tweet
           tweet_ends_with: Tag da aggiungere in coda ai tweet

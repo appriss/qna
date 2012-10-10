@@ -87,7 +87,7 @@ ms:
           title: Kongsi
         tag_your_tweets: 
           add_tags: Tambahkan tag pada tweet anda
-          ends_with_example: "cth. #ace"
+          ends_with_example: "cth. #qna"
           starts_with_example: "cth. #qa"
           title: Tagkan tweet anda
           tweet_ends_with: Tambahkan tag di akhir tweet anda

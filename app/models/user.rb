@@ -797,7 +797,7 @@ Time.zone.now ? 1 : 0)
   end
 
   # returns user's providers friends that have an account
-  # on ace but that user is not following
+  # on qna but that user is not following
   def suggested_social_friends(group, limit = 5)
     array_hash = []
     social_connections.to_a.each do |provider|

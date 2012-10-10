@@ -14,7 +14,7 @@ class CommentWrapper < ModelWrapper
   # returns the HTML of a comment's body
   def markdown
     md = view_context.markdown(@target.body.present? ? @target.body : @target.title)
-    view_context.ace_auto_link(md).html_safe
+    view_context.qna_auto_link(md).html_safe
   end
 
   # returns the author of a comment

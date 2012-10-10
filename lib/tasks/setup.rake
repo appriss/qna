@@ -81,7 +81,7 @@ namespace :setup do
       :login => "admin",
       :password => "admins",
       :password_confirmation => "admins",
-      :email => "ace@example.com",
+      :email => "qna@example.com",
       :role => "admin"
     }.each {|k,v| admin.send("#{k}=", v)}
     admin.preferred_languages = AVAILABLE_LANGUAGES

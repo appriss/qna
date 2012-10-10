@@ -73,7 +73,7 @@ en:
           tweet_starts_with: Prepend a tag to your tweets
           tweet_ends_with: Append a tag to your tweets
           starts_with_example: "e.g. #qa"
-          ends_with_example: "e.g. #ace"
+          ends_with_example: "e.g. #qna"
           add_tags: Add tags to your tweets
           title: Tag your tweets
         ask_from_twitter:

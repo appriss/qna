@@ -117,7 +117,7 @@ el:
         name: Αυτοδίδακτος
       service_medal: 
         description: 300 θετικές ψήφοι
-      ace: 
+      qna: 
         description: Επισκεφθείτε το site κάθε μέρα για 8 συνεχόμενες ημέρες
       stellar_question: 
         description: Κάντε ερώτηση που θα αγαπηθεί από 100 μέλη

@@ -141,7 +141,7 @@ sr-LATN:
       service_medal: 
         description: Ima trista pozitivnih glasova
         name: Medalja za službu
-      ace: 
+      qna: 
         description: Posetio mrežno mesto osam dana zaredom
       stellar_answer: 
         description: Ima odgovor koji je omiljen za 100 korisnika

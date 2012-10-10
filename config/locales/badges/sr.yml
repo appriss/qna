@@ -141,7 +141,7 @@ sr:
       service_medal: 
         description: Има триста позитивних гласова
         name: Медаља за службу
-      ace: 
+      qna: 
         description: Посетио сајт осам дана заредом
       stellar_answer: 
         description: Има одговор који је омиљен за 100 корисника

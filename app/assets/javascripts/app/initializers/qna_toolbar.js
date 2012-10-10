@@ -1,5 +1,5 @@
 (function($){
-  $.fn.aceToolbar = function(options) {
+  $.fn.qnaToolbar = function(options) {
     var defaults = {
       formContainer: ".panel-forms",
       afterFetchForm: function(link,form) {}

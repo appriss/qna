@@ -1,7 +1,7 @@
 %h1
   = h(version.data["title"])
 .description.markdown
-  = ace_auto_link(markdown(version.data["body"]))
+  = qna_auto_link(markdown(version.data["body"]))
 .messages
   = version.message
 %ul.tag-list

@@ -113,7 +113,7 @@ sv:
         name: Rockstjärna
       service_medal: 
         description: Har 300 positiva röster
-      ace: 
+      qna: 
         description: Besökt webbplatsen varje dag i 8 dagar i följd
       stellar_answer: 
         description: Har ett svar som märkts som favorit av 100 användare

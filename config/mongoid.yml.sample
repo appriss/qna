@@ -10,12 +10,12 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: ace-development
+  database: qna-development
 
 test:
   <<: *defaults
-  database: ace-test
+  database: qna-test
 
 production:
   <<: *defaults
-  database: ace-production
+  database: qna-production

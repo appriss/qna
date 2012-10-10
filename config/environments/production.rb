@@ -26,7 +26,7 @@ Qna::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
-  config.cache_store = :mongo_store, 'mongo_store_cache', {:expires_in => 2.hours, :db => 'ace-cache'}
+  config.cache_store = :mongo_store, 'mongo_store_cache', {:expires_in => 2.hours, :db => 'qna-cache'}
   #config.cache_store = [:file_store, "#{Rails.root}/tmp/cache"]
 
   # Disable Rails's static asset server

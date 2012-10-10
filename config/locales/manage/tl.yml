@@ -38,7 +38,7 @@ tl:
           add_tags: Magdagdag ng mga tatak sa mga pag-tweet mo
           application_id: ID ng aplikasyon
           asking_from_twitter: Nagtatanong ng mga katanungan magmula sa Twitter
-          ends_with_example: "katulad ng #ace"
+          ends_with_example: "katulad ng #qna"
           facebook_app: Mga katakdaan ng aplikasyon ng Facebook
           question_asked_to: Itinanong Ang Tanong Sa
           question_must_include: Ang tanong ay dapat na magsama ng sumusunod na tatak na maisisiyap

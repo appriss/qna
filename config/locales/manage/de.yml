@@ -88,7 +88,7 @@ de:
           title: freigeben
         tag_your_tweets: 
           add_tags: Füge Deinen Tweets Stichwörter hinzu
-          ends_with_example: "z. B. #ace"
+          ends_with_example: "z. B. #qna"
           starts_with_example: "z. B. #qa"
           title: Deinen Tweets Stichwörter hinzufügen
           tweet_ends_with: Deinem Tweet ein Stichwort anfügen

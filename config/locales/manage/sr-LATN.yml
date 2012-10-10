@@ -87,7 +87,7 @@ sr-LATN:
           title: Deli
         tag_your_tweets: 
           add_tags: Dodajte oznake na objavljeno na Tviteru
-          ends_with_example: "npr. #ace"
+          ends_with_example: "npr. #qna"
           starts_with_example: "npr. #qa"
           title: Označite svoje objave na Tviteru
           tweet_ends_with: Priložite oznaku na objavljeno na Tviteru

@@ -15,7 +15,7 @@
 
 
       %p.description
-        = ace_auto_link(markdown(@answer.body))
+        = qna_auto_link(markdown(@answer.body))
       %p.messages
         = @answer.version_message
       %p.author

@@ -2,7 +2,7 @@
 
 ENV["RAILS_ENV"] ||= (ARGV[0] || "development")
 
-require "#{File.expand_path("../..", __FILE__)}/lib/ace/scripting/easy_loader"
+require "#{File.expand_path("../..", __FILE__)}/lib/qna/scripting/easy_loader"
 # require File.expand_path("../../config/environment", __FILE__)
 require 'mail'
 

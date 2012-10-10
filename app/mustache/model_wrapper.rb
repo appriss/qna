@@ -7,7 +7,7 @@ class ModelWrapper
     @view_context = view_context
   end
 
-  # returns the current ace group the current user is on
+  # returns the current qna group the current user is on
   def current_group
     @view_context.current_group
   end

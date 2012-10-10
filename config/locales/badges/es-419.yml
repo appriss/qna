@@ -128,7 +128,7 @@ es-419:
       service_medal: 
         description: Recibir 300 votos positivos
         name: Insignia de servicio
-      ace: 
+      qna: 
         description: Visita el sitio 8 días consecutivos
       stellar_question: 
         description: Pregunta con mas de 100 favoritos

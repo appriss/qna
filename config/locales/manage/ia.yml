@@ -87,7 +87,7 @@ ia:
           title: Condivider
         tag_your_tweets: 
           add_tags: Adder etiquettas a tu tweets
-          ends_with_example: "p.ex. #ace"
+          ends_with_example: "p.ex. #qna"
           starts_with_example: "p.ex. #qa"
           title: Etiquettar tu tweets
           tweet_ends_with: Adjunger un etiquetta a tu tweets

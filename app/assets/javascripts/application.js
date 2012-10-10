@@ -12,7 +12,7 @@
 
 //= require app/modules/app_config.js
 //= require app/modules/ui.js
-//= require app/modules/ace_ui.js
+//= require app/modules/qna_ui.js
 //= require app/modules/websocket.js
 //= require app/modules/authentication.js
 //= require app/modules/local_storage.js
@@ -35,7 +35,7 @@
 //= require app/modules/layout_editor.js
 //= require app/initializers/search.js
 //= require app/initializers/retag.js
-//= require app/initializers/ace_toolbar.js
+//= require app/initializers/qna_toolbar.js
 //= require vendor/jquery.droppy.js
 //= require app/modules/invitations.js
 //= require application-init.js
