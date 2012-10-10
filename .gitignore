@@ -5,7 +5,7 @@
 *.orig
 coverage
 public/stylesheets/compiled/
-config/ace.yml
+config/qna.yml
 config/payments.yml
 data/*.dat
 config/mongoid.yml
