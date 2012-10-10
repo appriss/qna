@@ -74,9 +74,9 @@ gl:
       title: Preguntas relacionadas
     settings: 
       code: "Copie e pegue este código no seu sitio web ou blogue; por exemplo, como un widget de texto no Wordpress:"
-      custom_external_css: "Incluír CSS personalizado ao widget (recomendado se non está a incluír o CSS de Ace):"
+      custom_external_css: "Incluír CSS personalizado ao widget (recomendado se non está a incluír o CSS de Qna):"
       custom_html: "HTML personalizado:"
-      exclude_css_on_external: Excluír o CSS do seu sitio Ace do widget
+      exclude_css_on_external: Excluír o CSS do seu sitio Qna do widget
       limit: "Cantidade a mostrar:"
       on_questions: Mostrar na páxina da lista principal de preguntas
       on_show_question: Mostrar mentres se ve unha pregunta

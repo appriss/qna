@@ -1,7 +1,7 @@
 = t('shared.networks.title')
 
 .network-field
-  - options = share ? Ace::Models::Networks::SHARE : Ace::Models::Networks::PROFILE
+  - options = share ? Qna::Models::Networks::SHARE : Qna::Models::Networks::PROFILE
   = select_tag :network_select, options_for_select([[]]+options), :class => "network_select"
 
   .network-config

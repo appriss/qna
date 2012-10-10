@@ -1,7 +1,7 @@
 
 class CloseRequest
   include Mongoid::Document
-  include Ace::Models::Trackable
+  include Qna::Models::Trackable
 
   track_activities :user, :reason, :comment, :_parent, :scope => [:group_id], :target => :_parent do |activity, question|
     follower_ids = question.follower_ids+question.contributor_ids

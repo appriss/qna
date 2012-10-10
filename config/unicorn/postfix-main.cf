@@ -1,4 +1,4 @@
-smtpd_banner = Welcome to Ace Mail Server
+smtpd_banner = Welcome to Qna Mail Server
 biff = no
 append_dot_mydomain = no
 readme_directory = no

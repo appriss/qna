@@ -7,7 +7,7 @@ class Page
   include MongoidExt::Versioning
 
   include Mongoid::Timestamps
-  include Ace::Models::Trackable
+  include Qna::Models::Trackable
 
   track_activities :user, :title, :language, :scope => [:group_id] do |activity, page|
     follower_ids = []

@@ -45,7 +45,7 @@ es:
           reputation_constrains_subtitle: Lista de las restricciónes de reputación por acción
           title: Restricciónes
         domain: 
-          description: "Puede asignar un dominio diferente a su sitio Ace para que se pueda acceder a través de su dominio personalizado. Esta es la forma de hacerlo:"
+          description: "Puede asignar un dominio diferente a su sitio Qna para que se pueda acceder a través de su dominio personalizado. Esta es la forma de hacerlo:"
           instruction1: Primero tienes que conectarte en tu provedor de dominio (la pagina donde has comprado tu dominio como %{subdomain}.com).
           instruction2: Ahi, tienes que ir a la seccion DNS y crear un CNAME.
           instruction3: Dale un nombre como 'www' a tu CNAME, puede ser cualquier cosa.

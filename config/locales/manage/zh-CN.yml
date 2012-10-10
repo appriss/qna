@@ -24,7 +24,7 @@ zh-CN:
           instruction1: 这样做首先需要登录到您的域提供商。这是你在哪里买您的域如 %{subdomain}.com 站点。
           instruction2: 那里您需要转到 DNS 部分创建称为一个 CNAME 的东西。
           instruction3: 选择 ‘www’ 或任何其他为您 CNAME 名。
-          instruction4: 然后主机或目标领域把当前的 Ace 域： %{domain}。
+          instruction4: 然后主机或目标领域把当前的 Qna 域： %{domain}。
           instruction5: 此操作后一小时左右完成您的域 www.%{subdomain} 后应指向 %{appdomain}。
           instruction6: 当这是回到这里，把您的域的名称 www.%{subdomain} 在下面的字段并按更新按钮。有的问题要求我们在 %{chat_url} 或对我们的支持论坛。
           title: 设置您的域

@@ -11,8 +11,8 @@ class Question
   include MongoidExt::Versioning
   include MongoidExt::Voteable
 
-  include Ace::Models::GeoCommon
-  include Ace::Models::Trackable
+  include Qna::Models::GeoCommon
+  include Qna::Models::Trackable
 
   paginates_per 25
 

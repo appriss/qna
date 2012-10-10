@@ -44,11 +44,11 @@ ca:
           reputation_constrains_subtitle: Liistat de requeriments de reputació per a cada acció
           title: Requeriments
         domain: 
-          description: "Vostè pot fer el mapa un domini diferent al lloc de la seva Ace per la qual cosa s'hi pot accedir a través del seu propi camp de costum. Això és com fer-ho:"
+          description: "Vostè pot fer el mapa un domini diferent al lloc de la seva Qna per la qual cosa s'hi pot accedir a través del seu propi camp de costum. Això és com fer-ho:"
           instruction1: Per a fer això primer necessiteu iniciar la sessió al vostre proveïdor de domini. Aquest és el lloc on vàreu comprar el vostre domini com %{subdomain}.com.
           instruction2: Necessiteu anar a la secció de DNS i crear un registre CNAME.
           instruction3: Trieu 'www' o qualsevol altre cosa com el nom del vostre CNAME.
-          instruction4: "Després a l'hoste o camp de destinació, poseu el vostre domini actual de Ace: %{domain}."
+          instruction4: "Després a l'hoste o camp de destinació, poseu el vostre domini actual de Qna: %{domain}."
           instruction5: Un cop estigui fet, al cap d'una hora més o menys, el vostre domini www.%{subdomain} hauria d'apuntar a %{appdomain}.
           instruction6: Quan aquest sigui el cas, torneu aquí i poseu el vostre nom de domini www.%{subdomain} al camp inferior i premeu el botó 'actualitza'. Si teniu preguntes, feu-les a %{chat_url} o al nostre fòrum de suport.
           title: Configurar el seu domini personalitzat

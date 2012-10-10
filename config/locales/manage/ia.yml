@@ -43,11 +43,11 @@ ia:
           reputation_constrains_subtitle: Lista de requisitos de reputation pro cata action
           title: Requisitos
         domain: 
-          description: "Es possibile assignar un altere dominio a tu sito de Ace, de sorta que illo es accessibile per tu proprie dominio. Ecce le procedura:"
+          description: "Es possibile assignar un altere dominio a tu sito de Qna, de sorta que illo es accessibile per tu proprie dominio. Ecce le procedura:"
           instruction1: Pro facer lo, tu debe prima authenticar te al providitor de tu dominio. Isto es le sito ubi tu ha acquirite tu dominio como %{subdomain}.com.
           instruction2: Ibi, tu debe vader al section DNS e crear un cosa appellate CNAME.
           instruction3: Selige 'www' o altere cosa como le nomine de tu CNAME.
-          instruction4: "Postea, in le campo de host o de destination, insere tu dominio actual de Ace: %{domain}."
+          instruction4: "Postea, in le campo de host o de destination, insere tu dominio actual de Qna: %{domain}."
           instruction5: Quando isto es facite, post circa un hora, tu dominio www.%{subdomain} deberea punctar verso %{appdomain}.
           instruction6: Si isto es le caso, reveni hic e insere tu nomine de dominio www.%{subdomain} in le campo hic infra e preme le button 'actualisar'. Si tu ha questiones, pone los in le %{chat_url} o in nostre foro de supporto.
           title: Configurar tu dominio personalisate

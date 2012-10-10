@@ -21,7 +21,7 @@ hu:
           instruction1: Először be kell jelentkezned a domainszolgáltatódhoz. Ez az az oldal, ahol az olyan domainnevek vehetőek, mint a %{subdomain}.com.
           instruction2: Itt a DNS beállításokhoz kell menned, és létre kell hoznod egy CNAME-nek hívott bejegyzést.
           instruction3: Válassz egy nevet a CNAME-nek, lehet „www”, vagy bármi más.
-          instruction4: "Ezután a hoszt vagy célmezőbe helyezd el a jelenlegi Ace-domainedet: %{domain}."
+          instruction4: "Ezután a hoszt vagy célmezőbe helyezd el a jelenlegi Qna-domainedet: %{domain}."
           instruction5: "Ha ezzel megvagy, a www.%{subdomain} domaincímed a következőre kell, hogy mutasson: %{appdomain}."
           instruction6: Ha ez a helyzet, gyere vissza ide, és helyezd el a domainnevedet (www.%{subdomain}) az alábbi mezőbe, majd kattints a „Frissítés” gombra. Ha kérdésed lenne, keress fel minket a %{chat_url} címen vagy a támogatással foglalkozó fórumon.
           title: Domainnév beállítása

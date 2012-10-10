@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   include Subdomains
   include Sweepers
 
-  include Ace::Controllers::Access
-  include Ace::Controllers::Routes
-  include Ace::Controllers::Locale
-  include Ace::Controllers::Utils
+  include Qna::Controllers::Access
+  include Qna::Controllers::Routes
+  include Qna::Controllers::Locale
+  include Qna::Controllers::Utils
 
   if !AppConfig.recaptcha['activate']
     def recaptcha_valid?
@@ -229,7 +229,7 @@ class ApplicationController < ActionController::Base
       case invoice.action
       when "upgrade_plan"
         invoice.items.each do |item|
-          if item["item_class"] == "AceVersion"
+          if item["item_class"] == "QnaVersion"
             current_group.override(:ace_version_id => item["item_id"],
                                      :plan_expires_at => Time.now + 1.month)
 

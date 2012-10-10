@@ -112,7 +112,7 @@ class Notifier < ActionMailer::Base
     @language = language_for(user)
     set_locale @language
     mail(:to => AppConfig.exception_notification["exception_recipients"],
-         :from => "Ace[feedback] <#{AppConfig.notification_email}>",
+         :from => "Qna[feedback] <#{AppConfig.notification_email}>",
          :subject => "feedback: #{subject}",
          :date => Time.now) do |format|
       format.text
@@ -127,7 +127,7 @@ class Notifier < ActionMailer::Base
                        :locale => @language)
     @ip = ip
     mail(:to => AppConfig.exception_notification["exception_recipients"],
-         :from => "Ace[feedback] <#{AppConfig.notification_email}>",
+         :from => "Qna[feedback] <#{AppConfig.notification_email}>",
          :subject => @subject,
          :date => Time.now) do |format|
       format.text

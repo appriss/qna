@@ -19,7 +19,7 @@ sv:
           instruction1: För att göra så måste du först logga in på din domänleverantör. Det är platsen där du köpte din domän, t.ex %{subdomain}.com.
           instruction2: Där måste du gå till DNS avsnittet och skapa något som kallas en CNAME.
           instruction3: Sätt 'www' eller något annat som namnet på din CNAME.
-          instruction4: "Sedan i värd-eller målfältet, sätt din nuvarande Ace domän: %{domain}."
+          instruction4: "Sedan i värd-eller målfältet, sätt din nuvarande Qna domän: %{domain}."
           instruction5: När detta är gjort, efter en timme eller så, ska din domän www.%{subdomain} peka på %{appdomain}.
           instruction6: När detta är fallet, kom tillbaka hit och sätt ditt domännamn www.%{subdomain} i fältet nedan och tryck på 'uppdatera'. Om du har frågor, fråga oss i %{chat_url} eller på vårt supportforum.
           title: Ställ in din domän

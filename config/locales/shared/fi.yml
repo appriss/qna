@@ -34,7 +34,7 @@ fi:
         title: Et ole vielä luonut teemoja.
     layout: 
       footer: 
-        cc_footer: Kaikki Ace.comin sisältö ja tiedot ovat käytettävissä %{cc_link} -lisenssin alaisuudessa
+        cc_footer: Kaikki Qna.comin sisältö ja tiedot ovat käytettävissä %{cc_link} -lisenssin alaisuudessa
         powered_by: Käyttövoimana %{source_link} %{version} sovelluksen %{agpl_link} alaisena
     login_drop_down: 
       with_facebook: Facebookilla

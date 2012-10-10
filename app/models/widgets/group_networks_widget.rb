@@ -1,5 +1,5 @@
 class GroupNetworksWidget < Widget
-  include Ace::Models::Networks
+  include Qna::Models::Networks
 
   field :settings, :type => Hash, :default => { :on_mainlist => true  }
   field :networks, :type => Hash, :default => {}

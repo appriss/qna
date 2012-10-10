@@ -39,7 +39,7 @@ pt-PT:
           instruction1: Para fazê-lo, antes autentique-se no fornecedor do seu domínio. É o site onde comprou o seu domínio, do tipo %{subdomain}.com.
           instruction2: Lá, vá à secção de DNS e crie uma coisa chamada um CNAME.
           instruction3: Escolha 'www' ou outra coisa para o seu CNAME.
-          instruction4: "Depois, no campo do host ou de destino, coloque o seu domínio Ace actual: %{domain}."
+          instruction4: "Depois, no campo do host ou de destino, coloque o seu domínio Qna actual: %{domain}."
           instruction5: Cerca de uma hora depois de o fazer, o seu domínio www.%{subdomain} deverá apontar para %{appdomain}.
           instruction6: Quando for este o caso, volte cá, coloque o nome do seu domínio www.%{subdomain} no campo abaixo e clique 'Actualizar'. Se tem questões, coloque-as em %{chat_url} ou no nosso fórum de suporte.
           title: Defina o seu domínio

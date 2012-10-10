@@ -64,7 +64,7 @@ en:
       on_questions: "Show on Questions main list page"
       on_show_question: "Show on showing a question"
       exclude_css_on_external: "Exclude your ace site CSS from your widget"
-      custom_external_css: "Include custom CSS to your widget (advised if you are not including the Ace CSS):"
+      custom_external_css: "Include custom CSS to your widget (advised if you are not including the Qna CSS):"
       code: "Copy and paste this code to your site or blog, such as a text widget in your Wordpress:"
       preview: "Widget preview:"
       google_ad_client: google_ad_client

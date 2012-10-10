@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   Jqmath.initialize();
-  AceSocket.initialize();
+  QnaSocket.initialize();
   $('.auto-link').autoVideo();
   Form.initialize();
   Modernizr.load({

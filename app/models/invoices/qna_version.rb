@@ -1,4 +1,4 @@
-class AceVersion
+class QnaVersion
   include Mongoid::Document
 
   field :token, :type => String, :index => true
@@ -31,9 +31,9 @@ class AceVersion
     versions_data = YAML.load_file("#{Rails.root}/config/versions.yml")
 
     versions_data.each do |token, data|
-      version = AceVersion.where(:token => token).first
+      version = QnaVersion.where(:token => token).first
       if version.nil?
-        version = AceVersion.create!(data.merge(:token => token))
+        version = QnaVersion.create!(data.merge(:token => token))
         Stripe.api_key = PaymentsConfig['secret']
         Stripe::Plan.create(
           :amount => version.price,

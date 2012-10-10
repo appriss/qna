@@ -22,14 +22,14 @@
           =@invoice.created_at+1.month
       .clear
 
-    -if @invoice.items.first["item_class"] == "AceVersion"
-      -version = AceVersion.find(@invoice.items.first["item_id"])
+    -if @invoice.items.first["item_class"] == "QnaVersion"
+      -version = QnaVersion.find(@invoice.items.first["item_id"])
       .thanks
         %p.action
           You're upgrading your
           %em
             = current_group.name
-          Ace account
+          Qna account
           %br located at
           %em
             ==#{current_group.domain}.

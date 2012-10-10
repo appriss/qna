@@ -3,7 +3,7 @@ class Comment
   include MongoidExt::Voteable
   include Mongoid::Timestamps
 
-#   include Ace::Models::GeoCommon FIXME
+#   include Qna::Models::GeoCommon FIXME
 
 
   identity :type => String

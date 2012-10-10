@@ -18,6 +18,6 @@ end
 
 require "smtp_tls"
 
-Rails.application = Ace::Scripting::Application.instance
+Rails.application = Qna::Scripting::Application.instance
 ActionController::Base.prepend_view_path "#{Rails.root}/app/views"
 ActionMailer::Base.prepend_view_path "#{Rails.root}/app/views"

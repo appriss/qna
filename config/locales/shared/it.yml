@@ -34,7 +34,7 @@ it:
         title: Non hai creato alcun tema per ora.
     layout: 
       footer: 
-        cc_footer: Tutti i contenuti di Ace.com e i dati sono disponibili sotto licenza %{cc_link}
+        cc_footer: Tutti i contenuti di Qna.com e i dati sono disponibili sotto licenza %{cc_link}
         powered_by: Powered by %{source_link} %{version} sotto il %{agpl_link}
     login_drop_down: 
       with_facebook: con Facebook

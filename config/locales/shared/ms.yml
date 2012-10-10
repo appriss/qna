@@ -32,7 +32,7 @@ ms:
         title: Anda belum mencipta apa-apa tema buat sekarang.
     layout: 
       footer: 
-        cc_footer: Segala kandungan dan data Ace.com disediakan di bawah lesen %{cc_link}
+        cc_footer: Segala kandungan dan data Qna.com disediakan di bawah lesen %{cc_link}
         powered_by: Dikuasakan oleh %{source_link} %{version} di bawah %{agpl_link}
     login_drop_down: 
       with_facebook: dengan Facebook

@@ -34,7 +34,7 @@ ca:
         title: Encara no heu creat cap temes per ara.
     layout: 
       footer: 
-        cc_footer: Tot el contingut de Ace.com i dades estan disponibles sota la llicència de %{cc_link}
+        cc_footer: Tot el contingut de Qna.com i dades estan disponibles sota la llicència de %{cc_link}
         powered_by: Powered by % %{source_link} %{version} sota el %{agpl_link}
     login_drop_down: 
       with_facebook: amb Facebook

@@ -290,7 +290,7 @@ class GroupsController < ApplicationController
       redirect_to root_path and return
     end
 
-    version = AceVersion.where(:token => params[:plan]).first
+    version = QnaVersion.where(:token => params[:plan]).first
 
     @invoice = current_group.invoices.where(:payed => false,
                                             :version => version.token,

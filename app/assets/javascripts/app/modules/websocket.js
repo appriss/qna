@@ -1,4 +1,4 @@
-var AceSocket = {
+var QnaSocket = {
   initialize: function() {
     WEB_SOCKET_SWF_LOCATION = "/javascripts/web-socket-js/WebSocketMain.swf";
 
@@ -9,21 +9,21 @@ var AceSocket = {
 
 
     this.ws.onmessage = function(evt) {
-      AceSocket.parse(evt.data);
+      QnaSocket.parse(evt.data);
     };
 
     window.webSocketError = function(message) {
       console.error(decodeURIComponent(message));
-      AceSocket.error_count += 1;
+      QnaSocket.error_count += 1;
     }
 
     this.ws.onclose = function() {
-      if(AceSocket.error_count < 3)
-        setTimeout(AceSocket.initialize, 5000)
+      if(QnaSocket.error_count < 3)
+        setTimeout(QnaSocket.initialize, 5000)
     };
 
     this.ws.onopen = function() {
-      AceSocket.send({id: 'start', key: config.attr("data-key"), channel_id: config.attr("data-group")});
+      QnaSocket.send({id: 'start', key: config.attr("data-key"), channel_id: config.attr("data-group")});
     };
   },
   add_chat_message: function(from, message) {
@@ -37,43 +37,43 @@ var AceSocket = {
 
     switch(data.id) {
       case 'chatmessage': {
-        AceSocket.add_chat_message(data.from, data.message);
+        QnaSocket.add_chat_message(data.from, data.message);
       }
       break;
       case 'newquestion': {
-        AceUI.new_question(data);
+        QnaUI.new_question(data);
       }
       break;
       case 'updatequestion': {
-        AceUI.update_question(data);
+        QnaUI.update_question(data);
       }
       break;
       case 'destroyquestion': {
-        AceUI.delete_question(data);
+        QnaUI.delete_question(data);
       }
       break;
       case 'newanswer': {
-        AceUI.new_answer(data);
+        QnaUI.new_answer(data);
       }
       break;
       case 'updateanswer': {
-        AceUI.update_answer(data);
+        QnaUI.update_answer(data);
       }
       break;
       case 'vote': {
-        AceUI.vote(data);
+        QnaUI.vote(data);
       }
       break;
       case 'newcomment': {
-        AceUI.new_comment(data);
+        QnaUI.new_comment(data);
       }
       break;
       case 'updatedcomment': {
-        AceUI.update_comment(data);
+        QnaUI.update_comment(data);
       }
       break;
       case 'newactivity': {
-        AceUI.new_activity(data);
+        QnaUI.new_activity(data);
       }
       break;
     }

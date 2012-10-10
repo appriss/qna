@@ -31,7 +31,7 @@ Modernizr.load([{
       test: typeof(window.WebSocket)!=='undefined',
       nope: jsassets.websocket,
       complete: function() {
-        AceSocket.initialize();
+        QnaSocket.initialize();
         }
     }, {
       test: $('meta[data-has-js]').length > 0,

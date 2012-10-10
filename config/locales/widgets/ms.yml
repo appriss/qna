@@ -74,9 +74,9 @@ ms:
       title: Soalan Berkaitan
     settings: 
       code: "Salin dan tampalkan kod ini pada tapak dan blog anda, seperti widget teks di Wordpress anda:"
-      custom_external_css: "Sertakan CSS tersuai pada widget anda (disaran jika anda tidak menyertakan CSS Ace):"
+      custom_external_css: "Sertakan CSS tersuai pada widget anda (disaran jika anda tidak menyertakan CSS Qna):"
       custom_html: "Html tersuai:"
-      exclude_css_on_external: Kecualikan CSS tapak Ace anda daripada widget anda
+      exclude_css_on_external: Kecualikan CSS tapak Qna anda daripada widget anda
       limit: "Kuantiti untuk dipaparkan:"
       on_questions: Tunjukkan di laman senarai utama Soalan
       on_show_question: Tunjukkan ketika memaparkan soalan

@@ -43,11 +43,11 @@ gl:
           reputation_constrains_subtitle: Lista de requirimentos de reputación para cada acción
           title: Requirimentos
         domain: 
-          description: "Pode configurar un dominio diferente para o seu sitio de Ace de xeito que se poida consultar a través do seu propio dominio personalizado. Faise así:"
+          description: "Pode configurar un dominio diferente para o seu sitio de Qna de xeito que se poida consultar a través do seu propio dominio personalizado. Faise así:"
           instruction1: Para facer isto, primeiro necesita acceder ao sistema do seu provedor de dominios. Ese é o lugar onde comprou o seu dominio, como %{subdomain}.com.
           instruction2: Alí terá que ir ata a sección DNS e crear unha cousa chamada CNAME.
           instruction3: Escolla "www" ou calquera outra cousa para o seu CNAME.
-          instruction4: "A continuación, no campo de destino, introduza o seu dominio Ace actual: %{domain}."
+          instruction4: "A continuación, no campo de destino, introduza o seu dominio Qna actual: %{domain}."
           instruction5: Unha vez feito isto, ao que pase unha ou dúas horas, o seu www.%{subdomain} debería apuntar cara a %{appdomain}.
           instruction6: Cando se dea este caso, volva aquí e poña o nome do seu dominio, www.%{subdomain}, no campo de embaixo e prema o botón "actualizar". Se ten algunha dúbida, pregunte no %{chat_url} ou no noso foro de axuda.
           title: Configurar o seu dominio personalizado

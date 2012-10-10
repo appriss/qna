@@ -6,8 +6,8 @@ class Answer
 
   include MongoidExt::Versioning
   include MongoidExt::Voteable
-  include Ace::Models::GeoCommon
-  include Ace::Models::Trackable
+  include Qna::Models::GeoCommon
+  include Qna::Models::Trackable
 
   track_activities :user, :question, :body, :language, :scope => [:group_id] do |activity, answer|
     question = answer.question

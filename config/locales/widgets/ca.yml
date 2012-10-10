@@ -51,7 +51,7 @@ ca:
       title: Questions relacionades
     settings: 
       code: "Copieu i enganxeu el codi al seu lloc o bloc, com un widget de text en el seu Wordpress:"
-      custom_external_css: "Inclouen personalitzat CSS pel teu Giny (aconsellable si no són inclosos el CSS de Ace):"
+      custom_external_css: "Inclouen personalitzat CSS pel teu Giny (aconsellable si no són inclosos el CSS de Qna):"
       preview: "Vista prèvia de Widget:"
     share: 
       description: Aquest widget Mostra diversos botons per compartir la pàgina actual a les xarxes socials.

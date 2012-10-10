@@ -6,7 +6,7 @@ class Group
   include MongoidExt::Storage
   include MongoidExt::Filter
 
-  include Ace::Models::CustomHtmlMethods
+  include Qna::Models::CustomHtmlMethods
 
   BLACKLIST_GROUP_NAME = ["www", "net", "org", "admin", "ftp", "mail", "test", "blog",
                  "bug", "bugs", "dev", "ftp", "forum", "community", "mail", "email",
@@ -99,7 +99,7 @@ class Group
   slug_key :name, :unique => true
   filterable_keys :name
 
-  referenced_in :ace_version, :class_name => "AceVersion"
+  referenced_in :ace_version, :class_name => "QnaVersion"
   field :plan_expires_at, :type => Time
 
   references_many :tags, :dependent => :destroy, :validate => false
@@ -275,7 +275,7 @@ class Group
     if request.path =~ /\/(logo|big|medium|small|css|favicon)\/([^\/\.?]+)/
       @group = Group.find($2)
 
-      logo = @group.has_logo? ? @group.logo : Ace::FileWrapper.new("#{Rails.root}/public/images/logo.png", "image/png")
+      logo = @group.has_logo? ? @group.logo : Qna::FileWrapper.new("#{Rails.root}/public/images/logo.png", "image/png")
       case $1
       when "logo"
         logo

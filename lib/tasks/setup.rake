@@ -199,7 +199,7 @@ namespace :setup do
 
   desc "Create/Update Versions"
   task :versions => [:environment] do
-    AceVersion.reload!
+    QnaVersion.reload!
   end
 
   task :index_tags => [:environment] do

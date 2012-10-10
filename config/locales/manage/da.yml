@@ -23,7 +23,7 @@ da:
           instruction1: For at gøre det er du først nødt til at logge på din domæne udbyder. Det er stedet, hvor du har købt dit domæne såsom %{subdomain}.com.
           instruction2: Der skal du gå til DNS afsnittet og lave noget der hedder en CNAME.
           instruction3: Vælg 'www' eller noget andet som navnet på din CNAME.
-          instruction4: "Så i host eller destinations felt, sæt dit nuværende Ace domæne: %{domain}."
+          instruction4: "Så i host eller destinations felt, sæt dit nuværende Qna domæne: %{domain}."
           instruction5: Når dette er gjort, efter en time eller deromkring, skulle dit domæne www.%{subdomain} pege på %{appdomain}.
           instruction6: Når dette er tilfældet, kom tilbage her og sæt dit domænenavn www.%{subdomain} i feltet nedenfor og tryk på knappen 'opdater'. Hvis du har spørgsmål, så spørg os i %{chat_url} eller på vores support forum.
           title: Sæt dit domæne

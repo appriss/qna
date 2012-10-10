@@ -76,7 +76,7 @@ fi:
       title: Aiheeseen liittyvät kysymykset
     settings: 
       code: "Kopioi ja liitä tämä koodi sivustoosi tai blogiin, kuten text widgetiin Wordpressissä:"
-      custom_external_css: "Sisällytä oma CSS käyttöliittymäkomponenttiisi (suositeltavaa, jos et sisällytä Ace CSS -määrittelyä):"
+      custom_external_css: "Sisällytä oma CSS käyttöliittymäkomponenttiisi (suositeltavaa, jos et sisällytä Qna CSS -määrittelyä):"
       custom_html: "Mukautettu HTML:"
       exclude_css_on_external: Jätä ace-sivustosi CSS pois käyttöliittymäkomponentista
       limit: "Määrä:"

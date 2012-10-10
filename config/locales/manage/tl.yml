@@ -23,7 +23,7 @@ tl:
           instruction1: Upang maisagawa kailangan mo munang lumagda sa iyong tagapagbigay ng nasasakupan.  Iyan ang sityo kung saan mo binili ang nasasakupan mo katulad ng %{subdomain}.com.
           instruction2: Doon ay kailangan mong pumunta sa bahagi ng DNS at lumikha ng bagay na tinatawag na isang CNAME.
           instruction3: Piliin ang 'www' o ibang anumang bagay bilang pangalan ng iyong CNAME.
-          instruction4: "Pagkaraan ay ilagay ang pangkasalukuyan mong nasasakupan sa Ace sa loob ng kahanayan ng tagapagpasinaya o kapupuntahan: %{domain}."
+          instruction4: "Pagkaraan ay ilagay ang pangkasalukuyan mong nasasakupan sa Qna sa loob ng kahanayan ng tagapagpasinaya o kapupuntahan: %{domain}."
           instruction5: Kapag nagawa na ito, pagkalipas ng isang oras o mahigit pa, ang nasasakupan mong www.%{subdomain} ay dapat na tumuro sa %{appdomain}.
           instruction6: Kung ganito ang pangyayari, bumalik rito at ilagay ang iyong pangalan ng nasasakupan na www.%{subdomain} sa loob ng kahanayang nasa ibaba at pindutin ang pindutang 'isapanahon'.  Kung may mga katanungan ka, tanungin kami sa loob ng %{chat_url} o sa aming poro ng pagtangkilik.
           title: Itakda ang nasasakupan mo
