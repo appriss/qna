@@ -1,4 +1,4 @@
-ENV["ACE_NO_CHECK_CONFIG"] = "1"
+ENV["QNA_NO_CHECK_CONFIG"] = "1"
 
 Dir.chdir(File.dirname(__FILE__)) do
   require 'bundler/setup'
@@ -61,7 +61,7 @@ Dir.chdir(Rails.root.to_s) do
     ::File.basename(model_path, ".rb").classify.constantize
   end
 
-  if ENV["ACE_LOAD_ROUTES"]
+  if ENV["QNA_LOAD_ROUTES"]
     puts ">> Loading routes..."
     Devise.warden_config = Warden::Config.new
     Rails.application.routes_reloader.paths << Rails.root+"config/routes.rb"

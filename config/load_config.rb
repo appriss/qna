@@ -17,7 +17,7 @@ end
 AppConfig = OpenStruct.new(options[Rails.env])
 
 # check config
-unless ENV["ACE_NO_CHECK_CONFIG"]
+unless ENV["QNA_NO_CHECK_CONFIG"]
   begin
     known_options = YAML.load_file(Rails.root+"config/ace.yml.sample")[Rails.env]
     if known_options
