@@ -1,4 +1,4 @@
-module Ace
+module Qna
   module Scripting
     class Application < Rails::Application
       require './config/load_config'

@@ -27,7 +27,7 @@ module QuestionsHelper
         end
       when :identica
         url = "http://identi.ca/notice/new?status_textarea=#{microblogging_message(question)}"
-      when :ace
+      when :qna
         if question
           message = (question.title)+"&question[tags]=#{current_group.name},share&question[body]=#{h(question.body)}%20|%20[More...](#{h(question_path(question, :only_path =>false))})"
         else

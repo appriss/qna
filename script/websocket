@@ -10,7 +10,7 @@ require 'magent'
 require 'magent/web_socket_server'
 require 'fixed_array'
 
-module Ace
+module Qna
   class WebSocketServer < Magent::WebSocketServer
     def setup
       @chat_messages = Hash.new

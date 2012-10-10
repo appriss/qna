@@ -1,4 +1,4 @@
-module Ace
+module Qna
   module Controllers
     module Locale
       def self.included(base)

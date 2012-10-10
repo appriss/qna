@@ -16,7 +16,7 @@ end
 require 'yaml'
 YAML::ENGINE.yamler= 'syck'
 
-module Ace
+module Qna
   class Application < Rails::Application
     require File.expand_path('../load_config', __FILE__)
 

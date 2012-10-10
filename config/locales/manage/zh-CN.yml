@@ -39,7 +39,7 @@ zh-CN:
           add_tags: 为你的 tweets 添加标记
           application_id: 应用程序 ID
           asking_from_twitter: 从 Twitter 问的问题
-          ends_with_example: 例如：#ace
+          ends_with_example: 例如：#qna
           facebook_app: Facebook 应用设置
           question_asked_to: 问到的问题
           question_must_include: 问题一定要包含以下标记才能通过tweet发布。

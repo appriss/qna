@@ -1,4 +1,4 @@
-module Ace
+module Qna
   module Models
     module Trackable
       extend ActiveSupport::Concern

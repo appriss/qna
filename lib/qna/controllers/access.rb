@@ -1,4 +1,4 @@
-module Ace
+module Qna
   module Controllers
     module Access
       def self.included(base)

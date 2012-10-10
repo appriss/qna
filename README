@@ -57,7 +57,7 @@ add the following text to /etc/aliases
     qna: "|/usr/local/rvm/bin/rvm 1.9.2 exec PATH/to/qna/script/handle_email"
 
 in /etc/postfix/main.cf
-    default_privs = ace
+    default_privs = qna
 
 then type
     sudo newaliases

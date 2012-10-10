@@ -1,4 +1,4 @@
-module Ace
+module Qna
 module Models
   module GeoCommon
     extend ActiveSupport::Concern

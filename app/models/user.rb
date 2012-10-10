@@ -811,7 +811,7 @@ Time.zone.now ? 1 : 0)
       limit(limit)
   end
 
-  # returns user's friends on other social networks that already have an account on ace
+  # returns user's friends on other social networks that already have an account on qna
   def social_external_friends
     array_hash = []
     provider_ids = []

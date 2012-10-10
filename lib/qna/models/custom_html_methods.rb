@@ -1,4 +1,4 @@
-module Ace
+module Qna
 module Models
   module CustomHtmlMethods
     def question_prompt

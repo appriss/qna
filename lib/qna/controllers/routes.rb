@@ -1,4 +1,4 @@
-module Ace
+module Qna
   module Controllers
     module Routes
       def self.included(base)
