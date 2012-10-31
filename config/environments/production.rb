@@ -1,66 +1,51 @@
+# -*- coding: utf-8 -*-
 Qna::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
-  # The production environment is meant for finished, "live" apps.
-  # Code is not reloaded between requests
+  # In the development environment your application's code is reloaded on every request.  This slows
+  # down response time but is perfect for development since you don't have to restart the webserver
+  # when you make code changes.
   config.cache_classes = true
 
-  # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = ENV["debug_assets"] ? false : true
+  # Log error messages when you accidentally call methods on nil.
+  config.whiny_nils = true
 
-  # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = "X-Sendfile"
+  # Show full error reports and disable caching
+  config.consider_all_requests_local       = true
+  config.action_controller.perform_caching = true
 
-  # For nginx:
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = false
 
-  # If you have no front-end server that supports something like X-Sendfile,
-  # just comment this out and Rails will serve the files
+  config.active_support.deprecation = :log
 
-  # See everything in the log (default is :info)
-  # config.log_level = :debug
+  # Only use best-standards-support built into browsers
+  config.action_dispatch.best_standards_support = :builtin
 
-  # Use a different logger for distributed setups
-  # config.logger = SyslogLogger.new
+  # Compress assets.  For CSS, take out whitespace, comments, etc.  For JS, use a compressor (yui).
+  config.assets.compress = false
 
-  # Use a different cache store in production
-  # config.cache_store = :mem_cache_store
-  config.cache_store = :mongo_store, 'mongo_store_cache', {:expires_in => 2.hours, :db => 'qna-cache'}
-  #config.cache_store = [:file_store, "#{Rails.root}/tmp/cache"]
+  # Configures Rails to serve static assets. Defaults to true, but in the production environment is
+  # turned off as the server software (e.g. Nginx or Apache) used to run the application should
+  # serve static assets instead. Unlike the default setting set this to true when running
+  # (absolutely not recommended!) or testing your app in production mode using WEBrick. Otherwise
+  # you won´t be able use page caching and requests for files that exist regularly under the public
+  # directory will anyway hit your Rails app.
+  # config.serve_static_assets = false
 
-  # Disable Rails's static asset server
-  # In production, Apache or nginx will already do this
-  config.serve_static_assets = ENV["serve_assets"] ? true : false
-
-  # Enable serving of images, stylesheets, and javascripts from an asset server
-  config.action_controller.asset_host = AppConfig.site
-
-  # Compress JavaScripts and CSS
-  config.assets.compress = true
-
-  # Don't fallback to assets pipeline if a precompiled asset is missed
+  # Live Compilation of assets.  In this mode all requests for assets in the pipeline are handled by
+  # Sprockets directly.  On the first request the assets are compiled and cached as outlined in
+  # development above, and the manifest names used in the helpers are altered to include the MD5
+  # hash.  This mode uses more memory, performs more poorly than the default and is not recommended.
   config.assets.compile = true
 
-  # Generate digests for assets URLs
+  # Append the file's md5 digest to the end of asset filenames.
   config.assets.digest = true
 
-
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
-
-  # Enable threaded mode
-  # config.threadsafe!
-
-  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
-  # the I18n.default_locale when a translation can not be found)
-  config.i18n.fallbacks = true
+  # config.assets.debug Default 'true' for all environments but production If true, make sure that
+  # 'require' directives in application.js and application.css are expanded to individual <script>
+  # and <link> tags.  If false, all 'require's are combined into a single file.
+  config.assets.debug = false
 
   config.force_ssl = true
-end
-
-class Goalie::CustomErrorPages
-  def local_request?(*args)
-    false
-  end
 end
