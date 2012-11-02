@@ -146,6 +146,9 @@
             this.ec("removeFormat", false, []);
             this.unlink();
         },
+        addCodeBlock: function() {
+			this.formatBlock("pre");
+        },
         link: function() {
             if ($.browser.msie) {
                 this.ec("createLink", true);
@@ -160,7 +163,7 @@
         subscript: function() { this.ec("subscript"); },
 
         p: function() {
-            this.formatBlock("<p>");
+            this.formatBlock("p");
         },
         h1: function() {
             this.heading(1);
@@ -229,7 +232,7 @@
         },
 
         formatBlock: function(v) {
-            this.ec("formatblock", false, v || null);
+            this.ec("formatBlock", false, v || null);
         },
 
         showHTMLView: function() {

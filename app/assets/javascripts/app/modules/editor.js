@@ -33,7 +33,14 @@ var Editor = {
 
     editor.htmlarea({
       toolbar: [
-        ["html"], ["bold", "italic", "underline", "strikethrough", "|", "subscript", "superscript"],
+        ["html"], ["bold", "italic", "underline", "strikethrough", 
+			{
+				css: "addcodeblock",
+				text: "Code",
+				action: function(btn) {
+				    this.addCodeBlock();
+			    }
+			}, "|", "subscript", "superscript"],
         ["increasefontsize", "decreasefontsize"],
         ["orderedlist", "unorderedlist"],
         ["indent", "outdent"],
@@ -42,12 +49,12 @@ var Editor = {
         ["p", "h1", "h2", "h3", "h4", "h5", "h6"],
         ["cut", "copy", "paste"],
         [{
-            css: "removeformat",
-            text: "Remove Format",
-            action: function(btn) {
-              this.removeFormat();
-            }
-        }]
+			css: "removeformat",
+			text: "Remove Format",
+			action: function(btn) {
+			    this.removeFormat();
+			}
+		}]
       ]
     });
   },
