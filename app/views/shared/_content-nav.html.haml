@@ -1,10 +1,10 @@
 %nav
   .nav-main
     .content-tabs
-      = pjax_link_to t('layouts.application.questions'), "index", url_for(questions_link), :class => "questions-link" + (params[:controller].split("/").first == "questions" && params[:action] != "new" ? " youarehere" : "")
-      = link_to t('layouts.application.badges'), badges_path, :class => "pjax badges-link" + (params[:controller].split("/").first == "badges" ? " youarehere" : ""), :"data-layout" => "badges", :rel => 'nofollow'
+      = link_to t('layouts.application.questions'), url_for(questions_link), :class => "questions-link" + (params[:controller].split("/").first == "questions" && params[:action] != "new" ? " youarehere" : "")
+      = link_to t('layouts.application.badges'), badges_path, :class => "badges-link" + (params[:controller].split("/").first == "badges" ? " youarehere" : ""), :"data-layout" => "badges", :rel => 'nofollow'
       = link_to t('layouts.application.users'), users_path, :class => "users-link" + (params[:controller].split("/").first == "users" ? " youarehere" : "")
-      = link_to t('layouts.application.tags'), tags_path, :class => "pjax tags-link" + (params[:controller].split("/").first == "tags" ? " youarehere" : ""), :"data-layout" => "tags"
+      = link_to t('layouts.application.tags'), tags_path, :class => "tags-link" + (params[:controller].split("/").first == "tags" ? " youarehere" : ""), :"data-layout" => "tags"
       =# pjax_link_to t('activerecord.models.activity'), "index", activities_path('context' => (params[:context]||params[:action])), :rel => 'nofollow', :class => "activity-link" + (params[:controller].split("/").first == "activities" ? " youarehere" : "")
   .nav-askquestion
     = link_to "Ask Question", new_question_path, :class => "askquestion" + (params[:controller].split("/").first == "questions" && params[:action] == "new"? " youarehere" : "")

@@ -23,9 +23,9 @@
     .summary.clearfix
       .title
         - if question.wiki
-          = pjax_link_to t('.wiki_title', :title => title), "question", question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
+          = link_to t('.wiki_title', :title => title), question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
         - else
-          = pjax_link_to title, "question", question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
+          = link_to title, question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
       .tags
         - question.tags.each do |tag_name|
           %a.post-tag{:href => tag_path(:id => CGI.escape(tag_name))}= tag_name
@@ -39,7 +39,7 @@
 - else
   %article{:class => "#{class_for_question(question)} #{local_assigns[:lite] ? 'lite' : ''}"}
     %h3
-      = pjax_link_to title, "question", question_path(question)
+      = link_to title, question_path(question)
 
     .toolbar
       %ul
