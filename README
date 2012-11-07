@@ -49,7 +49,7 @@ sudo gem install bundler
 
 7. When running qna in production, you need to run:
 
-    jammit
+    bundle exec rake assets:precompile
 
 == Postfix config
 
