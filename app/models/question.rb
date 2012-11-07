@@ -117,10 +117,11 @@ class Question
 
   validates_length_of       :title,    :in => 5..100, :wrong_length => lambda { I18n.t("questions.model.messages.title_too_long") }
   validates_length_of       :body,     :minimum => 5, :allow_blank => true #, :if => lambda { |q| !q.disable_limits? }
+  validates_length_of       :tags,     :minimum => 1, :allow_blank => false, :on => :create #, :if => lambda { |q| !q.disable_limits? }
 
-#  FIXME mongoid (create a validator for tags size)
-#   validates_true_for :tags, :logic => lambda { |q| q.tags.size <= 9},
-#                      :message => lambda { |q| I18n.t("questions.model.messages.too_many_tags") if q.tags.size > 9 }
+  validates_each :tags, do |record, attr, value|
+    record.errors.add(attr, "must specify at least one tag.") if value.empty?
+  end
 
   versionable_keys :title, :body, :tags, :owner_field => "updated_by_id"
   filterable_keys :title, :body
