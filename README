@@ -35,19 +35,27 @@ sudo gem install bundler
 
     bundle install
 
-4. Load default data
+4. Make sure MongoDB is running
+
+5. Load default data
 
     rake bootstrap RAILS_ENV=development
 
-5. Add default subdomain to /etc/hosts, for example:
+6. Add default subdomain to /etc/hosts, for example:
 
     "0.0.0.0 localhost.lan group1.localhost.lan group2.localhost.lan"
 
-6. Start the server
+7. Start the server
 
     rails server -e development
 
-7. When running qna in production, you need to run:
+8. Start support services
+
+    bundle exec rackup xapit.ru     # Full Text Search engine http interface
+    bundle exec script/websocket    # Websocket: communicate with client-side javascript
+    bundle exec rake magent:start   # Execute background jobs stored in mongodb
+
+9. When running qna in production, you need to run:
 
     bundle exec rake assets:precompile
 
