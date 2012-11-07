@@ -17,6 +17,7 @@ db/xapit/
 base_packaged.*
 .directory
 .bundle
+log
 log/*.log
 tmp/**/*
 vendor/cache/*.gem
