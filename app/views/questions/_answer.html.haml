@@ -1,9 +1,10 @@
 
 -solution = question.accepted && question.answer_id == answer.id
 -source = question_path(question)
+-can_accept = question.user == current_user ? "can-accept" : ""
 
 -cache_for(:answers, question.id, answer.id, answer.user == current_user ? "owner" : "") do
-  %article.answer{:class => " #{answer.id} #{solution && "solution"}", :item_scope => '', :itemtype => "http://schema.org/Article", :vote_url => question_answer_votes_path(answer.question, answer)}
+  %article.answer{:class => " #{answer.id} #{solution ? "solution" : ""} #{can_accept}", :item_scope => '', :itemtype => "http://schema.org/Article", :vote_url => question_answer_votes_path(answer.question, answer)}
     %a{:name => "answer#{answer.id}"}
 
     %table.answer-wrapper-table
@@ -17,7 +18,11 @@
                 %a.vote-up{:class => vote_up_toggle}(title="This question shows research effort; it is useful and clear (click again to undo)") up vote
                 %span.vote-count-post= answer.votes_average
                 %a.vote-down{:class => vote_down_toggle}(title="This answer does not show any research effort; it is unclear or not useful (click again to undo)") down vote
-                %span.vote-accepted-on(title="The question owner accepted this as the best answer") accepted
+                - if (question.user == current_user && !solution)
+                  %a{:href => solve_question_path(question.id, :answer_id => answer.id)}
+                    %span.vote-accepted-on(title="This is the best answer") accepted
+                - else
+                  %span.vote-accepted-on(title="This is the best answer") accepted
           %td.postcell
             %div
               .post-text.markdown.description= find_and_preserve(qna_auto_link(markdown(answer.body), :link_users => true))
