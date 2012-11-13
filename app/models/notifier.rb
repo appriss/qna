@@ -7,12 +7,12 @@ class Notifier < ActionMailer::Base
     @language = language_for(user)
     set_locale @language
     if following
-      subject I18n.t("friend_subject",
+      @subject = I18n.t("friend_subject",
                      :scope => scope,
                      :question_title => question.title,
                      :locale => @language)
     else
-      subject I18n.t("subject",
+      @subject = I18n.t("subject",
                      :scope => scope,
                      :question_title => question.title,
                      :locale => @language)

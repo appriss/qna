@@ -5,21 +5,25 @@ module Jobs
     def self.on_ask_question(question_id)
       question = Question.find!(question_id)
       group = question.group
-      users = User.find_experts(question.tags, [question.language],
-                                                :except => [question.user.id],
-                                                :group_id => group.id)
+
+      
+
+      tag_followers = Membership.where(
+                                 :group_id => group.id,
+                                 "$or" => question.tags.map { |tag| {:preferred_tags => "#{tag}"} }
+                                 ).map {|member| member.user}
+
+      ### The original author apparently had an idea for guessing if a user is an expert for a given
+      ### set of tags.  This is hairy, at best.  Commenting this out completely.
+      #users = User.find_experts(question.tags, [question.language],
+      #                                          :except => [question.user.id],
+      #                                          :group_id => group.id)
 
       followers = question.user.followers(:group_id => group.id, :languages.in => [question.language])
 
-      (users.to_a - followers.to_a).each do |u|
+      (tag_followers.to_a | followers.to_a).each do |u|
         if !u.email.blank?
-#           Notifier.give_advice(u, group, question, false).deliver
-        end
-      end
-
-      followers.each do |u|
-        if !u.email.blank?
-#           Notifier.give_advice(u, group, question, true).deliver
+          Notifier.give_advice(u, group, question, false).deliver
         end
       end
     end

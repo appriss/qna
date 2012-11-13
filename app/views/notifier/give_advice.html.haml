@@ -1,18 +1,14 @@
-==%% #{t("notifier.give_advice.reply_instructions", :default => "REPLY BEFORE THIS LINE TO ANSWER THE QUESTION")} %%
-%p
-  = t("notifier.global.hi", :user => h(@user.login))
-  %br
-  = t("notifier.give_advice.message1", :user => h(@question.user.login))
-  %br
-  == "#{h(@question.title)}"
-  %br
-  = t("notifier.give_advice.message2")
-  = raw link_to url_for(:host => @domain, :controller => "questions", :action => "show", :id => @question.slug), url_for(:host => @domain, :controller => "questions", :action => "show", :id => @question.slug)
-  %br
+%h3 Greetings from QNA!
 
-  = t("notifier.give_advice.message3")
-  =  url_for(:host => @domain, :controller => "questions", :action => "show", :id => @question.slug)
-  %br
-  = t("notifier.give_advice.message4")
-  %br
+%p 
+  User 
+  %b #{@question.user.login}
+  just asked a new question:
+  
+%p
+  %i= raw link_to @question.title, url_for(:host => @domain, :controller => "questions", :action => "show", :id => @question.slug)
+
+%p
+  You asked to be notified about new questions from this user or new questions tagged with "#{@question.tags.join('" or "')}"
+
 == - #{h(@group.name)}
