@@ -1,7 +1,7 @@
 %nav
   .nav-main
     .content-tabs
-      %img(src="/images/logo.png" height="60px" style="margin: 0px 10px 10px 0px;")
+      = image_tag("/images/logo.png", :height => "60px", :style => "margin: 0px 10px 10px 0px; cursor: pointer;", :onclick => "window.location.href='#{url_for(questions_link)}';")
       = link_to t('layouts.application.questions'), url_for(questions_link), :class => "questions-link" + (params[:controller].split("/").first == "questions" && params[:action] != "new" ? " youarehere" : "")
       = link_to t('layouts.application.badges'), badges_path, :class => "badges-link" + (params[:controller].split("/").first == "badges" ? " youarehere" : ""), :"data-layout" => "badges", :rel => 'nofollow'
       = link_to t('layouts.application.users'), users_path, :class => "users-link" + (params[:controller].split("/").first == "users" ? " youarehere" : "")
