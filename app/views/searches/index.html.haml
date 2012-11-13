@@ -1,7 +1,7 @@
 .top
   %h1
-    -unless @questions.blank?
-      = t('.found_results', :quantity => @questions.total_count)
+    -unless @results.blank?
+      = t('.found_results', :quantity => @results.total_count)
     -else
       %font(style="color: #BB0000;")= t('.found_results', :quantity => 0)
   -#%p.description
@@ -11,13 +11,16 @@
 .advanced-form.clearfix
   = render :partial => "form"
 
--if @questions.blank? && params[:q]
+-if @results.blank? && params[:q]
   .box.highlight(style="font-weight: bold; margin: 20px 0px 20px 20px")= t(".empty")
 -else
-  -@questions.each do |question|
-    = render :partial => "searches/question", :object => question, :locals => {:query_regexp => @query_regexp}
+  -@results.each do |result|
+    - if result.is_a?(Question)
+      = render :partial => "searches/question", :object => result, :locals => {:query_regexp => @query_regexp}
+    - if result.is_a?(Answer)
+      = render :partial => "answers/answer", :object => result, :locals => {:query_regexp => @query_regexp}
 
-= paginate @questions unless @questions.blank?
+= paginate @results unless @results.blank?
 
 -#if !params[:q].blank?
   .save-search

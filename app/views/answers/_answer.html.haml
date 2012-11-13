@@ -1,10 +1,33 @@
--title = answer.question.title
+- title = answer.question.title
+- last_target_date = answer.updated_at
+- owner = answer.user
 
-%article.clearfix{:class => "answer #{answer.id}"}
-  %h2
-    = link_to truncate(strip_tags(answer.body), :length => 200), question_path(answer.question, :anchor => "answer#{answer.id}"), :title => title
-  %p
-    = link_to answer.question.title, question_path(answer.question), :title => answer.question.body
+:css
+  strong.highlight { font-weight: inherit; background-color: #EEFF6F; }
 
-  =format_number(answer.votes_average)
-  =t(:votes, :scope => "activerecord.attributes.question")
+%article.search.clearfix.Question.answer{:class => (answer.question.accepted && answer.question.answer_id == answer.id) ? "solution" : ""}
+  .stats
+    %a{:href => question_path(answer.question)}
+      .top
+        .votes
+          .mini-counts= answer.votes_average
+          .text votes
+        -#.status{:class => [question.answers_count==0 ? "unanswered" : "", question.accepted ? "accepted" : ""]}
+          .mini-counts= question.answers_count
+          .text answers
+      %span.views #{answer.question.views_count} views
+      %center
+        %span.vote-accepted-on(title="The question owner accepted this as the best answer") accepted
+  .summary.clearfix
+    .title
+      %span(style="font-weight: bold;") Answer: 
+      = link_to highlight(title, @highlight), question_path(answer.question), :title => truncate(strip_tags(answer.body), :length => 200)
+    .markdown(style="color: black; line-height: 0.3;")
+      = highlight(markdown(truncate(answer.body, :length => 750)), @highlight)
+    .tags
+      - answer.question.tags.each do |tag_name|
+        %a.post-tag{:href => tag_path(:id => CGI.escape(tag_name))}= tag_name
+    .started
+      %span.relativetime #{time_ago_in_words(last_target_date)} ago
+      %a.author{:href => user_path(owner)}= owner.login
+      %span.reputation-score(title="#{owner.login}'s reputation: #{format_number(owner.reputation_on(current_group))}")= format_number(owner.reputation_on(current_group))

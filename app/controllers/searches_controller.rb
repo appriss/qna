@@ -33,21 +33,21 @@ class SearchesController < ApplicationController
         # FIXME:filter is blocking mongodb
         # @questions = Question.(@search_text, options)
 
-        @questions = Question.search(@search_text).where(options).page(params["page"])
+        @results = Xapit.search(@search_text).where(options).page(params["page"])
 
         # @questions = Question.filter(@search_text, options)
-        # @highlight = @questions.parsed_query[:tokens].to_a
+        @highlight = @search_text.split
         # @questions = Question.where(options).page(params["page"])
-        @highlight = ""
+        # @highlight = ""
       else
         if !@search_tags.empty?
-          @questions = Question.where(options.merge({:tags=>{:$all =>@search_tags}})).page(params["page"])
+          @results = Question.where(options.merge({:tags=>{:$all =>@search_tags}})).page(params["page"])
         else
-          @questions = Question.where(options).page(params["page"])
+          @results = Question.where(options).page(params["page"])
         end
       end
     else
-      @questions = []
+      @results = []
     end
 
     respond_to do |format|
