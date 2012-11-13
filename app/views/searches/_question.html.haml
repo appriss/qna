@@ -37,7 +37,7 @@
   .summary.clearfix
     .title
       = link_to highlight(title, @highlight), question_path(question), :title => truncate(strip_tags(question.title), :length => 200)
-    .markdown(style="color: black; line-height: 0.3")
+    .markdown(style="color: black; line-height: 1")
       = highlight(find_and_preserve(qna_auto_link(markdown(question.body.present? ? question.body : question.title))), @highlight)
     .tags
       - question.tags.each do |tag_name|

@@ -22,7 +22,7 @@
     .title
       %span(style="font-weight: bold;") Answer: 
       = link_to highlight(title, @highlight), question_path(answer.question), :title => truncate(strip_tags(answer.body), :length => 200)
-    .markdown(style="color: black; line-height: 0.3;")
+    .markdown(style="color: black; line-height: 1;")
       = highlight(markdown(truncate(answer.body, :length => 750)), @highlight)
     .tags
       - answer.question.tags.each do |tag_name|
