@@ -284,10 +284,12 @@ class QuestionsController < ApplicationController
       end
     end
 
+    @question.errors.add(:tags, "Need to specify at least one tag") if @question.tags == [""]
+
     return login_required if !@question.user
 
     respond_to do |format|
-      if (logged_in? ||  (@question.user.valid? && recaptcha_valid?)) && @question.save
+      if (logged_in? || (@question.user.valid? && recaptcha_valid?)) && @question.errors.empty? && @question.save
         @question.add_contributor(@question.user)
 
         sweep_question_views
