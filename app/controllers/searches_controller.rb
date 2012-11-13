@@ -36,9 +36,9 @@ class SearchesController < ApplicationController
         @results = Xapit.search(@search_text).where(options).page(params["page"])
 
         # @questions = Question.filter(@search_text, options)
-        # @highlight = @questions.parsed_query[:tokens].to_a
+        @highlight = @search_text.split
         # @questions = Question.where(options).page(params["page"])
-        @highlight = ""
+        # @highlight = ""
       else
         if !@search_tags.empty?
           @results = Question.where(options.merge({:tags=>{:$all =>@search_tags}})).page(params["page"])

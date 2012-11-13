@@ -18,7 +18,7 @@
     - if result.is_a?(Question)
       = render :partial => "searches/question", :object => result, :locals => {:query_regexp => @query_regexp}
     - if result.is_a?(Answer)
-      = render :partial => "searches/question", :object => result.question, :locals => {:query_regexp => @query_regexp}
+      = render :partial => "answers/answer", :object => result, :locals => {:query_regexp => @query_regexp}
 
 = paginate @results unless @results.blank?
 

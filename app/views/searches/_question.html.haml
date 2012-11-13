@@ -20,6 +20,9 @@
   - last_target_date = question.updated_at
   - owner = question.user unless question.anonymous
 
+:css
+  strong.highlight { font-weight: inherit; background-color: #EEFF6F; }
+
 %article.search.cleafix{:class => class_for_question(question)}
   .stats
     %a{:href => question_path(question)}
@@ -33,9 +36,9 @@
       %span.views #{question.views_count} views
   .summary.clearfix
     .title
-      = link_to highlight(title, @highlight), question_path(question), :title => truncate(strip_tags(question.body), :length => 200)
-    .markdown
-      = highlight(markdown(truncate(question.body, :length => 300)), @highlight)
+      = link_to highlight(title, @highlight), question_path(question), :title => truncate(strip_tags(question.title), :length => 200)
+    .markdown(style="color: black; line-height: 0.3")
+      = highlight(find_and_preserve(qna_auto_link(markdown(question.body.present? ? question.body : question.title))), @highlight)
     .tags
       - question.tags.each do |tag_name|
         %a.post-tag{:href => tag_path(:id => CGI.escape(tag_name))}= tag_name
