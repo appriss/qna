@@ -19,7 +19,7 @@ module Jobs
       end
 
       if !old_tags.blank?
-        Tag.collection.update({ :name => {:$in => new_tags-old_tags}, :group_id => question.group_id },
+        Tag.collection.update({ :name => {:$in => old_tags-new_tags}, :group_id => question.group_id },
                               { :$inc => {:count => -1}})
       end
     end

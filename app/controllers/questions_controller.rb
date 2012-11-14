@@ -352,6 +352,9 @@ class QuestionsController < ApplicationController
       if !params[:tag_input].blank? && params[:question][:tags].blank?
         params[:question][:tags] = params[:tag_input]
       end
+
+      old_tags = @question.tags
+
       @question.safe_update(%w[title body language tags wiki adult_content version_message attachments], params[:question])
 
       @question.updated_by = current_user
@@ -366,7 +369,7 @@ class QuestionsController < ApplicationController
         sweep_question(@question)
 
         if tags_changes
-          Jobs::Tags.async.question_retagged(@question.id, tags_changes.last, tags_changes.first, Time.now).commit!
+          Jobs::Tags.async.question_retagged(@question.id, @question.tags, old_tags, Time.now).commit!
         end
 
         Magent::WebSocketChannel.push({id: "updatequestion",
@@ -397,6 +400,7 @@ class QuestionsController < ApplicationController
     if @question.user_id == current_user.id
       @question.user.update_reputation(:delete_question, current_group)
     end
+    Jobs::Tags.question_retagged(@question.id, [], @question.tags, Time.now)
     sweep_question(@question)
     @question.answers.each do |answer|
       sweep_answer(answer)

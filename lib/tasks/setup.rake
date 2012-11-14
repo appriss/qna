@@ -206,7 +206,7 @@ namespace :setup do
     Tag.all.each do |tag|
       count = tag.group.questions.where(:tags.in => [tag.name], :banned => false).count
       p "#{tag.name}: #{count}"
-      if tag.count != tag
+      if tag.count != count
         tag.override(count: count)
       end
     end
