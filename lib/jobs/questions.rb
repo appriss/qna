@@ -59,11 +59,11 @@ module Jobs
 
       views = question.views_count
       opts = {:source_id => question.id, :source_type => "Question", :unique => true}
-      if views >= 10000
+      if views >= 300
         create_badge(user, group, {:token => "famous_question", :source => question}, opts)
-      elsif views >= 2500
+      elsif views >= 200
         create_badge(user, group, {:token => "notable_question", :source => question}, opts)
-      elsif views >= 1000
+      elsif views >= 100
         create_badge(user, group, {:token => "popular_question", :source => question}, opts)
       end
     end

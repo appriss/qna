@@ -122,15 +122,15 @@ module Jobs
         create_badge(vuser, group, :token => "merit_medal", :source => voteable, :unique => true)
       end
 
-      if vote_value >= 300
+      if vote_value >= 100
         create_badge(vuser,  group, :token => "service_medal", :source => voteable, :unique => true)
       end
 
-      if vote_value >= 500 && vuser.config_for(group).votes_down <= 10
+      if vote_value >= 250 && vuser.config_for(group).votes_down <= 10
         create_badge(vuser, group, :token => "popstar", :source => voteable, :unique => true)
       end
 
-      if vote_value >= 1000 && vuser.config_for(group).votes_down <= 10
+      if vote_value >= 500 && vuser.config_for(group).votes_down <= 20
         create_badge(vuser, group, :token => "rockstar",  :source => voteable, :unique => true)
       end
     end
