@@ -5,9 +5,7 @@
 
 .tags-list
 
-  %h1
-    = t('layouts.application.tags')
-  .tags
+  .tags(style="float: none;")
     -@tags.each do |tag|
       .each
         = render "tag", :tag => tag, :show_counter => true
@@ -17,10 +15,6 @@
           = tag.description
 
   %section
-    -if @questions.empty?
-      %article.question
-        %li.highlight
-        = t(".empty")
     -@questions.each do |question|
       = render "questions/question", :question => question
 
