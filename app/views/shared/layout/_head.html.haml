@@ -10,6 +10,8 @@
 = raw(current_group.head_tag)
 = render "shared/layout/meta"
 
+= yield :rss
+
 -if @feed_urls && !@feed_urls.empty?
   -@feed_urls.each do |title, url|
     %link{:rel=>"alternate", :type=>"application/atom+xml", :title => title, :href=> url}
