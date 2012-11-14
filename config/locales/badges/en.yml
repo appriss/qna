@@ -25,40 +25,40 @@ en:
     shared:
       rockstar:
         name: Rockstar
-        description: Has 1,000 positive votes, 10 negative votes maximum
+        description: Has 500 positive votes, 20 negative votes maximum
       popstar:
         name: Popstar
-        description: Has 500 positive votes, 10 negative votes maximum
+        description: Has 250 positive votes, 10 negative votes maximum
       fanatic:
         name: Fanatic
         description: Visited the site each day for 100 consecutive days
       service_medal:
         name: Service medal
-        description: Has 300 positive votes
+        description: Has 100 positive votes
       famous_question:
         name: Famous question
-        description: Asked a question with 10,000 views
+        description: Asked a question with 300 views
       notable_question:
         name: Notable question
-        description: Asked a question with 2,500 views
+        description: Asked a question with 200 views
       popular_question:
         name: Popular question
-        description: Asked a question with 1,000 views
+        description: Asked a question with 100 views
       popular_person:
         name: Popular person
-        description: Has a profile that was visited 10,000 times
+        description: Has a profile that was visited 100 times
       guru:
         name: Guru
         description: Gave a solution to a question with an average of more than 40 votes
       favorite_answer:
         name: Favorite answer
-        description: Has an answer favorited by 25 users
+        description: Has an answer favorited by 15 users
       stellar_answer:
         name: Stellar answer
-        description: Has an answer favorited by 100 users
+        description: Has an answer favorited by 30 users
       favorite_question:
         name: Favorite question
-        description: Asked a question followed by 25 users
+        description: Asked a question followed by 15 users
       tutor:
         name: Tutor
         description: Gave a solution to a question with an average of more than 2 votes
@@ -67,10 +67,10 @@ en:
         description: Visited the site each day for 20 consecutive days
       good_question:
         name: Good question
-        description: Asked a question that reached an average of more than 25 votes
+        description: Asked a question that reached an average of more than 10 votes
       good_answer:
         name: Good answer
-        description: Gave an answer that reached an average of more than 25 votes
+        description: Gave an answer that reached an average of more than 10 votes
       pioneer:
         name: Pioneer
         description: Was one of the first users to register
@@ -88,13 +88,13 @@ en:
         description: Answered for the first time
       commentator:
         name: Commentator
-        description: Left 10 comments
+        description: Left 20 comments
       merit_medal:
         name: Merit medal
-        description: Got 200 positive votes
+        description: Got 50 positive votes
       effort_medal:
         name: Effort medal
-        description: Got 100 positive votes
+        description: Got 25 positive votes
       student:
         name: Student
         description: Asked a question with at least one up vote
@@ -108,19 +108,19 @@ en:
         description: Started following someone for the first time
       interesting_person:
         name: Interesting person
-        description: Got more than 10 followers
+        description: Got more than 5 followers
       popular_person:
         name: Popular person
-        description: Got more than 50 followers
+        description: Got more than 10 followers
       celebrity:
         name: Celebrity
-        description: Got more than 100 followers
+        description: Got more than 30 followers
       necromancer:
         name: Necromancer
         description: Answered a question after more than 60 days later at least 5 votes
       stellar_question:
         name: Stellar question
-        description: Asked a question followed by 100 users
+        description: Asked a question followed by 30 users
       nice_question:
         name: Nice question
         description: Asked a question voted up 10 times
@@ -129,10 +129,10 @@ en:
         description: Has an answer voted up 10 times
       great_question:
         name: Great question
-        description: Asked a question voted up 100 times
+        description: Asked a question voted up 30 times
       great_answer:
         name: Great answer
-        description: Has an answer voted up 100 times
+        description: Has an answer voted up 30 times
       peer_pressure:
         name: Peer pressure
         description: Deleted own post with score of -3 or lower
