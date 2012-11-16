@@ -60,8 +60,10 @@ class VotesController < ApplicationController
     if state != :error
       if @voteable.class == Question
         sweep_question(@voteable)
+        Solr.update(Solr.add_document(@voteable))
       elsif @voteable.class == Answer
         sweep_answer(@voteable)
+        Solr.update(Solr.add_document(@voteable.question))
       end
       Magent::WebSocketChannel.push({id: "vote", object_id: @voteable.id, channel_id: current_group.slug,
                                      value: value, average: average, on: @voteable.class.to_s})

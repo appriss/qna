@@ -22,6 +22,7 @@ class CommentsController < ApplicationController
       current_user.on_activity(:comment_question, current_group)
 
       current_user.membership_selector_for(current_group).first.increment(:comments_count => 1)
+
       link = question_url(@question)
 
       Jobs::Activities.async.on_comment(scope.id, scope.class.to_s, @comment.id, link).commit!
@@ -33,6 +34,12 @@ class CommentsController < ApplicationController
       end
       if question_id = @comment.question_id
         Question.update_last_target(question_id, @comment)
+      end
+
+      if @answer
+        Solr.update(Solr.add_document(@answer.question))
+      else
+        Solr.update(Solr.add_document(@question))
       end
 
       flash[:notice] = t("comments.create.flash_notice")
@@ -96,6 +103,9 @@ class CommentsController < ApplicationController
         if question_id = @comment.question_id
           Question.update_last_target(question_id, @comment)
         end
+
+        Solr.update(Solr.add_document(@question))
+
         html = render_to_string(:partial => "comments/comment",
                                       :object => @comment,
                                       :locals => {
@@ -136,6 +146,8 @@ class CommentsController < ApplicationController
     if @comment.user.member_of? @comment.group
       @comment.user.membership_selector_for(@comment.group).first.decrement(:comments_count => 1)
     end
+
+    Solr.update(Solr.add_document(@question))
 
     respond_to do |format|
       format.html { redirect_to(params[:source]||question_path(:id => @question.slug)) }

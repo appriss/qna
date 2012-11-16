@@ -87,6 +87,8 @@ class Moderate::QuestionsController < ApplicationController
 
     sweep_question(@question)
 
+    Solr.update(Solr.add_document(@question))
+
     respond_to do |format|
       format.html {redirect_to question_path(@question)}
 

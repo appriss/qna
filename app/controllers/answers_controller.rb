@@ -108,6 +108,9 @@ class AnswersController < ApplicationController
     respond_to do |format|
       if (logged_in? || (recaptcha_valid? && @answer.user.valid?)) && @answer.save
         @question.add_contributor(current_user || @answer.user)
+
+        Solr.update(Solr.add_document(@question))
+
         link = question_answer_url(@question, @answer)
 
         Jobs::Activities.async.on_create_answer(@answer.id).commit!
@@ -179,6 +182,9 @@ class AnswersController < ApplicationController
 
         Question.update_last_target(@question.id, @answer)
 
+        Solr.update(Solr.add_document(@question))
+
+
         flash[:notice] = t(:flash_notice, :scope => "answers.update")
 
         Jobs::Activities.async.on_update_answer(@answer.id).commit!
@@ -208,6 +214,8 @@ class AnswersController < ApplicationController
     @answer.destroy
     @question.answer_removed!
     sweep_question(@question)
+
+    Solr.update(Solr.add_document(@question))
 
     respond_to do |format|
       format.html { redirect_to(question_path(@question)) }

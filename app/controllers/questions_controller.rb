@@ -292,6 +292,8 @@ class QuestionsController < ApplicationController
       if (logged_in? || (@question.user.valid? && recaptcha_valid?)) && @question.errors.empty? && @question.save
         @question.add_contributor(@question.user)
 
+        Solr.update(Solr.add_document(@question))
+
         sweep_question_views
         html = nil
         if params[:facebook]
@@ -365,6 +367,7 @@ class QuestionsController < ApplicationController
 
       if @question.save
         @question.add_contributor(current_user)
+        Solr.update(Solr.add_document(@question))
 
         sweep_question(@question)
 
@@ -406,6 +409,7 @@ class QuestionsController < ApplicationController
       sweep_answer(answer)
     end
     @question.destroy
+    Solr.update(Solr.remove_document(@question.id))
 
     Jobs::Questions.async.on_destroy_question(current_user.id, @question.attributes).commit!
     Magent::WebSocketChannel.push({id: "destroyquestion",
@@ -429,6 +433,8 @@ class QuestionsController < ApplicationController
       if !@question.subjetive && @question.save
         sweep_question(@question)
         sweep_answer(@answer)
+
+        Solr.update(Solr.add_document(@question))
 
         current_user.on_activity(:close_question, current_group)
         if current_user != @answer.user
@@ -466,6 +472,9 @@ class QuestionsController < ApplicationController
         @question.answers.each do |answer|
           sweep_answer(answer)
         end
+
+        Solr.update(Solr.add_document(@question))
+
         flash[:notice] = t(:flash_notice, :scope => "questions.unsolve")
         current_user.on_activity(:reopen_question, current_group)
         if current_user != @answer_owner
@@ -497,6 +506,8 @@ class QuestionsController < ApplicationController
 
     sweep_question(@question)
 
+    Solr.update(Solr.add_document(@question))
+
     respond_to do |format|
       format.html {redirect_to question_path(@question)}
       format.mobile { redirect_to question_path(@question, :format => :mobile) }
@@ -515,6 +526,7 @@ class QuestionsController < ApplicationController
     flash[:notice] = t("questions.unwatch.success")
 
     sweep_question(@question)
+    Solr.update(Solr.add_document(@question))
 
     respond_to do |format|
       format.html {redirect_to question_path(@question)}
