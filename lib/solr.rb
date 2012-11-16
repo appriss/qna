@@ -40,6 +40,17 @@ class Solr
     response = http.request(request)
   end
 
+  def Solr.search (query, opts=nil)
+    opts ||= {}
+    opts = {
+      :highlight => true,
+    }.merge(opts)
+    uri = URI.parse("http://127.0.0.1:8983/solr/qna/select?q=#{query}&fl=id&wt=ruby&indent=true&hl=true&hl.fl=title%2C+question%2C+answer%2C+comment&hl.simple.pre=%3Cspan+class%3D%22highlight%22%3E&hl.simple.post=%3C%2Fspan%3E")
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.request(Net::HTTP::Get.new(uri.request_uri))
+    eval(response.body)
+  end
+
   def self.strip_tags (str)
     ActionView::Base.full_sanitizer.sanitize(str)
   end
