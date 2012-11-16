@@ -44,8 +44,10 @@ class Solr
     opts ||= {}
     opts = {
       :highlight => true,
+      :start => 0,
     }.merge(opts)
-    uri = URI.parse("http://127.0.0.1:8983/solr/qna/select?q=#{query}&fl=id&wt=ruby&indent=true&hl=true&hl.fl=title%2C+question%2C+answer%2C+comment&hl.simple.pre=%3Cspan+class%3D%22highlight%22%3E&hl.simple.post=%3C%2Fspan%3E")
+    query = URI::encode(query)
+    uri = URI.parse("http://127.0.0.1:8983/solr/qna/select?q=#{query}&fl=id&wt=ruby&indent=true&hl=true&hl.fl=text&hl.simple.pre=%3Cspan+class%3D%22highlight%22%3E&hl.snippets=3&hl.fragsize=100&hl.mergeContiguous=true&hl.alternateField=text&hl.useFastVectorHighlighter=true&hl.maxAlternateFieldLength=500&hl.simple.post=%3C%2Fspan%3E&start=#{opts[:start]}")
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.request(Net::HTTP::Get.new(uri.request_uri))
     eval(response.body)
