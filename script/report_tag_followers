@@ -12,8 +12,15 @@ Membership.all.each do |member|
   end
 end
 
-max_length = tags.keys.inject(0) { |l, t| [l, t.length].max }
+tag_names = tags.keys
 
-tags.keys.sort.each do |tag|
+max_length = tag_names.inject(0) { |l, t| [l, t.length].max }
+
+tag_names.sort.each do |tag|
   printf "%-#{max_length + 2}s|  %s\n", tag, tags[tag].sort.join(", ")
 end
+
+puts "\n========================================"
+puts "The following tags do not have followers:\n"
+
+puts Tag.all.select {|tag| !tag_names.include?(tag.name) }.sort.join(", ")
