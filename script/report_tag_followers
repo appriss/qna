@@ -22,5 +22,6 @@ end
 
 puts "\n========================================"
 puts "The following tags do not have followers:\n"
+puts
 
-puts Tag.all.select {|tag| !tag_names.include?(tag.name) }.sort.join(", ")
+puts Tag.all.map {|tag| tag.name}.select {|tag| !tag_names.include?(tag) }.sort.join(", ")
