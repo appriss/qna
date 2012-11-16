@@ -21,7 +21,8 @@
   - owner = question.user unless question.anonymous
 
 :css
-  strong.highlight { font-weight: inherit; background-color: #EEFF6F; }
+  span.highlight { font-weight: bold; }
+  span.grey-text { color: #999; }
 
 %article.search.cleafix{:class => class_for_question(question)}
   .stats
@@ -37,9 +38,9 @@
   .summary.clearfix
     .title
       = link_to highlight(title, @highlight), question_path(question), :title => truncate(strip_tags(question.title), :length => 200)
-    .markdown(style="color: black; line-height: 1")
-      = highlight(find_and_preserve(qna_auto_link(question.body.present? ? question.body : question.title)), @highlight)
-    .tags
+    .wee
+      = @highlight_info[question.id]["text"].join(" <span class='grey-text'>...</span> ").html_safe
+    .tags(style="margin-top: 10px;")
       - question.tags.each do |tag_name|
         %a.post-tag{:href => tag_path(:id => CGI.escape(tag_name))}= tag_name
     .started

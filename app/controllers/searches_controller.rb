@@ -8,43 +8,32 @@ class SearchesController < ApplicationController
   def index
     options = {}
     unless params[:q].blank?
-      pharse = params[:q]
-      @search_tags = pharse.scan(/\[(\w+)\]/).flatten
-      @search_text = pharse.gsub(/\[(\w+)\]/, "")
-      options[:tags] = @search_tags unless @search_tags.empty?
+      @search_text = params[:q]
+
       options[:group_id] = current_group.id
-      options[:banned] = false
 
-      if params[:language]
-        pharse += " lang:#{params[:language]}"
-      end
+      @search = Search.new(:query => @search_text)
 
-      if params[:accepted]
-        pharse += " is:accepted"
-      end
-
-      if params[:answered]
-        pharse += " is:answered"
-      end
-
-      @search = Search.new(:query => pharse)
-
-      if !@search_text.blank? #FIXME make tag search work with xapit || !@search_tags.empty?
-        # FIXME:filter is blocking mongodb
-        # @questions = Question.(@search_text, options)
-
-        @results = Xapit.search(@search_text).where(options).page(params["page"])
-
-        # @questions = Question.filter(@search_text, options)
-        @highlight = @search_text.split
-        # @questions = Question.where(options).page(params["page"])
-        # @highlight = ""
-      else
-        if !@search_tags.empty?
-          @results = Question.where(options.merge({:tags=>{:$all =>@search_tags}})).page(params["page"])
+      if !@search_text.blank?
+        @solr_results = Solr.search(@search_text)
+        if @solr_results.key? "error"
+          flash[:error] = "There was a problem with your search: #{@solr_results["error"]["msg"]}"
+          @results = []
+          @total_count = 0
         else
-          @results = Question.where(options).page(params["page"])
+          @results = []
+          @solr_results["response"]["docs"].map {|d| d["id"]}.each do |question_id|
+            @results << Question.find(question_id)
+          end
+          @highlight_info = @solr_results["highlighting"]
+          @total_count = @solr_results["response"]["numFound"]
+          # @questions = Question.filter(@search_text, options)
+          @highlight = @search_text.split
+          # @questions = Question.where(options).page(params["page"])
+          # @highlight = ""
         end
+      else
+        @results = Question.where(options).page(params["page"])
       end
     else
       @results = []
