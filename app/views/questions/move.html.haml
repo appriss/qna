@@ -5,7 +5,7 @@
 
 #move_question
   .markdown{:style => "width: 92%"}
-    = markdown(@question.body)
+    = @question.body
 
   .tag-list
     -@question.tags.each do |tag|

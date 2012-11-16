@@ -25,7 +25,7 @@
                   %span.vote-accepted-on(title="This is the best answer") accepted
           %td.postcell
             %div
-              .post-text.markdown.description= find_and_preserve(qna_auto_link(markdown(answer.body), :link_users => true))
+              .post-text.markdown.description= find_and_preserve(qna_auto_link(answer.body, :link_users => true))
               %table.fw
                 %tbody
                   %tr
@@ -72,7 +72,7 @@
                               -#%a.comment-flag(title="flag this comment as unconstructive, offensive, or spam") flag
                       %td.comment-text
                         %div
-                          %span.comment-copy= find_and_preserve(qna_auto_link(markdown(comment.body), :link_users => true))
+                          %span.comment-copy= find_and_preserve(qna_auto_link(comment.body, :link_users => true))
                           –
                           %a.comment-user(href="#")= comment.user.display_name
                           %span.comment-date #{time_ago_in_words(comment.created_at)} ago 
@@ -106,7 +106,7 @@
 
     -#.content.markdown
       %div{:itemprop => "articleBody"}
-        = find_and_preserve(qna_auto_link(markdown(answer.body), :link_users => true))
+        = find_and_preserve(qna_auto_link(answer.body, :link_users => true))
 
       -if logged_in? && (current_user.mod_of?(current_group) || current_user.can_view_offensive_counts_on?(current_group)) && answer.flags.count > 0
         %h3

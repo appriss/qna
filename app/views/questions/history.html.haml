@@ -17,7 +17,7 @@
       %h1
         = h(@question.title)
       %p.description
-        = qna_auto_link(markdown(@question.body))
+        = qna_auto_link(@question.body)
       %p.messages
         = @question.version_message
       %ul.tag-list

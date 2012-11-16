@@ -23,7 +23,7 @@
           = link_to t('global.follow'), follow_question_path(@question, :format => :mobile), :"data-role" => "button", :"data-theme" => "c"
       = link_to t('questions.index.title'), questions_path(:format => :mobile), :"data-role" => "button", :"data-theme" => "b"
 -else
-  - question_body = find_and_preserve(qna_auto_link(markdown(@question.body.present? ? @question.body : @question.title)))
+  - question_body = find_and_preserve(qna_auto_link(@question.body.present? ? @question.body : @question.title))
   %div{:data => {:role => "page"}}
     %div{:"data-role" => "header"}
       %h1

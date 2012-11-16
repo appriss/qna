@@ -21,7 +21,7 @@ atom_feed do |feed|
     next if question.nil? || question.updated_at.blank?
     feed.entry(question, :url => question_url(question)) do |entry|
       entry.title(question.title)
-      entry.content(markdown(question.body), :type => 'html')
+      entry.content(question.body, :type => 'html')
       entry.author do |author|
         author.name(question.user.login)
       end

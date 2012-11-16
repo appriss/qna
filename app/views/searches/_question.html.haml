@@ -38,7 +38,7 @@
     .title
       = link_to highlight(title, @highlight), question_path(question), :title => truncate(strip_tags(question.title), :length => 200)
     .markdown(style="color: black; line-height: 1")
-      = highlight(find_and_preserve(qna_auto_link(markdown(question.body.present? ? question.body : question.title))), @highlight)
+      = highlight(find_and_preserve(qna_auto_link(question.body.present? ? question.body : question.title)), @highlight)
     .tags
       - question.tags.each do |tag_name|
         %a.post-tag{:href => tag_path(:id => CGI.escape(tag_name))}= tag_name
