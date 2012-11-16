@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+ENV['Rails.env'] ||= (ARGV.first || 'development')
+require File.expand_path("../../config/environment", __FILE__)
+
+tags = {}
+
+Membership.all.each do |member|
+  member.preferred_tags.each do |tag|
+    tags[tag] ||= []
+    tags[tag] << member.display_name
+  end
+end
+
+max_length = tags.keys.inject(0) { |l, t| [l, t.length].max }
+
+tags.keys.sort.each do |tag|
+  printf "%-#{max_length + 2}s|  %s\n", tag, tags[tag].sort.join(", ")
+end
