@@ -46,8 +46,61 @@ class Solr
       :highlight => true,
       :start => 0,
     }.merge(opts)
-    query = URI::encode(query)
-    uri = URI.parse("http://127.0.0.1:8983/solr/qna/select?q=#{query}&fl=id&wt=ruby&indent=true&hl=true&hl.fl=text&hl.simple.pre=%3Cspan+class%3D%22highlight%22%3E&hl.snippets=3&hl.fragsize=100&hl.mergeContiguous=true&hl.alternateField=text&hl.useFastVectorHighlighter=true&hl.maxAlternateFieldLength=500&hl.simple.post=%3C%2Fspan%3E&start=#{opts[:start]}")
+    params = {
+      "q" => URI::encode(query),
+      "fl" => "id",
+      "wt" => "ruby",
+      "indent" => "true",
+      "hl" => "true",
+      "hl.fl" => "text",
+      "hl.simple.pre" => URI::encode("<span class=\"highlight\">"),
+      "hl.snippets" => 3,
+      "hl.fragsize" => 100,
+      "hl.mergeContiguous" => "true",
+      "hl.alternateField" => "text",
+      "hl.useFastVectorHighlighter" => "true",
+      "hl.maxAlternateFieldLength" => 500,
+      "hl.simple.post" => URI::encode("</span>"),
+      "start" => opts[:start],
+    }
+    args = params.map {|key, _| "#{key}=#{params[key]}"}.join("&")
+    uri = URI.parse("http://127.0.0.1:8983/solr/qna/select?#{args}")
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.request(Net::HTTP::Get.new(uri.request_uri))
+    eval(response.body)
+  end
+
+  def Solr.search_edismax (query, opts=nil)
+    opts ||= {}
+    opts = {
+      :highlight => true,
+      :start => 0,
+      :row => 25,
+    }.merge(opts)
+    params = {
+      "q" => URI::encode(query),
+      "typeDef" => "edismax",  # eDisMax is more user friendly/fuzzy than default.  Default is better for stricter searches
+      "f.votes.qf" => "vote_score",  # Setup an alias "votes" for "vote_score" field
+      "bf" => URI::encode("sum(vote_score, num_followers, num_visits)"),
+      "qf" => URI::encode("title^1.6 questionBody answer comment^0.9"),
+      "fl" => "id",
+      "wt" => "ruby",
+      "rows" => opts[:row],
+      "indent" => "true",
+      "hl" => "true",
+      "hl.fl" => "text",
+      "hl.simple.pre" => URI::encode("<span class=\"highlight\">"),
+      "hl.snippets" => 3,
+      "hl.fragsize" => 100,
+      "hl.mergeContiguous" => "true",
+      "hl.alternateField" => "text",
+      "hl.useFastVectorHighlighter" => "true",
+      "hl.maxAlternateFieldLength" => 500,
+      "hl.simple.post" => URI::encode("</span>"),
+      "start" => opts[:start],
+    }
+    args = params.map {|key, _| "#{key}=#{params[key]}"}.join("&")
+    uri = URI.parse("http://127.0.0.1:8983/solr/qna/select?#{args}")
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.request(Net::HTTP::Get.new(uri.request_uri))
     eval(response.body)
