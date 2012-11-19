@@ -9,13 +9,16 @@ class SearchesController < ApplicationController
     options = {}
     unless params[:q].blank?
       @search_text = params[:q]
+      page = (params[:page] || 1).to_i
+      per_page = 25
+      start = (page-1) * per_page
 
       options[:group_id] = current_group.id
 
       @search = Search.new(:query => @search_text)
 
       if !@search_text.blank?
-        @solr_results = Solr.search(@search_text)
+        @solr_results = Solr.search_edismax(@search_text, :start => start, :row => per_page)
         if @solr_results.key? "error"
           flash[:error] = "There was a problem with your search: #{@solr_results["error"]["msg"]}"
           @results = []
@@ -25,8 +28,18 @@ class SearchesController < ApplicationController
           @solr_results["response"]["docs"].map {|d| d["id"]}.each do |question_id|
             @results << Question.find(question_id)
           end
-          @highlight_info = @solr_results["highlighting"]
           @total_count = @solr_results["response"]["numFound"]
+          total_count = @total_count
+          (class << @results; self; end).send :define_method, :current_page do
+            page
+          end
+          (class << @results; self; end).send :define_method, :num_pages do
+            ((total_count.to_i * 1.0) / per_page).ceil
+          end
+          (class << @results; self; end).send :define_method, :limit_value do
+            per_page
+          end
+          @highlight_info = @solr_results["highlighting"]
           # @questions = Question.filter(@search_text, options)
           @highlight = @search_text.split
           # @questions = Question.where(options).page(params["page"])

@@ -18,7 +18,7 @@
     - if result.is_a?(Question)
       = render :partial => "searches/question", :object => result, :locals => {:query_regexp => @query_regexp, :highlight_info => @highlight_info}
 
-=# paginate @results unless @results.blank?
+= paginate @results unless @results.blank?
 
 -#if !params[:q].blank?
   .save-search
