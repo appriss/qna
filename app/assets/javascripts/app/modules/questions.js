@@ -97,27 +97,27 @@ var Questions = {
 	  $("#question_tags").chosen();
 
 
-//     FIXME:filter is blocking mongodb
-    $(".ask_question #ask_question").searcher({url : "/questions/related_questions.js",
-      target : $("#related_questions"),
-      fields : $("form#ask_question input[type=text][name*=question]"),
-      behaviour : "focusout",
-      timeout : 2500,
-      extraParams : { 'format' : 'js',
-                      'per_page' : 5,
-                      mini: true
-      },
-      before_query: function(target) {
-        target.show();
-      },
-      success: function(data) {
-        if(!data.html) {
-          $("#related_questions").hide();
-          // TODO: show a message
-        }
-        $("label#rqlabel").show();
-      }
-    });
+// //     FIXME:filter is blocking mongodb
+//     $(".ask_question #ask_question").searcher({url : "/questions/related_questions.js",
+//       target : $("#related_questions"),
+//       fields : $("form#ask_question input[type=text][name*=question]"),
+//       behaviour : "focusout",
+//       timeout : 2500,
+//       extraParams : { 'format' : 'js',
+//                       'per_page' : 5,
+//                       mini: true
+//       },
+//       before_query: function(target) {
+//         target.show();
+//       },
+//       success: function(data) {
+//         if(!data.html) {
+//           $("#related_questions").hide();
+//           // TODO: show a message
+//         }
+//         $("label#rqlabel").show();
+//       }
+//     });
 
     var fields = $("#attachments #fields");
     var template = fields.find(".template");
