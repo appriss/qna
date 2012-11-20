@@ -61,14 +61,6 @@ class Answer
   before_destroy :unsolve_question
   after_destroy :update_question_last_target
 
-  xapit do
-    language :language
-    text :body do |body|
-      body.gsub(/<\/?[^>]*>/, " ").gsub(/[\S]{245,}/, "") unless body.nil?
-    end
-    field :group_id, :banned, :id, :language, :tags
-  end
-
   def tags
     self.question.tags
   end

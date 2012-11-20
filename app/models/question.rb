@@ -131,15 +131,6 @@ class Question
   validate :disallow_spam
   validate :check_useful
 
-  xapit do
-    language :language
-    text :title
-    text :body do |body|
-      body.gsub(/<\/?[^>]*>/, " ").gsub(/[\S]{245,}/, "") unless body.nil?
-    end
-    field :group_id, :banned, :id, :language, :tags
-  end
-
   def self.minimal
     without(:_keywords, :close_requests, :open_requests, :versions)
   end
