@@ -16,8 +16,8 @@ timeout 30
 pid WD + "/tmp/pids/unicorn.pid"
 
 # Logs are very useful for trouble shooting, use them
-stderr_path WD+"/log/unicorn.stderr.log"
-stdout_path WD+"/log/unicorn.stdout.log"
+#stderr_path WD+"/log/unicorn.stderr.log"
+#stdout_path WD+"/log/unicorn.stdout.log"
 
 # Use "preload_app true"
 preload_app true
