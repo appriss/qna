@@ -1,5 +1,5 @@
 class DocController < ApplicationController
-  layout 'doc'
+  #layout 'doc'
 
   def privacy
     set_page_title("Privacy")
@@ -14,5 +14,9 @@ class DocController < ApplicationController
 
   def chat
     set_page_title(t('doc.chat.title'))
+  end
+
+  def faq
+    set_page_title("Frequently Asked Questions")
   end
 end
