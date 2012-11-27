@@ -2,15 +2,49 @@
   .question {text-decoration: underline; margin-top: 30px; color: #07C; font-weight: bold; font-size: 17px; font-family: Trebuchet MS, Liberation Sans, DejaVu Sans, sans-serif;}
   .answer {width: 600px;}
   .faq-title {border-bottom: 1px solid #CCC;}
+  .faq-toc { background-color: #EEF; max-width: 600px; }
+  .faq-toc a { color: #07C; font-size: 14px; font-weight: normal; text-decoration: underline; }
+  .faq-toc li { padding-top: 5px;}
 
 %h2.faq-title Frequently Asked Questions
 
-.question What kind of questions can I ask here?
+.faq-toc
+  %ol
+    %li
+      %a(href="#1") What kind of questions can I ask here?
+    %li
+      %a(href="#2") What kind of questions should I not ask here?
+    %li
+      %a(href="#3") How do I ask questions here?
+    %li
+      %a(href="#4") Etiquette
+    %li
+      %a(href="#5") Do I have to login?
+    %li
+      %a(href="#6") What is reputation?
+    %li
+      %a(href="#7") What if I don’t get a good answer?
+    %li
+      %a(href="#8") Why are some questions closed?
+    %li
+      %a(href="#9") Why are some questions or answers removed?
+    %li
+      %a(href="#10") What if I see bad things happening?
+    %li
+      %a(href="#11") Can I use a signature or tagline?
+    %li
+      %a(href="#12") Other people can edit my posts?!
+    %li
+      %a(href="#13") How do I search?
+    %li
+      %a(href="#14") How is QNA different from the Wiki or the ServiceDesk knowledge base?
+
+.question(id="1") What kind of questions can I ask here?
 .answer
   %p QNA is for all Appriss employees.  We all depend on each other in many ways.  QNA is a place to ask Appriss-related questions that other Appriss employees may be able to help with.  We feel the best QNA questions are straight forward, practical, and answerable.
   %p Please look around to see if your question has been asked before. It’s also OK to ask and answer your own question.
 
-.question What kind of questions should I not ask here?
+.question(id="2") What kind of questions should I not ask here?
 .answer
   %p You should only ask practical, answerable questions based on actual problems that you face. Chatty, open-ended questions diminish the usefulness of the site and push other questions off the front page.
   %p Your questions should be reasonably scoped. If you can imagine an entire book that answers your question, you are probably asking too much.
@@ -24,7 +58,7 @@
       %li we are being asked an open-ended, hypothetical question: “What if ______ happened?”
       %li it is a rant disguised as a question: “______ sucks, am I right?”
 
-.question How do I ask questions here?
+.question(id="3") How do I ask questions here?
 .answer
   %p When you post a new question, other users will almost immediately see it and try to provide good answers. Be sure to check back frequently when your question is still new for the best response.
   %p If your question needs clarification, you will see comments in smaller type below your question.
@@ -34,28 +68,28 @@
   %p Answers are normally sorted by vote score so the most highly voted answers float to the top. Other users will also vote on the answers to your question.
   %p When you have decided which answer is the most helpful to you, mark it as the accepted answer by clicking on the green check box outline to the left of the answer.  This lets other people know that you have received a good answer to your question. Doing this is helpful because it shows other people that you’re getting value from the community. (And if you don’t do this, others might politely ask you to go back and accept answers for more of your questions!)
 
-.question Etiquette
+.question(id="4") Etiquette
 .answer
   %p Civility is required at all times; rudeness will not be tolerated.
   %p Treat others with the same respect you’d want them to treat you. We’re all here to learn together. Be tolerant of others who may not know everything you know. Please bring your sense of humor!
   %p Above all, be honest. If you see misinformation, vote it down. Add comments indicating what, specifically, is wrong. Provide better answers of your own. Best of all — edit and improve the existing questions and answers!
 
-.question Do I have to login?
+.question(id="5") Do I have to login?
 .answer
   %p You can search and view information on QNA without logging in.  However, if you wish to ask or answer questions, add comments, vote on content, or do many other tasks, you must log in.
   %p Once logged in, you can gain other key privileges through reputation, most crucially the right to vote.
 
-.question What is reputation?
+.question(id="6") What is reputation?
 .answer
   %p Reputation is a rough measurement of how much the community trusts you; it is earned by convincing your peers that you know what you’re talking about. Basic use of the site, including asking questions, answering, and suggesting edits, does not require any reputation at all. But the more reputation you earn, the more privileges you gain on QNA.
   %p The primary way to gain reputation is by posting good questions and useful answers. Your peers will vote on your posts, and those votes will cause you to gain (or, in rare cases, lose) reputation. Amass enough reputation points and QNA will grant you additional privileges.
   %p At the high end of this reputation spectrum there is little difference between users with high reputation and QNA moderators. That is very much intentional. No single person runs QNA. The community does.
 
-.question What if I don’t get a good answer?
+.question(id="7") What if I don’t get a good answer?
 .answer
   %p First, make sure you’ve asked a good question. To get better answers, you may need to put additional effort into your question. Edit your question to provide status and progress updates. Document your own continued efforts to answer your question. This will naturally bump your question and get more people interested in it.
 
-.question Why are some questions closed?
+.question(id="8") Why are some questions closed?
 .answer
   %p Questions that are not a good fit for this site may be voted closed by experienced community members. Closed questions cannot be answered, but are eligible for improvement (and eventual re-opening) through editing, voting, and commenting.
   %p Common reasons a question may be closed include:
@@ -77,7 +111,7 @@
       %i too localized: 
       This question is unlikely to help any future visitors; it is only relevant to a single person, a specific moment in time, or an extraordinarily narrow situation that is not generally applicable to the company-wide audience of QNA.
 
-.question Why are some questions or answers removed?
+.question(id="9") Why are some questions or answers removed?
 .answer
   %p Questions that are extremely off topic, or of very low quality, may be removed at the discretion of the community and moderators.
   %p Over time, closed questions that are not useful as signpoints to other questions may also be removed, as well as questions which have no significant activity over a very long period after being asked.
@@ -90,7 +124,7 @@
     %li not even a partial answer to the actual question
   %p If you wish to improve an existing answer, click edit.
 
-.question What if I see bad things happening?
+.question(id="10") What if I see bad things happening?
 .answer
   %p Currently you may flag a question if you feel it is inappropriate.  Site moderators will see this flagged question and respond appropriately (perhaps by editing or removing the question.)  It is not currently possible to flag answers or comments, but this feature will be included in the near future.
   %p 
@@ -99,17 +133,17 @@
     if you feel the matter is urgent.
   %p Most importantly, don't feed the trolls! Replying to abusive, off-topic, or inappropriate content only encourages it – whereas flagging allows removal without providing undue attention.
 
-.question Can I use a signature or tagline?
+.question(id="11") Can I use a signature or tagline?
 .answer
   %p Please don’t use signatures or taglines in your posts.
   %p Every post you make is already “signed” with your standard user card, which links directly back to your user page.
 
-.question Other people can edit my posts?!
+.question(id="12") Other people can edit my posts?!
 .answer
   %p This site is collaboratively edited, like Wikipedia. If you see something that needs improvement, click edit and help us make it so!  Remember that the more reputation that you earn, the more privileges you will have and the more you will be able to contribute.
   %p All revisions of posts are stored in the QNA database.  In the near future we hope to make these revisions visible on the site.
 
-.question How do I search?
+.question(id="13") How do I search?
 .answer
   %p Enter search terms in the search box that appears at the upper left of every page, and press Enter.
   %p If you need to refine and narrow your search:
@@ -120,3 +154,7 @@
     %li To ensure that specific words appear in the results, use plus: +frame +steel.
     %li To search for posts by a specific user: "author:<username>".
   %p We hope to have a more complete search FAQ and guide available soon.
+
+.question(id="14") How is QNA different from the Wiki or the ServiceDesk knowledge base?
+.answer
+  %p QNA does not compete with the Wiki or ServiceDesk knowledge base.  These technologies are meant to compliment each other.  Information captured in the Wiki or the ServiceDesk knowledge base contain a different type of knowledge, more structured or formal than a Q&A format can provide. In many cases, a question will already have an answer in one of these systems. In that case, the best answer will be a link to the appropriate wiki page or ServiceDesk knowledge document.
