@@ -1,3 +1,6 @@
+:css
+  .top-bar li.faq a { color: #07C !important; border: none !important;}
+
 %nav.top-bar
   .warp
     %ul.menubar
@@ -18,10 +21,14 @@
       = multiauth_dropdown("Sign In")
     -elsif current_group.is_member?(current_user)
       %ul.user-list.menubar
+        %li.faq
+          %a(href="/doc/faq") faq
         = render "notifications/notifications_menu"
         = render "users/top_user"
     - else
       %ul.user-list.menubar.not_member
+        %li.faq.user-list
+          %a(href="/doc/faq") faq
         %li
           = link_to t('layouts.application.join_group', :group => current_group.name), new_user_path, :class => "signed_in_join_group #{current_group.signup_type} has-subnav"
 
