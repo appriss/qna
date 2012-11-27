@@ -164,7 +164,8 @@ class ApplicationController < ActionController::Base
     elsif current_group.layout.present?
       current_group.layout
     else
-      'application'
+      Group.where({:state => "active"}).first.layout
+      #'application'
     end
   end
 

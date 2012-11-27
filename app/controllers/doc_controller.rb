@@ -1,5 +1,5 @@
 class DocController < ApplicationController
-  #layout 'doc'
+  layout :set_layout
 
   def privacy
     set_page_title("Privacy")
