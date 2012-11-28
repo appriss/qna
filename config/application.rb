@@ -91,6 +91,8 @@ module Qna
 
     config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
     config.assets.css_compressor = :yui
+
+    config.action_dispatch.ip_spoofing_check = false
   end
 end
 
