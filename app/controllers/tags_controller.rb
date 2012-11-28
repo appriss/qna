@@ -75,7 +75,7 @@ class TagsController < ApplicationController
           Question.pull({group_id: @tag.group_id, :tags => {:$all => [@name_changes.first, @name_changes.last]}},
                         "tags" => @name_changes.first)
         end
-        Question.override({group_id: @tag.group_id, :tags => @name_changes.first}, {"tags.$" => @name_changes.last})
+        Question.override({group_id: @tag.group_id, :tags => @name_changes.first}, {"tags.\$" => @name_changes.last})
       end
       redirect_to tag_url(:id => @tag.name)
     else
@@ -94,9 +94,9 @@ class TagsController < ApplicationController
   protected
   def current_scope
     if(!params[:q].blank?)
-      current_group.tags.where(:name => /^#{Regexp.escape(params[:q])}/)
+      current_group.tags.asc(:name).where(:name => /^#{Regexp.escape(params[:q])}/)
     else
-      current_group.tags
+      current_group.tags.asc(:name)
     end
   end
 
